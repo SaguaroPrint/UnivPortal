@@ -1,0 +1,3 @@
+<script>
+alert("new");
+</script>
