@@ -5,16 +5,16 @@ var portfolio_selectors_li;
 
 var hashfilter;
 
-$(document).ready(function () {
+jQuery(document).ready(function () {
 
 
 
 
     // use for portfolio sotring with masonry
 
-    portfolio = $('.masonry-items');
-    portfolio_selectors = $('.portfolio-filter > li > a');
-    portfolio_selectors_li = $('.portfolio-filter li');
+    portfolio = jQuery('.masonry-items');
+    portfolio_selectors = jQuery('.portfolio-filter > li > a');
+    portfolio_selectors_li = jQuery('.portfolio-filter li');
 
     hashfilter = "*";
     if(location.hash!=""){
@@ -25,13 +25,13 @@ $(document).ready(function () {
         }
 
         portfolio_selectors.each(function(){
-                 if ($(this).attr("data-filter") == temphashfilter) {
+                 if (jQuery(this).attr("data-filter") == temphashfilter) {
                     portfolio_selectors_li.removeClass('active');
                     portfolio_selectors_li.find('a[data-filter="'+temphashfilter+'"]').parent('li').addClass("active");
 
                     var autoscrolltoelement = function(){
-                        $("html, body").animate({
-                         scrollTop: $('.portfolio-filter').parents('section').offset().top-60
+                        jQuery("html, body").animate({
+                         scrollTop: jQuery('.portfolio-filter').parents('section').offset().top-60
                         });
                     };
                     setTimeout(autoscrolltoelement, 500);
@@ -52,8 +52,8 @@ $(document).ready(function () {
 
     portfolio_selectors.on('click', function () {
         portfolio_selectors.parent().removeClass('active');
-        $(this).parent().addClass('active');
-        var selector = $(this).attr('data-filter');
+        jQuery(this).parent().addClass('active');
+        var selector = jQuery(this).attr('data-filter');
         portfolio.isotope({filter: selector});
        
         if (selector.substr(1)!="" && selector.substr(1)!="#")
@@ -69,7 +69,7 @@ $(document).ready(function () {
 
 
 
-    $(window).resize(function () {
+    jQuery(window).resize(function () {
         setTimeout(function () {
             portfolio.isotope('layout');
         }, 500);
@@ -80,11 +80,11 @@ $(document).ready(function () {
 // Main navigation href
 /*==============================================================*/
 
-$(document).ready(function () {
-    $(document).on('click', '.menu-first-level > a:first-child', function() {
-        var geturl = $(this).attr('data-redirect-url');
+jQuery(document).ready(function () {
+    jQuery(document).on('click', '.menu-first-level > a:first-child', function() {
+        var geturl = jQuery(this).attr('data-redirect-url');
         if(geturl != '#' && geturl != ''){
-            if ( $(this).attr('target') == '_blank') {
+            if ( jQuery(this).attr('target') == '_blank') {
                 window.open(geturl, '_blank');
             }else{
                 window.location = geturl;
