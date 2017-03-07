@@ -1,7 +1,7 @@
-var $portfolio;
+var portfolio;
 
-var $portfolio_selectors;
-var $portfolio_selectors_li;
+var portfolio_selectors;
+var portfolio_selectors_li;
 
 var hashfilter;
 
@@ -12,9 +12,9 @@ $(document).ready(function () {
 
     // use for portfolio sotring with masonry
 
-    $portfolio = $('.masonry-items');
-    $portfolio_selectors = $('.portfolio-filter > li > a');
-    $portfolio_selectors_li = $('.portfolio-filter li');
+    portfolio = $('.masonry-items');
+    portfolio_selectors = $('.portfolio-filter > li > a');
+    portfolio_selectors_li = $('.portfolio-filter li');
 
     hashfilter = "*";
     if(location.hash!=""){
@@ -24,10 +24,10 @@ $(document).ready(function () {
             temphashfilter="*";
         }
 
-        $portfolio_selectors.each(function(){
+        portfolio_selectors.each(function(){
                  if ($(this).attr("data-filter") == temphashfilter) {
-                    $portfolio_selectors_li.removeClass('active');
-                    $portfolio_selectors_li.find('a[data-filter="'+temphashfilter+'"]').parent('li').addClass("active");
+                    portfolio_selectors_li.removeClass('active');
+                    portfolio_selectors_li.find('a[data-filter="'+temphashfilter+'"]').parent('li').addClass("active");
 
                     var autoscrolltoelement = function(){
                         $("html, body").animate({
@@ -41,8 +41,8 @@ $(document).ready(function () {
     }
        
 
-    $portfolio.imagesLoaded(function () {
-        $portfolio.isotope({
+    portfolio.imagesLoaded(function () {
+        portfolio.isotope({
             filter: hashfilter,
             itemSelector: 'li',
             layoutMode: 'masonry'
@@ -50,11 +50,11 @@ $(document).ready(function () {
     });
 
 
-    $portfolio_selectors.on('click', function () {
-        $portfolio_selectors.parent().removeClass('active');
+    portfolio_selectors.on('click', function () {
+        portfolio_selectors.parent().removeClass('active');
         $(this).parent().addClass('active');
         var selector = $(this).attr('data-filter');
-        $portfolio.isotope({filter: selector});
+        portfolio.isotope({filter: selector});
        
         if (selector.substr(1)!="" && selector.substr(1)!="#")
         {
@@ -71,7 +71,7 @@ $(document).ready(function () {
 
     $(window).resize(function () {
         setTimeout(function () {
-            $portfolio.isotope('layout');
+            portfolio.isotope('layout');
         }, 500);
     });
 });
