@@ -21,8 +21,8 @@ jQuery(".spSearch").remove();
 
 
 //Main Menu modifications.
-var mccMenuLeft = jQuery(".NavTop > div").children().eq(3);
-var mccMenuRight = jQuery(".NavTop > div").children().eq(4);
+var mccMenuLeft = jQuery(".NavTop div").last().prev();
+var mccMenuRight = jQuery(".NavTop div").last();
 
 jQuery(mccMenuLeft).css("float","right").css("display","inline-block").css("margin-right","20px").css("vertical-align","middle").css("text-transform","uppercase").css("margin-top","20px").css("margin-bottom","auto");
 jQuery(mccMenuRight).css("float","").css("display","inline-block").css("margin-right","20px").css("vertical-align","middle").css("text-transform","uppercase").css("margin-top","20px").css("margin-bottom","auto");
