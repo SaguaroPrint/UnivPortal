@@ -7,10 +7,14 @@ jQuery("#ENUSmain").css("width","100%");
 
 //banner customization
 jQuery("#ctl00_ImageControlPageHeader").css("max-height","500px").css("min-width","100%").css("flex-shrink","0").css("object-fit","cover");
-jQuery(".NavTop").css("padding","20px 0px !important");
-jQuery(".NavTop").css("background","#ff00ff !important");
+jQuery(".NavTop").css("padding","20px 0px").css("font-family","Helvetica Neue").css("font-size","14px").css("color","#333");
+jQuery(".NavTop").css("background","#ffffff");
 jQuery(".NavTop").prepend(logoImg);
 //jQuery(".NavTop").prepend("<h1> University </h1>").css(".navbar-brand");
 jQuery("#ctl00_ctl08_CatalogSearchBox_txtSearchText").remove();
+
+var mccMenuLeft = jQuery(".NavTop > div").children().eq(3);
+
+jQuery(mccMenuLeft).css("float","right").css("margin-right","20px");
 
 });
