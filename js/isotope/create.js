@@ -13,31 +13,31 @@
 
 
 	function newLi(link, image, textP, textA, filter) {
-		var smallP = $("<p></p>").html(textP);
-		var a = $("<a></a>").attr("href", link).html(textA);
-		var h3 = $("<h3></h3>");
-		var caption = $("<figcaption></figcaption>");
+		var smallP = jQuery("<p></p>").html(textP);
+		var a = jQuery("<a></a>").attr("href", link).html(textA);
+		var h3 = jQuery("<h3></h3>");
+		var caption = jQuery("<figcaption></figcaption>");
 		//
 		h3.append(a);
 		caption.append(h3);
 		caption.append(smallP);
 
 		// **
-		var div = $("<div></div>").addClass("gallery-img");
-		var divA = $("<a></a>").attr("href", link);
-		var aImg = $("<img></img>").attr("src", image);
+		var div = jQuery("<div></div>").addClass("gallery-img");
+		var divA = jQuery("<a></a>").attr("href", link);
+		var aImg = jQuery("<img></img>").attr("src", image);
 		//
 		divA.append(aImg);
 		div.append(divA);
 		
 		//**
-		var figure = $("<figure></figure>");
+		var figure = jQuery("<figure></figure>");
 		//
 		figure.append(div);
 		figure.append(caption);
 		
 		//**
-		var li = $("<li></li>").addClass("html " + filter);
+		var li = jQuery("<li></li>").addClass("html " + filter);
 		li.append(figure);
 		return li;
 	}
@@ -51,9 +51,9 @@
 	**/	
 	
 	function newGridGallery() {
-		var ul = $("<ul></ul>").addClass("grid masonry-items");
-		var divContent = $("<div></div>").addClass("tab-content");
-		var galleryCol =$("<div></div>").addClass("col-md-12 grid-gallery overflow-hidden");
+		var ul = jQuery("<ul></ul>").addClass("grid masonry-items");
+		var divContent = jQuery("<div></div>").addClass("tab-content");
+		var galleryCol =jQuery("<div></div>").addClass("col-md-12 grid-gallery overflow-hidden");
 		
 		divContent.append(ul);
 		galleryCol.append(divContent);
@@ -73,16 +73,16 @@
 	**/	
 	
 	function newFilter(dataFilter) {
-		var ul = $("<ul></ul>").addClass("portfolio-filter nav nav-tabs nav-tabs-light wow fadeInUp");
+		var ul = jQuery("<ul></ul>").addClass("portfolio-filter nav nav-tabs nav-tabs-light wow fadeInUp");
 		// Get the filters arrays
 		var filters = dataFilter.filters;
 		var inners = dataFilter.inners;
 		// Add filters to the filter collection
 		for(var i = 0; i <= filters.length; i++) {
-			var a = $("<a></a>");
+			var a = jQuery("<a></a>");
 			a.attr("data-filter", filters[i]);
 			a.html(inners[i]);
-			var li = $("<li></li>").addClass("nav");
+			var li = jQuery("<li></li>").addClass("nav");
 			if (i == 0) {
 				li.addClass("nav active");
 			}
@@ -91,8 +91,8 @@
 		}
 		
 		//**
-		var divCenter = $("<div></div>").addClass("text-center");
-		var filterCol = $("<div></div>").addClass("col-md-12 text-center");
+		var divCenter = jQuery("<div></div>").addClass("text-center");
+		var filterCol = jQuery("<div></div>").addClass("col-md-12 text-center");
 		divCenter.append(ul);
 		filterCol.append(divCenter);
 		
@@ -109,9 +109,9 @@
 	**/		
 	
 	function isotopeSection(filterCol, galleryCol) {
-		var divRow = $("<div></div>").addClass("row");
-		var divContainer = $("<div></div>").addClass("container");
-		var section = $("<section></section>").addClass("work-5col gutter work-with-title no-margin-top content-section");
+		var divRow = jQuery("<div></div>").addClass("row");
+		var divContainer = jQuery("<div></div>").addClass("container");
+		var section = jQuery("<section></section>").addClass("work-5col gutter work-with-title no-margin-top content-section");
 		
 		divRow.append(filterCol);
 		divRow.append(galleryCol);
