@@ -11,10 +11,17 @@ jQuery(".NavTop").css("padding","20px 0px").css("font-family","Helvetica Neue").
 jQuery(".NavTop").css("background","#ffffff");
 jQuery(".NavTop").prepend(logoImg);
 //jQuery(".NavTop").prepend("<h1> University </h1>").css(".navbar-brand");
+
+//remove DOM elements
 jQuery("#ctl00_ctl08_CatalogSearchBox_txtSearchText").remove();
+jQuery(".spSearch").remove();
 
+
+//Main Menu modifications.
 var mccMenuLeft = jQuery(".NavTop > div").children().eq(3);
+var mccMenuRight = jQuery(".NavTop > div").children().eq(4);
 
-jQuery(mccMenuLeft).css("float","right").css("margin-right","20px");
+jQuery(mccMenuLeft).css("float","right").css("display","inline-block").css("margin-right","20px").css("vertical-align","middle").css("text-transform","uppercase").css("margin-top","20px").css("margin-bottom","auto");
+jQuery(mccMenuRight).css("float","").css("display","inline-block").css("margin-right","20px").css("vertical-align","middle").css("text-transform","uppercase").css("margin-top","20px").css("margin-bottom","auto");
 
 });
