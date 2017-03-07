@@ -1,4 +1,3 @@
-<script>
 jQuery(document).ready(function(){
 var logoImg = $("<img></img>");
 logoImg.attr("src","https://rawgit.com/SaguaroPrint/saguaroprint.github.io/master/img/logo_min_university.png").css("float","left").css("vertical-align","middle").css("max-height","45px").css("margin-left","10%");
@@ -15,5 +14,3 @@ $(".NavTop").prepend(logoImg);
 $("#ctl00_ctl08_CatalogSearchBox_txtSearchText").remove();
 
 });
-
-</script>
