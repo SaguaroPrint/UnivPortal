@@ -43,7 +43,8 @@ jQuery(document).ready(function() {
 						var products = getItems(data);
 						for(var i=0; i < products.l.length; i++) {
 							var name = products.l[i].innerHTML;
-							var link = products.l[i].href;
+							var link = products.l[i].onclick;
+							link = link.substring(link.indexOf("'") + 1, target.lastIndexOf("'"));
 							var description = products.d[i].innerHTML;
 							var image = products.im[i].src;
 							var li = newLi(link ,image, name, description, liClass);		
