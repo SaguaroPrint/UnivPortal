@@ -7,7 +7,7 @@ logoTxt.attr("src","https://rawgit.com/SaguaroPrint/UnivPortal/master/img/uoc.pn
 jQuery("#ENUSmain").css("width","100%");
 
 //Banner customization
-jQuery("#ctl00_ImageControlPageHeader").css("max-height","400px").css("min-width","100%").css("flex-shrink","0").css("object-fit","cover").css("border-top", "2px solid #0074c7 !important").css("box-shadow", "0px -3px 4px rgba(0,0,0,.2)").css("border-bottom", "2px solid #0074c7 !important").css("box-shadow", "0px 3px 4px rgba(0,0,0,.2)").css("object-position", "0% 20%"); 
+jQuery("#ctl00_ImageControlPageHeader").css("max-height","400px").css("min-width","100%").css("flex-shrink","0").css("object-fit","cover").css("border-top", "2px solid #0074c7 !important").css("box-shadow", "0px -3px 4px rgba(0,0,0,.2)").css("border-bottom", "2px solid #0074c7 !important").css("box-shadow", "0px 3px 4px rgba(0,0,0,.2)").css("object-position", "0% 20%");
 jQuery(".NavTop").css("background","#ffffff");
 jQuery(".NavTop").css("padding","20px 0px").css("font-family","Helvetica Neue,Helvetica,Arial").css("font-size","14px").css("color","#333").css("font-weight","600");
 jQuery(".NavTop").find("a").css("color","#333").css("font-family","Helvetica Neue,Helvetica,Arial").css("font-size","14px").css("text-decoration","none").css("font-weight","600");
