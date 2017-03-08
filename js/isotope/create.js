@@ -78,7 +78,7 @@
 		var filters = dataFilter.filters;
 		var inners = dataFilter.inners;
 		// Add filters to the filter collection
-		for(var i = 0; i <= filters.length; i++) {
+		for(var i = 0; i < filters.length; i++) {
 			var a = jQuery("<a></a>");
 			a.attr("data-filter", "." + filters[i]);
 			a.html(inners[i]);
