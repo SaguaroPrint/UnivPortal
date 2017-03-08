@@ -62,7 +62,12 @@ jQuery(document).ready(function() {
 			}
 			
 			jQuery.when.apply(null, fetchItems).done(function() {
-				jQuery("body").append(imageGallery);
+				/*   //*[@id="ENUSmain"]/tbody/tr/td/div[1]  */
+				var result = document.evaluate('//*[@id="ENUSmain"]/tbody/tr/td/div[1]', 
+					document, null, 5, null);
+				var el = result.iterateNext();
+	
+				jQuery(el).append(imageGallery);
 				loadIsotope();
 				jQuery("#catalogContent").remove();
 			});		
