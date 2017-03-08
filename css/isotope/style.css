@@ -68,10 +68,6 @@ ul, ol, dl {list-style-position: outside;}
 :-moz-placeholder { color: #999 !important; text-overflow: ellipsis; opacity:1; }
 ::-moz-placeholder { color: #999 !important; text-overflow: ellipsis; opacity:1; } 
 :-ms-input-placeholder { color: #999 !important; text-overflow: ellipsis; opacity:1; }
-::-webkit-scrollbar { width:12px }
-::-webkit-scrollbar-track { -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.3); -moz-box-shadow:inset 0 0 6px rgba(0,0,0,.3); box-shadow:inset 0 0 6px rgba(0,0,0,.3); }
-::-webkit-scrollbar-thumb { background:rgba(210,210,210,.8); -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.5); -moz-box-shadow:inset 0 0 6px rgba(0,0,0,.5); box-shadow:inset 0 0 6px rgba(0,0,0,.5); }
-::-webkit-scrollbar-thumb:window-inactive { background:rgba(210,210,210,.4) }
 .animated { -moz-transition-duration: 0s !important;  }
 
 /* only ie7, ie9, ie10, ie11 */
@@ -376,16 +372,7 @@ p.uppercase a:hover { text-decoration: none;}
 .border-transperent-light { border-color:rgba(255,255,255,.25) !important}
 .no-border-round {border-radius:0 !important}
 
-/* ===================================
-    Scroll to top
-====================================== */
 
-#scroll_to_top { cursor: pointer; }
-#scroll_to_top:hover { opacity: 0.75; }
-.scrollToTop { display: none; font-weight: bold; height: auto; padding: 0; position: fixed; right: 45px; text-align: center; text-decoration: none; top: 91%; width: auto; background-color: #000; z-index: 555; border-radius:2px; }
-.scrollToTop i { font-size: 18px; margin: 0 6px; color: #fff; }
-.scrollToTop:hover { opacity: 0.5; }
-.scrollToTop:hover i { position: relative; }
 
 /* ===================================
     Slider background and overlay
@@ -764,12 +751,7 @@ footer ul.list-inline li:first-child {padding-left: 6px}
 /* bottom pagination */
 .bottom-pagination .owl-pagination {position:inherit !important}
 
-/* scroll down */
-.scroll-down{ bottom: 50px; position: absolute; text-align: center; width: 100%; z-index: 10}
-.scroll-down a i { background: #fff; border-radius: 2px; font-size: 17px; padding: 2px 6px; color: #000; }
-.scroll-down a i:hover { background:#000; color: #fff  }
-.scroll-to-down { cursor:url("../images/arrow-down.png"), pointer;}
-.scroll-to-down-white { cursor:url("../images/arrow-down-white.png"), pointer;}
+
 .background-slider-text { position: absolute; width: 100%}
 #owl-demo-background .owl-item  { cursor: default !important}
 
@@ -1691,7 +1673,7 @@ ul.list-line li span {min-width:130px; display:inline-block}
 /* contact us */
 .contact-map iframe { width:100%; height:420px;}
 .view-map { position:absolute; bottom: 0; right: 0}
-.scrolloff { pointer-events: none; }
+
 
 /* sitemap */
 .sitemap-title { font-size: 13px; font-weight: 600; text-transform: uppercase; border: 1px solid rgba(0,0,0,.1); padding: 5px 15px; background: #f7f7f7}
