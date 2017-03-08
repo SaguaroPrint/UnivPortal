@@ -14,7 +14,7 @@ jQuery("#ctl00_ImageControlPageHeader").css(
       "object-fit" : "cover",
       "border-top" : "2px solid #0074c7 !important",
       "box-shadow" : "0px -3px 4px rgba(0,0,0,.2)",
-      "border-bottom" : "2px solid #0074c7 !important" :
+      "border-bottom" : "2px solid #0074c7 !important",
       "box-shadow" : "0px 3px 4px rgba(0,0,0,.2)",
       "object-position" : "0% 20%"
     });
