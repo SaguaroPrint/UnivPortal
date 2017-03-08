@@ -80,7 +80,7 @@
 		// Add filters to the filter collection
 		for(var i = 0; i < filters.length; i++) {
 			var a = jQuery("<a></a>");
-			a.attr("data-filter", "." + filters[i]);
+			a.attr("data-filter", ((filters[i] == "*")?"":".") + filters[i]);
 			a.html(inners[i]);
 			var li = jQuery("<li></li>").addClass("nav");
 			if (i == 0) {
