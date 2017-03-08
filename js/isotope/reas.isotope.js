@@ -69,6 +69,6 @@ jQuery(document).ready(function() {
 				jQuery(el).append(imageGallery);
 				loadIsotope();
 				jQuery("#catalogContent").remove();
-				document.getElementsById('ENUSmain')[0].style.visibility = 'visible';
+				document.getElementById('ENUSmain').style.visibility = 'visible';
 			});		
 	})
