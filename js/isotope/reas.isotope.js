@@ -1,5 +1,4 @@
 jQuery(document).ready(function() {
-			jQuery("#catalogContent").css("display", "none");		
 		
 			var fetchItems = [];
 			var inners = ["All"];
@@ -70,5 +69,6 @@ jQuery(document).ready(function() {
 				jQuery(el).append(imageGallery);
 				loadIsotope();
 				jQuery("#catalogContent").remove();
+				document.getElementsById('ENUSmain')[0].style.visibility = 'visible';
 			});		
 	})
