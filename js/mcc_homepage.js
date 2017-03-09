@@ -83,6 +83,8 @@ jQuery(document).ready(function() {
     loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/css/main.css");
     loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/css/orderInfoCopy.css");
 
+    jQuery("#ENUSmain").css("display", "table");
+
     // load the js file
     //loadJS("one.js");
 
