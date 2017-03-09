@@ -270,7 +270,7 @@ body {
   font-size: 18px;
   line-height: 1.33;
   border-radius: 6px;
-    color: #fff;
+  color: #ffffff;
   background-color: #5cb85c;
   border-color: #4cae4c;
   display: inline-block;
@@ -283,7 +283,7 @@ body {
   border: 1px solid transparent;
   white-space: nowrap;
   user-select: none;
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .angBtn:hover {
