@@ -49,10 +49,7 @@ jQuery(document).ready(function() {
 							var image = products.im[i].src;
 							var li = newLi(js ,image, description, name, liClass);		
 							var item = 
-								"{ \"name\":\"" + name + "\"," +
-								+ "\"description\":\"" + description + "\"," +
-								+ "\"js\":\"" + js + "\"," +
-								+ "\"image\":\"" + image + "\"} " + ((i == (products.l.length - 1))?"":",");
+								"{ \"name\":\"" + name + "\",\"description\":\"" + description + "\",\"js\":'" + js + "',\"image\":\"" + image + "\"} " + ((i == (products.l.length - 1))?"":",");
 							window.reasJSON += item;
 							ul.append(li);
 						}
