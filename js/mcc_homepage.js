@@ -54,4 +54,26 @@ var logoutHref = jQuery("#ctl00_ctl08_btnLogOut").attr("href");
 var landingPage = "https://ricoheurope.github.io";
 jQuery("#ctl00_ctl08_btnLogOut").attr("href", logoutHref + "; window.location.href = '" + landingPage + "'");
 
+ /**
+  * function to load a given css file
+  */
+ loadCSS = function(href) {
+     var cssLink = jQuery("<link rel='stylesheet' type='text/css' href='" + href + "'>");
+     jQuery("head").append(cssLink);
+ };
+
+/**
+ * function to load a given js file
+ */
+ loadJS = function(src) {
+     var jsLink = jQuery("<script type='text/javascript' src='" + src + "'>");
+     jQuery("head").append(jsLink);
+ };
+
+ // load the css file
+ loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/css/main.css");
+
+ // load the js file
+ //loadJS("one.js");
+
 });
