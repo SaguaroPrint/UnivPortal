@@ -43,6 +43,8 @@ jQuery(document).ready(function() {
     //remove DOM elements
     jQuery("#ctl00_ctl08_CatalogSearchBox_txtSearchText").remove();
     jQuery(".spSearch").remove();
+    jQuery("#ctl00_ctl08_lblUserName").remove();
+    jQuery("#ctl00_ctl08_imgDivider1").remove();
 
 
     //Main Menu modifications.
