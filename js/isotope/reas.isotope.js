@@ -57,6 +57,7 @@ jQuery(document).ready(function() {
 							ul.append(li);
 						}
 						json += "]},";
+						data.json = json;
 					},
 					done: function(data) {
 					}
@@ -68,7 +69,7 @@ jQuery(document).ready(function() {
 				catalogContent.remove();
 			}
 			
-			jQuery.when.apply(null, fetchItems).done(function(args) {
+			jQuery.when.apply(args1, fetchItems).done(function(args) {
 				/*   //*[@id="ENUSmain"]/tbody/tr/td/div[1]  */
 				var result = document.evaluate('//*[@id="ENUSmain"]/tbody/tr/td/div[1]', 
 					document, null, 5, null);
@@ -78,10 +79,10 @@ jQuery(document).ready(function() {
 				loadIsotope();
 				jQuery("#catalogContent").remove();
 				document.getElementById('ENUSmain').style.visibility = 'visible';
-				this.json = this.json.slice(0, -1);
-				this.json += "]}";
+				data.json = data.json.slice(0, -1);
+				data.json += "]}";
 				if (this.reasJSON == "") {
-					document.cookie = "reas=" + this.json;
+					document.cookie = "reas=" + data.json;
 				}
 			});		
 	})
