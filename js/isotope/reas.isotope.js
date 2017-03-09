@@ -3,6 +3,7 @@ jQuery(document).ready(function() {
 			var inners = ["ALL"];
 			var filters = ["*"];
 			var obj = getItems();
+			this.json = "{\"products\": [ ";
 			
 			for(var i=0; i < obj.l.length; i++) {
 				filter = obj.l[i].innerHTML;
@@ -32,8 +33,6 @@ jQuery(document).ready(function() {
 				return {i: items, l: links, im: images, d: descriptions};
 			}			
 	
-			this.json = "{\"products\": [ ";
-			
 			function getCatalogItems(catalogId, liClass, category) {
 				theForm.__EVENTTARGET.value = catalogId.replace(/_/g, '$');
 				return jQuery.ajax({
@@ -49,11 +48,13 @@ jQuery(document).ready(function() {
 							var description = products.d[i].innerHTML;
 							var image = products.im[i].src;
 							var li = newLi(js ,image, description, name, liClass);		
-							ul.append(li);
-							this.json += "{ \"name\":\"" + name + "\"," +
+							var item = 
+								"{ \"name\":\"" + name + "\"," +
 								+ "\"description\":\"" + description + "\"," +
 								+ "\"js\":\"" + js + "\"," +
-								+ "\"image\":\"" + image + "\"} " + (i == products.l.length - 1)?"":",";
+								+ "\"image\":\"" + image + "\"} " + (i == (products.l.length - 1))?"":",";
+							this.json += item;
+							ul.append(li);
 						}
 						this.json += "]},";
 					},
