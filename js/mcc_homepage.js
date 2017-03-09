@@ -18,6 +18,10 @@ jQuery("#ctl00_ImageControlPageHeader").css(
       "box-shadow" : "0px 3px 4px rgba(0,0,0,.2)",
       "object-position" : "0% 20%"
     });
+jQuery("#PageType01").css(
+    {
+      "background-color" : "#09121B"
+    });
 jQuery(".NavTop").css("background","#ffffff");
 jQuery(".NavTop").css("padding","20px 0px").css("font-family","Helvetica Neue,Helvetica,Arial").css("font-size","14px").css("color","#333").css("font-weight","600");
 jQuery(".NavTop").find("a").css("color","#333").css("font-family","Helvetica Neue,Helvetica,Arial").css("font-size","14px").css("text-decoration","none").css("font-weight","600");
