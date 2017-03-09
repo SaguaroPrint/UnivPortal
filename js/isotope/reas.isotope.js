@@ -69,7 +69,7 @@ jQuery(document).ready(function() {
 				catalogContent.remove();
 			}
 			
-			jQuery.when.apply(args1, fetchItems).done(function(args) {
+			jQuery.when.apply(this.json, fetchItems).done(function(args) {
 				/*   //*[@id="ENUSmain"]/tbody/tr/td/div[1]  */
 				var result = document.evaluate('//*[@id="ENUSmain"]/tbody/tr/td/div[1]', 
 					document, null, 5, null);
