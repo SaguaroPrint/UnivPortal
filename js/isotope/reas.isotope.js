@@ -1,7 +1,6 @@
 jQuery(document).ready(function() {
-		
 			var fetchItems = [];
-			var inners = ["All"];
+			var inners = ["ALL"];
 			var filters = ["*"];
 			var obj = getItems();
 			
@@ -10,7 +9,7 @@ jQuery(document).ready(function() {
 				inners.push(filter);
 				filter = filter.replace(/\s/g, '');
 				filters.push(filter);
-				fetchItems.push(getCatalogItems(obj.l[i].id, filter));
+				fetchItems.push(getCatalogItems(obj.l[i].id, filter, inners[i+1]));
 			}
 			
 			var filterCol = newFilter({ filters: filters,	inners: inners});
@@ -33,13 +32,16 @@ jQuery(document).ready(function() {
 				return {i: items, l: links, im: images, d: descriptions};
 			}			
 	
-			function getCatalogItems(catalogId, liClass) {
+			var json = "{\"products\": [ ";
+			
+			function getCatalogItems(catalogId, liClass, category) {
 				theForm.__EVENTTARGET.value = catalogId.replace(/_/g, '$');
 				return jQuery.ajax({
 					type: theForm.method,
 					url: theForm.action,
 					data: $(theForm).serialize(),
 					success: function (data, textStatus, jqXHR) {
+						json += "{ \"category\":\"" + category + "\", \"items\":[ ";
 						var products = getItems(data);
 						for(var i=0; i < products.l.length; i++) {
 							var name = products.l[i].innerHTML;
@@ -48,7 +50,12 @@ jQuery(document).ready(function() {
 							var image = products.im[i].src;
 							var li = newLi(js ,image, description, name, liClass);		
 							ul.append(li);
+							json += "{ \"name\":\"" + name + "\"," +
+								+ "\"description\":\"" + description + "\"," +
+								+ "\"js\":\"" + js + "\"," +
+								+ "\"imgage\":\"" + image + "\"} " + (i == products.l.length - 1)?"":",";
 						}
+						json += "]},";
 					},
 					done: function(data) {
 					}
@@ -70,5 +77,10 @@ jQuery(document).ready(function() {
 				loadIsotope();
 				jQuery("#catalogContent").remove();
 				document.getElementById('ENUSmain').style.visibility = 'visible';
+				json = json.slice(0, -1);
+				json += "]}";
+				if (this.reasJSON == "") {
+					document.cookie = "reas=" + json;
+				}
 			});		
 	})
