@@ -156,10 +156,13 @@ jQuery(document).ready(function() {
     // change cart icon to black
     jQuery("#ctl00_ctl08_lnkImgCart > img").attr("src", "images/cart_black.png");
 
-    // redirect to landing page at logout
-    var logoutHref = jQuery("#ctl00_ctl08_btnLogOut").attr("href");
-    var landingPage = "https://ricoheurope.github.io";
-    jQuery("#ctl00_ctl08_btnLogOut").attr("href", logoutHref + "; window.location.href = '" + landingPage + "'");
+    // update bread crums menu
+    jQuery("#CtlBrdCrm").css({
+      "width": "80%",
+      "margin": "auto",
+      "float": "none",
+      "font-size": "18px"
+    });
 
     /**
      * function to load a given css file
@@ -185,12 +188,20 @@ jQuery(document).ready(function() {
     //loadJS("one.js");
 
     // Order Info Copy page
-    // replace description with i icon
+    // replace "description" with i icon
     var infoIcon = jQuery("<i class='fa fa-info fa-lg fa-fw' aria-hidden='true' style='color: #0074c7;'></i>");
     var desc = jQuery("#ctl00_content_CtlAddToCart_ProductDescription_StringControl1");
     desc.before(infoIcon);
     desc.remove();
 
+    // replace "instruction" with book icon
+    var instrIcon = jQuery("<i class='fa fa-book fa-lg fa-fw' aria-hidden='true' style='color: #0074c7;'></i>");
+    instrIcon.css("color", "#0074c7");
+    var instr = jQuery("#ctl00_content_CtlAddToCart_ProductDescription_Stringcontrol2");
+    instr.before(instrIcon);
+    instr.remove();
+
+    //
 
 
 
@@ -204,9 +215,10 @@ jQuery(document).ready(function() {
 
 
 
-
-
-
+    // redirect to landing page at logout
+    var logoutHref = jQuery("#ctl00_ctl08_btnLogOut").attr("href");
+    var landingPage = "https://ricoheurope.github.io";
+    jQuery("#ctl00_ctl08_btnLogOut").attr("href", logoutHref + "; window.location.href = '" + landingPage + "'");
 
     // display the page once all styling is applied
     jQuery("#ENUSmain").css("display", "table");
