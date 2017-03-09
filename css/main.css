@@ -1,3 +1,7 @@
 #CtlBody {
 	width: 80%;
 }
+
+#ctl00_ImageControlPageHeader {
+		object-position: 0% 40%;
+}
