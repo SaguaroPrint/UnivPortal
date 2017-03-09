@@ -8,7 +8,7 @@ jQuery(document).ready(function() {
 
     //Banner customization
     jQuery("#ctl00_ImageControlPageHeader").css({
-        "max-height": "400px",
+        "max-height": "300px",
         "min-width": "100%",
         "flex-shrink": "0",
         "object-fit": "cover",
