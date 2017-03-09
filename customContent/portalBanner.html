@@ -201,9 +201,12 @@ jQuery(document).ready(function() {
     instr.before(instrIcon);
     instr.remove();
 
-    //
+    // remove classes for buttons container
+    jQuery("#Table5").removeClass();
 
-
+    // re-style button Order Print
+    var btnOrderPrint = jQuery("#ctl00_content_CtlAddToCart_ProductOrderInfoController_AddToCartActionBox_mAddToCartAction_btnAddToCart");
+    btnOrderPrint.removeClass().addClass("angBtn");
 
 
 

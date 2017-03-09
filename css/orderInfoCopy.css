@@ -263,3 +263,31 @@ body {
     font-size: 15px !important;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+/* angular style buttons */
+.angBtn {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+    color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  user-select: none;
+    text-decoration: none;
+}
+
+.angBtn:hover {
+  background-color: #47a447;
+  border-color: #398439;
+  text-decoration: none;
+}
