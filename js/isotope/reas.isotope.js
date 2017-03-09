@@ -77,6 +77,9 @@ jQuery(document).ready(function() {
 				var json = window.reasJSON;
 				json = json.slice(0, -1);
 				json += "]}";
-				document.cookie = "reas=" + json;
+				var d = new Date();
+				d.setTime(d.getTime() + (24 * 60 * 60 * 1000));
+				var expires = "expires=" + d.toUTCString();
+				document.cookie = "reas=" + json ";" + expires + ";path=/";
 			});		
 	})
