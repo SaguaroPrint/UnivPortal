@@ -249,8 +249,7 @@ body {
     margin-left: 10px;
     font-size: 15px;
 }
-#ctl00_content_CtlAddToCart_ProductOrderInfoController_AddToCartActionBox_mAddToCartAction_btnAddToCart span {
-
+#ctl00_content_CtlAddToCart_ProductOrderInfoController_AddToCartActionBox_mAddToCartAction_btnAddToCart {
     cursor: pointer;
     width: 100%;
     border: 1px solid #d40212;
@@ -258,6 +257,7 @@ body {
     background: #d42000;
     color: #FFF;
     margin: 0 0 5px;
+	vertical-align: middle;
     padding: 10px;
     margin-left: 10px;
     font-size: 15px;
