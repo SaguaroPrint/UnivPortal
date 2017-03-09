@@ -237,7 +237,30 @@ body {
 }
 
 /*Start Order Buttons*/
+#btnDigitalAssetOrder span {
+    cursor: pointer;
+    width: 100%;
+    border: 0;
+    background: #d42000;
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    margin-left: 10px;
+    font-size: 15px;
+}
+.pbtn-icon img-plus {
 
+    display:none;
+
+}
+
+.ContentBoxGrey {
+    padding: 0px 0px 0px 0px;
+    border: 0;
+    box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.24);
+    margin-right: auto;
+    margin-left: auto;
+}
 
 /*End Order buttons*/
 
