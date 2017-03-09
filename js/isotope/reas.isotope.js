@@ -46,7 +46,7 @@ jQuery(document).ready(function() {
 							var js = jQuery(products.l[i]).attr("onclick");
 							var description = products.d[i].innerHTML;
 							var image = products.im[i].src;
-							var li = newLi(js ,image, name, description, liClass);		
+							var li = newLi(js ,image, description, name, liClass);		
 							ul.append(li);
 						}
 					},
