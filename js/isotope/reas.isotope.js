@@ -10,7 +10,7 @@ jQuery(document).ready(function() {
 				inners.push(filter);
 				filter = filter.replace(/\s/g, '');
 				filters.push(filter);
-				fetchItems.push(getCatalogItems(obj.l[i].id, filter, inners[i+1]));
+				fetchItems.push(getCatalogItems(obj.l[i].id, filter, inners[i+1], this.json));
 			}
 			
 			var filterCol = newFilter({ filters: filters,	inners: inners});
@@ -33,14 +33,14 @@ jQuery(document).ready(function() {
 				return {i: items, l: links, im: images, d: descriptions};
 			}			
 	
-			function getCatalogItems(catalogId, liClass, category) {
+			function getCatalogItems(catalogId, liClass, category, json) {
 				theForm.__EVENTTARGET.value = catalogId.replace(/_/g, '$');
 				return jQuery.ajax({
 					type: theForm.method,
 					url: theForm.action,
 					data: $(theForm).serialize(),
 					success: function (data, textStatus, jqXHR) {
-						this.json += "{ \"category\":\"" + category + "\", \"items\":[ ";
+						json += "{ \"category\":\"" + category + "\", \"items\":[ ";
 						var products = getItems(data);
 						for(var i=0; i < products.l.length; i++) {
 							var name = products.l[i].innerHTML;
@@ -52,11 +52,12 @@ jQuery(document).ready(function() {
 								"{ \"name\":\"" + name + "\"," +
 								+ "\"description\":\"" + description + "\"," +
 								+ "\"js\":\"" + js + "\"," +
-								+ "\"image\":\"" + image + "\"} " + (i == (products.l.length - 1))?"":",";
-							this.json += item;
+								+ "\"image\":\"" + image + "\"} " + ((i == (products.l.length - 1))?"":",");
+							json += item;
 							ul.append(li);
 						}
-						this.json += "]},";
+						json += "]},";
+						data.json = json;
 					},
 					done: function(data) {
 					}
@@ -68,7 +69,7 @@ jQuery(document).ready(function() {
 				catalogContent.remove();
 			}
 			
-			jQuery.when.apply(null, fetchItems).done(function() {
+			jQuery.when.apply(this.json, fetchItems).done(function(args) {
 				/*   //*[@id="ENUSmain"]/tbody/tr/td/div[1]  */
 				var result = document.evaluate('//*[@id="ENUSmain"]/tbody/tr/td/div[1]', 
 					document, null, 5, null);
@@ -78,10 +79,10 @@ jQuery(document).ready(function() {
 				loadIsotope();
 				jQuery("#catalogContent").remove();
 				document.getElementById('ENUSmain').style.visibility = 'visible';
-				this.json = this.json.slice(0, -1);
-				this.json += "]}";
+				data.json = data.json.slice(0, -1);
+				data.json += "]}";
 				if (this.reasJSON == "") {
-					document.cookie = "reas=" + this.json;
+					document.cookie = "reas=" + data.json;
 				}
 			});		
 	})
