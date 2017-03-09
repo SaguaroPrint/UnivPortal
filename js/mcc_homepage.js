@@ -49,4 +49,10 @@ var mccMenuRight = jQuery(".NavTop > div").children().last();
 jQuery(mccMenuLeft).css("float","right").css("display","inline-block").css("margin-right","20px").css("vertical-align","middle").css("text-transform","uppercase").css("margin-top","20px").css("margin-bottom","auto");
 jQuery(mccMenuRight).css("float","").css("display","inline-block").css("margin-right","20px").css("vertical-align","middle").css("text-transform","uppercase").css("margin-top","20px").css("margin-bottom","auto");
 
+// redirect to landing page
+
+var logoutHref = jQuery("#ctl00_ctl08_btnLogOut").attr("href");
+var landingPage = "https://ricoheurope.github.io";
+jQuery("#ctl00_ctl08_btnLogOut").attr("href", logoutHref + "; window.location.href = '" + landingPage + "'";
+
 });
