@@ -78,6 +78,7 @@ jQuery(document).ready(function() {
 
     // load the css file
     loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/css/main.css");
+    loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/css/orderInfoCopy.css");
 
     // load the js file
     //loadJS("one.js");
