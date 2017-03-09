@@ -237,72 +237,7 @@ body {
 }
 
 /*Start Order Buttons*/
-#btnDigitalAssetOrder span {
-    cursor: pointer;
-    width: 100%;
-    border: 1px solid #d40212;
-    border-radius: 5px;
-    background: #d42000;
-    color: #FFF;
-    margin: 0 0 5px;
-    padding: 10px;
-    margin-left: 10px;
-    font-size: 15px;
-}
-#ctl00_content_CtlAddToCart_ProductOrderInfoController_AddToCartActionBox_mAddToCartAction_btnAddToCart {
-    cursor: pointer;
-    width: 100%;
-    border: 1px solid #d40212;
-    border-radius: 5px;
-    background: #d42000;
-    color: #FFF;
-    margin: 0 0 5px;
-	vertical-align: middle;
-    padding: 10px;
-    margin-left: 10px;
-    font-size: 15px;
-}
 
-#ctl00_content_CtlAddToCart_ProductOrderInfoController_AddToCartActionBox_mAddToCartAction_btnAddToCart hover {
-
- cursor: pointer;
-    width: 100%;
-    border: 1px solid #d40212;
-    border-radius: 5px;
-    background: #ff00ff;
-    color: #FFF;
-    margin: 0 0 5px;
-	vertical-align: middle;
-    padding: 10px;
-    margin-left: 10px;
-    font-size: 15px;
-
-}
-.pbtn-icon {
-
-    display:none;
-}
-.pbtn span {
-background: none;
-}
-.pbtn SPAN.pbtn-icon{
-
-background:none;
-
-}
-.btn-l SPAN.pbtn-icon{
-width:0px;
-height:0px;
-}
-
-#Table5 {
-    padding: 0px 0px 0px 0px;
-    border: none !important;
-    box-shadow: none !important;
-	    background-color: white;
-    margin-right: auto;
-    margin-left: auto;
-}
 
 /*End Order buttons*/
 
