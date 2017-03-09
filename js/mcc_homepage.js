@@ -7,6 +7,7 @@ jQuery(document).ready(function() {
     jQuery("#ENUSmain").css("width", "100%");
 
     //Banner customization
+    /*
     jQuery("#ctl00_ImageControlPageHeader").css({
         "max-height": "300px",
         "min-width": "100%",
@@ -17,7 +18,7 @@ jQuery(document).ready(function() {
         "border-bottom": "2px solid #0074c7 !important",
         "box-shadow": "0px 3px 4px rgba(0,0,0,.2)",
         "object-position": "0% 40%"
-    });
+    });*/
     jQuery("#PageType01").css({
         "background-color": "#09121B"
     });
