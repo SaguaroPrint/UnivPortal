@@ -314,3 +314,9 @@ body {
   user-select: none;
   text-decoration: none;
 }
+
+.angBtnWhite:hover {
+  text-decoration: none !important;
+  color: #398439 !important;
+  background-color: white !important;
+}
