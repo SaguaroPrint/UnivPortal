@@ -52,6 +52,9 @@ jQuery(document).ready(function() {
     jQuery(mccMenuLeft).css("float", "right").css("display", "inline-block").css("margin-right", "20px").css("vertical-align", "middle").css("text-transform", "uppercase").css("margin-top", "20px").css("margin-bottom", "auto");
     jQuery(mccMenuRight).css("float", "").css("display", "inline-block").css("margin-right", "20px").css("vertical-align", "middle").css("text-transform", "uppercase").css("margin-top", "20px").css("margin-bottom", "auto");
 
+    // change cart icon to black
+    jQuery("#ctl00_ctl08_lnkImgCart > img").attr("src", "images/cart_black.png");
+
     // redirect to landing page
     var logoutHref = jQuery("#ctl00_ctl08_btnLogOut").attr("href");
     var landingPage = "https://ricoheurope.github.io";
