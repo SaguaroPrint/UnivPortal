@@ -270,7 +270,7 @@ body {
   font-size: 18px;
   line-height: 1.33;
   border-radius: 6px;
-  color: #ffffff;
+  color: #ffffff !important;
   background-color: #5cb85c;
   border-color: #4cae4c;
   display: inline-block;
@@ -298,7 +298,7 @@ body {
   font-size: 18px;
   line-height: 1.33;
   border-radius: 6px;
-  color: #398439;
+  color: #398439 !important;
   background-color: white;
   border-color: #398439;
   display: inline-block;
