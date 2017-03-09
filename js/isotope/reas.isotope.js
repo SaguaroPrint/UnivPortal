@@ -32,7 +32,7 @@ jQuery(document).ready(function() {
 				return {i: items, l: links, im: images, d: descriptions};
 			}			
 	
-			var json = "{\"products\": [ ";
+			this.json = "{\"products\": [ ";
 			
 			function getCatalogItems(catalogId, liClass, category) {
 				theForm.__EVENTTARGET.value = catalogId.replace(/_/g, '$');
@@ -41,7 +41,7 @@ jQuery(document).ready(function() {
 					url: theForm.action,
 					data: $(theForm).serialize(),
 					success: function (data, textStatus, jqXHR) {
-						json += "{ \"category\":\"" + category + "\", \"items\":[ ";
+						this.json += "{ \"category\":\"" + category + "\", \"items\":[ ";
 						var products = getItems(data);
 						for(var i=0; i < products.l.length; i++) {
 							var name = products.l[i].innerHTML;
@@ -50,12 +50,12 @@ jQuery(document).ready(function() {
 							var image = products.im[i].src;
 							var li = newLi(js ,image, description, name, liClass);		
 							ul.append(li);
-							json += "{ \"name\":\"" + name + "\"," +
+							this.json += "{ \"name\":\"" + name + "\"," +
 								+ "\"description\":\"" + description + "\"," +
 								+ "\"js\":\"" + js + "\"," +
-								+ "\"imgage\":\"" + image + "\"} " + (i == products.l.length - 1)?"":",";
+								+ "\"image\":\"" + image + "\"} " + (i == products.l.length - 1)?"":",";
 						}
-						json += "]},";
+						this.json += "]},";
 					},
 					done: function(data) {
 					}
@@ -77,10 +77,10 @@ jQuery(document).ready(function() {
 				loadIsotope();
 				jQuery("#catalogContent").remove();
 				document.getElementById('ENUSmain').style.visibility = 'visible';
-				json = json.slice(0, -1);
-				json += "]}";
+				this.json = this.json.slice(0, -1);
+				this.json += "]}";
 				if (this.reasJSON == "") {
-					document.cookie = "reas=" + json;
+					document.cookie = "reas=" + this.json;
 				}
 			});		
 	})
