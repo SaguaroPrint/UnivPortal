@@ -52,7 +52,7 @@ jQuery(document).ready(function() {
 								"{ \"name\":\"" + name + "\"," +
 								+ "\"description\":\"" + description + "\"," +
 								+ "\"js\":\"" + js + "\"," +
-								+ "\"image\":\"" + image + "\"} " + (i == (products.l.length - 1))?"":",";
+								+ "\"image\":\"" + image + "\"} " + ((i == (products.l.length - 1))?"":",");
 							this.json += item;
 							ul.append(li);
 						}
