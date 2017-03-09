@@ -240,7 +240,8 @@ body {
 #btnDigitalAssetOrder span {
     cursor: pointer;
     width: 100%;
-    border: 0;
+    border: 1px solid #d40212;
+    border-radius: 5px;
     background: #d42000;
     color: #FFF;
     margin: 0 0 5px;
@@ -248,16 +249,28 @@ body {
     margin-left: 10px;
     font-size: 15px;
 }
-.pbtn-icon img-plus {
+#ctl00_content_CtlAddToCart_ProductOrderInfoController_AddToCartActionBox_mAddToCartAction_btnAddToCart span {
+
+    cursor: pointer;
+    width: 100%;
+    border: 1px solid #d40212;
+    border-radius: 5px;
+    background: #d42000;
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    margin-left: 10px;
+    font-size: 15px;
+}
+.pbtn-icon {
 
     display:none;
-
 }
 
 .ContentBoxGrey {
     padding: 0px 0px 0px 0px;
-    border: 0;
-    box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.24);
+    border: none !important;
+    box-shadow: none !important;
     margin-right: auto;
     margin-left: auto;
 }
