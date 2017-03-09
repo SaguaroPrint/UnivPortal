@@ -12,9 +12,9 @@
 	**/			
 
 
-	function newLi(link, image, textP, textA, filter) {
+	function newLi(js, image, textP, textA, filter) {
 		var smallP = jQuery("<p></p>").html(textP);
-		var a = jQuery("<a></a>").attr("href", link).html(textA);
+		var a = jQuery("<a></a>").attr("onclick", js).html(textA);
 		var h3 = jQuery("<h3></h3>");
 		var caption = jQuery("<figcaption></figcaption>");
 		//
@@ -24,7 +24,7 @@
 
 		// **
 		var div = jQuery("<div></div>").addClass("gallery-img");
-		var divA = jQuery("<a></a>").attr("href", link);
+		var divA = jQuery("<a></a>").attr("onclick", js);
 		var aImg = jQuery("<img></img>").attr("src", image);
 		//
 		divA.append(aImg);

@@ -43,10 +43,10 @@ jQuery(document).ready(function() {
 						var products = getItems(data);
 						for(var i=0; i < products.l.length; i++) {
 							var name = products.l[i].innerHTML;
-							var link = "javascript:" + jQuery(products.l[i]).attr("onclick");
+							var js = jQuery(products.l[i]).attr("onclick");
 							var description = products.d[i].innerHTML;
 							var image = products.im[i].src;
-							var li = newLi(link ,image, name, description, liClass);		
+							var li = newLi(js ,image, name, description, liClass);		
 							ul.append(li);
 						}
 					},
