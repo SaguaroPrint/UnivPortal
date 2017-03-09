@@ -1,0 +1,242 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+
+body {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 30px;
+  color: #777;
+}
+
+#tdForm {
+	width:350px;
+	padding:10px;
+	max-width: 400px;
+    width: 350px;
+    background: #F9F9F9;
+    padding: 25px;
+	float: right;
+    margin-right: 40px;
+
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#fname_LabelCell{
+	vertical-align: middle;
+}
+#fname_InputCell{
+	vertical-align: top;
+    border: medium none !important;
+    margin: 10px 0 10px;
+    min-width: 100%;
+    padding: 4px;
+    width: 100%;
+}
+
+#fname {
+
+	width: 100%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+}
+
+#lname_LabelCell{
+	vertical-align: middle;
+}
+#lname_InputCell{
+	vertical-align: top;
+    border: medium none !important;
+    margin: 10px 0 10px;
+    min-width: 100%;
+    padding: 4px;
+    width: 100%;
+}
+
+#lname {
+
+	width: 100%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+}
+
+#add1_LabelCell{
+	vertical-align: middle;
+}
+#add1_InputCell{
+	vertical-align: top;
+    border: medium none !important;
+    margin: 10px 0 10px;
+    min-width: 100%;
+    padding: 4px;
+    width: 100%;
+}
+
+#add1 {
+
+	width: 100%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+}
+
+#add2_LabelCell{
+	vertical-align: middle;
+}
+#add2_InputCell{
+	vertical-align: top;
+    border: medium none !important;
+    margin: 10px 0 10px;
+    min-width: 100%;
+    padding: 4px;
+    width: 100%;
+}
+
+#add2 {
+
+	width: 100%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+}
+
+#city_LabelCell{
+	vertical-align: middle;
+}
+#city_InputCell{
+	vertical-align: top;
+    border: medium none !important;
+    margin: 10px 0 10px;
+    min-width: 100%;
+    padding: 4px;
+    width: 100%;
+}
+
+#city {
+
+	width: 100%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+}
+
+#zip_LabelCell{
+	vertical-align: middle;
+}
+#zip_InputCell{
+	vertical-align: top;
+    border: medium none !important;
+    margin: 10px 0 10px;
+    min-width: 100%;
+    padding: 4px;
+    width: 100%;
+}
+
+#zip {
+
+	width: 100%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+}
+
+#country_LabelCell{
+	vertical-align: middle;
+}
+#country_InputCell{
+	vertical-align: top;
+    border: medium none !important;
+    margin: 10px 0 10px;
+    min-width: 100%;
+    padding: 4px;
+    width: 100%;
+}
+
+#country{
+
+	width: 100%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+}
+
+#Text_Email_Address_LabelCell{
+	vertical-align: middle;
+}
+#Text_Email_Address_InputCell{
+	vertical-align: top;
+    border: medium none !important;
+    margin: 10px 0 10px;
+    min-width: 100%;
+    padding: 4px;
+    width: 100%;
+}
+
+#Text_Email_Address{
+
+	width: 100%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+}
+
+/* End of Form Style */
+
+/*Product Proof Styles*/
+
+#tdProof{
+
+	width:500px;
+    height: auto;
+}
+
+.ContentBoxGrey {
+    padding: 0px 0px 0px 0px;
+    border: 1px solid #BCBEC0;
+    background-color: #EFF1F2;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+/*Product Proof Styles End*/
+
+/*Order information Style */
+
+#ctl00_content_CtlAddToCart_ProductOrderInfoController_divProductOrderInfo {
+
+	margin-top: 20px;
+}
+
+/* Order information End */
+
+/*Iframe Style*/
+
+#previewFrame{
+	min-width: 500px;
+	min-height: 500px;
+
+}
+#previewWrapper {
+	height: 100%;
+	min-width:500px;
+}
+
+#previewImage{
+	width: 100%;
+    height: auto;
+    max-width: 400px;
+    max-height: 600px;
+}
+
+/*Start Order Buttons*/
+
+
+/*End Order buttons*/
