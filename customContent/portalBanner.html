@@ -1,1 +1,214 @@
-<script type="text/javascript" src="https://rawgit.com/SaguaroPrint/UnivPortal/master/js/mcc_homepage.js"></script>
+<style>
+#ENUSmain {
+  display: none;
+}
+
+/*#ctl00_ImageControlPageHeader {
+  max-height: 300px;
+  min-width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: 0% 40%;
+  border-top: 2px solid #0074c7 !important;
+  border-bottom: 2px solid #0074c7 !important;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2), 0px -3px 4px rgba(0,0,0,.2);
+}*/
+
+#CtlBody {
+  width: 80% !important;
+  margin: auto;
+}
+
+</style>
+
+<script>
+
+
+
+jQuery(document).ready(function() {
+
+  // full width Table
+  var el = document.querySelector("#ENUSmain");
+  el.style.width = "100%";
+  el.style.minWidth = "1000px";
+
+  // banner style
+  var el = document.querySelector("#ctl00_ImageControlPageHeader");
+  el.style.maxHeight = "300px";
+  el.style.minWidth = "100%";
+  el.style.flexShrink = "0";
+  el.style.objectFit = "cover";
+  el.style.objectPosition = "0% 40%";
+  el.style.borderTop = "2px solid #0074c7 !important";
+  el.style.borderBottom = "2px solid #0074c7 !important";
+  el.style.boxShadow = "0px 3px 4px rgba(0, 0, 0, 0.2), 0px -3px 4px rgba(0,0,0,.2)";
+
+  // logo style
+    var logoImg = jQuery("<img></img>");
+    logoImg.attr("src", "https://rawgit.com/SaguaroPrint/saguaroprint.github.io/master/img/logo_min_university.png");
+    logoImg.css({
+      "float": "left",
+      "vertical-align": "middle",
+      "max-height": "45px",
+      "margin-left": "10%"
+    });
+
+    var logoTxt = jQuery("<img></img>");
+    logoTxt.attr("src", "https://rawgit.com/SaguaroPrint/UnivPortal/master/img/uoc.png");
+    logoTxt.css({
+      "float": "left",
+      "vertical-align": "middle",
+      "max-height": "45px",
+      "margin-left": "5px"
+    });
+
+    //Banner customization
+    /*
+    jQuery("#ctl00_ImageControlPageHeader").css({
+        "max-height": "300px",
+        "min-width": "100%",
+        "flex-shrink": "0",
+        "object-fit": "cover",
+        "border-top": "2px solid #0074c7 !important",
+        "box-shadow": "0px -3px 4px rgba(0,0,0,.2)",
+        "border-bottom": "2px solid #0074c7 !important",
+        "box-shadow": "0px 3px 4px rgba(0,0,0,.2)",
+        "object-position": "0% 40%"
+    });*/
+
+    jQuery("#PageType01").css({
+        "background-color": "#09121B"
+    });
+
+
+    // top menu style
+    var navTop =   jQuery(".NavTop");
+    navTop.css({
+      "background": "#ffffff",
+      "padding": "20px 0px",
+      "font-family": "Helvetica Neue,Helvetica,Arial",
+      "font-size": "14px",
+      "color": "#333",
+      "font-weight": "600"
+    });
+
+    // menu links style
+    var links = navTop.find("a");
+    links.css({
+      "color": "#333",
+      "font-family": "Helvetica Neue,Helvetica,Arial",
+      "font-size": "14px",
+      "text-decoration": "none",
+      "font-weight": "600"
+    });
+
+    //hover function
+    links.hover(function() {
+        jQuery(this).css({
+          "color": "#d42000",
+          "border-bottom": "2px solid #d42000",
+          "padding-bottom": "3px",
+          "text-decoration": "none"
+        });
+    }, function() {
+        jQuery(this).css({
+          "color": "#333",
+          "border-bottom": ""
+        });
+    });
+
+
+    //Add logo and Text
+    navTop.prepend(logoTxt);
+    navTop.prepend(logoImg);
+
+    //remove DOM elements
+    jQuery("#ctl00_ctl08_CatalogSearchBox_txtSearchText").remove();
+    jQuery(".spSearch").remove();
+    // remove User menu (for guest)
+    jQuery("#ctl00_ctl08_lblUserName").remove();
+    jQuery("#ctl00_ctl08_imgDivider1").remove();
+    jQuery("#ctl00_ctl08_spUserName").remove();
+
+    //Main Menu modifications
+    var mccMenuLeftCart = jQuery(".NavTop > div").children().last();
+    var mccMenuRightLogout = mccMenuLeftCart.prev();
+
+
+    // top menu style
+    jQuery(mccMenuRightLogout).css({
+      "float": "right",
+      "display": "inline-block",
+      "vertical-align": "middle",
+      "text-transform": "uppercase",
+      "margin-right": "20px",
+      "margin-top": "10px"
+    });
+    jQuery(mccMenuLeftCart).css({
+      "float": "",
+      "display": "inline-block",
+      "vertical-align": "middle",
+      "text-transform": "uppercase",
+      "margin-top": "10px",
+      "margin-bottom": "auto"
+    });
+
+    // change cart icon to black
+    jQuery("#ctl00_ctl08_lnkImgCart > img").attr("src", "images/cart_black.png");
+
+    // redirect to landing page at logout
+    var logoutHref = jQuery("#ctl00_ctl08_btnLogOut").attr("href");
+    var landingPage = "https://ricoheurope.github.io";
+    jQuery("#ctl00_ctl08_btnLogOut").attr("href", logoutHref + "; window.location.href = '" + landingPage + "'");
+
+    /**
+     * function to load a given css file
+     */
+    loadCSS = function(href) {
+        var cssLink = jQuery("<link rel='stylesheet' type='text/css' href='" + href + "'>");
+        jQuery("head").append(cssLink);
+    };
+
+    /**
+     * function to load a given js file
+     */
+    loadJS = function(src) {
+        var jsLink = jQuery("<script type='text/javascript' src='" + src + "'>");
+        jQuery("head").append(jsLink);
+    };
+
+    // load the css file
+    loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/css/main.css");
+    loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/css/orderInfoCopy.css");
+
+    // load the js file
+    //loadJS("one.js");
+
+    // Order Info Copy page
+    // replace description with i icon
+    var infoIcon = jQuery("<i class='fa fa-info fa-lg fa-fw' aria-hidden='true' style='color: #0074c7;'></i>");
+    var desc = jQuery("#ctl00_content_CtlAddToCart_ProductDescription_StringControl1");
+    desc.before(infoIcon);
+    desc.remove();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // display the page once all styling is applied
+    jQuery("#ENUSmain").css("display", "table");
+});
+</script>

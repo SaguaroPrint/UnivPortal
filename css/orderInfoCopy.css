@@ -201,7 +201,7 @@ body {
 
 .ContentBoxGrey {
     padding: 0px 0px 0px 0px;
-    border: 1px solid #BCBEC0;
+  border: 1px solid #BCBEC0;
     background-color: #F9F9F9;;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
@@ -243,7 +243,7 @@ body {
 
 /* Product information with rest of title*/
 .ColorPromptText, .BluePromptText, .QuickFillPrompt {
-    font-size: 16px;
+    font-size: 24px;
     color: #d42000;
     border-bottom: solid 1px #000000;
     -webkit-box-shadow: 0 4px 6px -6px #222;
@@ -256,6 +256,12 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .Font22 {
-    font-size: 20px;
+    font-size: 20px !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.Font12 {
+    margin-left: 40px;
+    font-size: 15px !important;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
