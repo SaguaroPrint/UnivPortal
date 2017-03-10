@@ -291,6 +291,7 @@ body {
   background-color: #47a447;
   border-color: #398439;
   text-decoration: none;
+  color: #ffffff !important;
 }
 
 .angBtn:visited {
