@@ -1,17 +1,47 @@
-jQuery(document).ready(function() {
+	
+	jQuery(window).on('load', function() {
+	
+			function getReasCookies() {
+				var cookie = document.cookie;
+				var pairs = cookie.split(";");
+				var i = 0;
+				while (i < pairs.length) {
+					var pair = pairs[i].split("=");
+					var name = pair[0];
+					if (!name.startsWith("reas")) {
+						pairs.splice(i, 1);
+					} else {
+						i++;
+					}
+				}
+				return pairs;
+			}
+			
+			var c = getReasCookies();
+			if (c["reasCatalog"]) {
+				return;
+			} 
+	
+			
+
 			var fetchItems = [];
 			var inners = ["ALL"];
 			var filters = ["*"];
-			var obj = getItems();
-			window.reasJSON = "{\"products\": [ ";
+			window.reasProducts = [];
+			window.reasCategories = [];
 			
+			var obj = getItems();
+			var reasCatalog = "{\"catalog\": [ ";
 			for(var i=0; i < obj.l.length; i++) {
 				filter = obj.l[i].innerHTML;
 				inners.push(filter);
+				reasCatalog += "\"" + filter + "\"" + ((i == (obj.l.length - 1))?"":",");
 				filter = filter.replace(/\s/g, '');
 				filters.push(filter);
 				fetchItems.push(getCatalogItems(obj.l[i].id, filter, inners[i+1]));
 			}
+			reasCatalog += "]}";
+			window.reasCatalog = "reasCatalog=" + JSON.stringify(reasCatalog);
 			
 			var filterCol = newFilter({ filters: filters,	inners: inners});
 			var gridGallery = newGridGallery();
@@ -40,7 +70,7 @@ jQuery(document).ready(function() {
 					url: theForm.action,
 					data: $(theForm).serialize(),
 					success: function (data, textStatus, jqXHR) {
-						window.reasJSON += "{ \"category\":\"" + category + "\", \"items\":[ ";
+						var reasCategory = "{ \"category\":\"" + category + "\", \"items\":[ ";
 						var products = getItems(data);
 						for(var i=0; i < products.l.length; i++) {
 							var name = products.l[i].innerHTML;
@@ -48,11 +78,13 @@ jQuery(document).ready(function() {
 							var description = products.d[i].innerHTML;
 							var image = products.im[i].src;
 							var li = newLi(js ,image, description, name, liClass);		
-							var item = "{ \"name\":\"" + name + "\",\"description\":\"" + description + "\",\"js\":\"" + js.replace(/\"/g, '\'') + "\",\"image\":\"" + image + "\"} " + ((i == (products.l.length - 1))?"":",");
-							window.reasJSON += item;
+							var item = "{ \"name\":\"" + name + "\",\"description\":\"" + description + "\",\"js\":\"" + js.replace(/\"/g, '\'') + "\",\"image\":\"" + image + "\"} ";
+							window.reasProducts.push("reasProduct" + name.replace(/\s/g, '') + "=" + JSON.stringify(item));
+							reasCategory += "\"" + name + "\"" + ((i == (products.l.length - 1))?"":",");
 							ul.append(li);
 						}
-						window.reasJSON += "]},";
+						reasCategory += "]}";
+						window.reasCategories.push("reasCategory" + category.replace(/\s/g, '') + "=" + JSON.stringify(reasCategory));
 					},
 					done: function(data) {
 					}
@@ -72,14 +104,13 @@ jQuery(document).ready(function() {
 	
 				jQuery(el).append(imageGallery);
 				loadIsotope();
-				jQuery("#catalogContent").remove();
 				document.getElementById('ENUSmain').style.visibility = 'visible';
-				var json = window.reasJSON;
-				json = json.slice(0, -1);
-				json += "]}";
-				var d = new Date();
-				d.setTime(d.getTime() + (24 * 60 * 60 * 1000));
-				var expires = "expires=" + d.toUTCString();
-				document.cookie = "reas=" + JSON.stringify(json) + ";" + expires + ";path=/";
+				document.cookie = window.reasCatalog;
+				for (var i = 0; i < window.reasCategories.length; i++) {
+					document.cookie = window.reasCategories[i];
+				}
+				for (var i = 0; i < window.reasProducts.length; i++) {
+					document.cookie = window.reasProducts[i];
+				}
 			});		
-	})
+	})	

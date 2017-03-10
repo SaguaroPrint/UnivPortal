@@ -111,7 +111,7 @@
 	function isotopeSection(filterCol, galleryCol) {
 		var divRow = jQuery("<div></div>").addClass("row");
 		var divContainer = jQuery("<div></div>").addClass("container");
-		var section = jQuery("<section></section>").addClass("work-5col gutter work-with-title no-margin-top content-section");
+		var section = jQuery("<section></section>").addClass("work-4col gutter work-with-title no-margin-top content-section");
 		section.css("padding" , "40px 0px");
 		
 		divRow.append(filterCol);
