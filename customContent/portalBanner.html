@@ -246,6 +246,47 @@ jQuery(document).ready(function() {
     var btnOrderPrint = jQuery("#ctl00_content_CartShipping_btnRemoveItems");
     btnOrderPrint.removeClass().addClass("angBtnWhite angBtnWhiteRed");
 
+    //input fields
+    jQuery("#CtlCart input[type=text]").css({
+      "border":"1px solid #CCC",
+      "color":"#888",
+      "height":"20px",
+      "line-height":"15px",
+      "margin-bottom":"3px",
+      "margin-right":"6px",
+      "margin-top":"3px",
+      "outline":"0 none",
+      "padding":"4px 0px 4px 4px",
+      "width":"100%",
+      "border-radius":"4px",
+      "-webkit-border-radius":"4px",
+      "-moz-border-radius":"4px",
+      "-webkit-box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075)",
+      "box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075)",
+      "-moz-box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075)"
+    });
+
+    //select fields
+    jQuery("#CtlCart select").css({
+      "border":"1px solid #CCC",
+      "color":"#888","height":"100%",
+      "line-height":"15px",
+      "margin-bottom":"3px",
+      "max-width":"300px",
+      "margin-right":"6px",
+      "margin-top":"3px",
+      "outline":"0 none",
+      "padding":"5px 0px 5px 5px",
+      "width":"100%",
+      "border-radius":"4px",
+      "-webkit-border-radius":"4px",
+      "-moz-border-radius":"4px",
+      "-webkit-box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075)",
+      "box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075)",
+      "-moz-box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075)"
+  });
+
+
     // *********** Complete Order page ************
 
     // re-style Complete order button
@@ -264,6 +305,10 @@ jQuery(document).ready(function() {
     // Checkout button
     var btnOrderPrint = jQuery("#ctl00_content_CurrentCart_btnOrderCart");
     btnOrderPrint.removeClass().addClass("angBtn");
+
+    // *********** Home page *************
+    // Main table shadow
+    jQuery(".FeaturedProducts").css("-webkit-box-shadow", "1px 2px 12px 0px #222");
 
 
 
