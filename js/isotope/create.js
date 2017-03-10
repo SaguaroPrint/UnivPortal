@@ -74,21 +74,21 @@
 	
 	function newFilter(dataFilter) {
 		var ul = jQuery("<ul></ul>").addClass("portfolio-filter nav nav-tabs nav-tabs-light wow fadeInUp");
-		// Get the filters arrays
-		var filters = dataFilter.filters;
-		var inners = dataFilter.inners;
 		// Add filters to the filter collection
-		for(var i = 0; i < filters.length; i++) {
+		for (var filter in dataFilter) {
+			var inner = dataFilter[filter];
 			var a = jQuery("<a></a>");
-			a.attr("data-filter", ((filters[i] == "*")?"":".") + filters[i]);
-			a.html(inners[i]);
+			a.attr("data-filter", ((filter == "*")?"":".") + filter);
+			a.html(inner);
 			var li = jQuery("<li></li>").addClass("nav");
 			if (i == 0) {
 				li.addClass("nav active");
 			}
 			li.append(a);
-			ul.append(li);			
+			ul.append(li);	
 		}
+		
+
 		
 		//**
 		var divCenter = jQuery("<div></div>").addClass("text-center");
