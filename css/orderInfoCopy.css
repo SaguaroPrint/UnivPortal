@@ -326,6 +326,12 @@ body {
   background-color: #dddddd !important;
 }
 
+.angBtnWhiteRed:hover {
+  text-decoration: none !important;
+  color: red !important;
+  background-color: white !important;
+}
+
 CheckoutBreadCrumbs {
   width: 80%;
   margin: auto;
