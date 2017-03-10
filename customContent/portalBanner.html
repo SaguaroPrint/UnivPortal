@@ -34,14 +34,16 @@ jQuery(document).ready(function() {
 
   // banner style
   var el = document.querySelector("#ctl00_ImageControlPageHeader");
-  el.style.maxHeight = "300px";
-  el.style.minWidth = "100%";
-  el.style.flexShrink = "0";
-  el.style.objectFit = "cover";
-  el.style.objectPosition = "0% 40%";
-  el.style.borderTop = "2px solid #0074c7 !important";
-  el.style.borderBottom = "2px solid #0074c7 !important";
-  el.style.boxShadow = "0px 3px 4px rgba(0, 0, 0, 0.2), 0px -3px 4px rgba(0,0,0,.2)";
+  if (el) {
+    el.style.maxHeight = "300px";
+    el.style.minWidth = "100%";
+    el.style.flexShrink = "0";
+    el.style.objectFit = "cover";
+    el.style.objectPosition = "0% 40%";
+    el.style.borderTop = "2px solid #0074c7 !important";
+    el.style.borderBottom = "2px solid #0074c7 !important";
+    el.style.boxShadow = "0px 3px 4px rgba(0, 0, 0, 0.2), 0px -3px 4px rgba(0,0,0,.2)";
+  }
 
   // logo style
     var logoImg = jQuery("<img></img>");
@@ -216,8 +218,19 @@ jQuery(document).ready(function() {
     var btnOrderPrint = jQuery("#ctl00_content_CtlAddToCart_ProductOrderInfoController_AddToCartActionBox_mAddToCartAction_btnAddingItem");
     btnOrderPrint.removeClass().addClass("angBtnWhite");
 
-
-
+    // remove white spaces after buttons
+    var el = document.evaluate( '//*[@id="CtlCart"]/tbody/tr/td/table/tbody/tr/td[1]/div[8]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
+    if (el) {
+        el.style.display = "none";
+    }
+    el = document.evaluate( '//*[@id="CtlCart"]/tbody/tr/td/table/tbody/tr/td[1]/br[3]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
+    if (el) {
+        el.style.display = "none";
+    }
+    el = document.evaluate( '//*[@id="CtlCart"]/tbody/tr/td/table/tbody/tr/td[1]/br[4]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
+    if (el) {
+        el.style.display = "none";
+    }
 
 
 
