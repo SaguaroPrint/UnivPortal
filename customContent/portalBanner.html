@@ -189,7 +189,8 @@ jQuery(document).ready(function() {
     // load the js file
     //loadJS("one.js");
 
-    // Order Info Copy page
+    // *********** Order Info Copy page ********************
+
     // replace "description" with i icon
     var infoIcon = jQuery("<i class='fa fa-info fa-lg fa-fw' aria-hidden='true' style='color: #0074c7;'></i>");
     var desc = jQuery("#ctl00_content_CtlAddToCart_ProductDescription_StringControl1");
@@ -232,6 +233,11 @@ jQuery(document).ready(function() {
         el.style.display = "none";
     }
 
+    //  *************** Delivery page *********************
+
+    // re-style button Continue
+    var btnOrderPrint = jQuery("#ctl00_content_CartShipping_btnContinue");
+    btnOrderPrint.removeClass().addClass("angBtn");
 
 
 

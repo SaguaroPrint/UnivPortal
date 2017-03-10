@@ -322,7 +322,8 @@ body {
 .angBtnWhite:hover {
   text-decoration: none !important;
   color: #398439 !important;
-  background-color: white !important;
+  /*background-color: white !important;*/
+  background-color: #dddddd !important;
 }
 
 CheckoutBreadCrumbs {
