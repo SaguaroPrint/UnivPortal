@@ -294,7 +294,7 @@ body {
 }
 
 .angBtn:visited {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .angBtnWhite {
