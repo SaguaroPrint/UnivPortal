@@ -338,7 +338,7 @@ body {
   border-color: #4cae4c !important;
 }
 
-CheckoutBreadCrumbs {
+.CheckoutBreadCrumbs {
   width: 80%;
   margin: auto;
   float: none;
