@@ -25,7 +25,16 @@
 		// **
 		var div = jQuery("<div></div>").addClass("gallery-img");
 		var divA = jQuery("<a></a>").attr("onclick", js);
-		var aImg = jQuery("<img></img>").attr("src", image).addClass("reasimg");
+		var aImg = jQuery("<img></img>").attr("src", image);
+		
+		$(aImg).load(function () {
+			if (this.width/this.height <= 0.5) {
+				this.addClass("reasimg-portret")
+			} else {
+				this.addClass("reasimg-landscape")
+			}
+		});
+
 		//
 		divA.append(aImg);
 		div.append(divA);

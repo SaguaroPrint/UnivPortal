@@ -54,10 +54,18 @@ Table of contents
 	cursor:pointer;
 }
 
-.reasimg {
+.reasimg-landscape {
 	display: block;
-	max-width:220px;
-	max-height:137px;
+	max-width:600px;
+	max-height:375px;
+	width: auto;
+	height: auto;
+}
+
+.reasimg-portret{
+	display: block;
+	max-width:600px;
+	max-height:750px;
 	width: auto;
 	height: auto;
 }
