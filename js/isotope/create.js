@@ -29,9 +29,9 @@
 		
 		$(aImg).load(function () {
 			if (this.width/this.height <= 0.5) {
-				this.addClass("reasimg-portret")
+				jQuery(this).addClass("reasimg-portret");
 			} else {
-				this.addClass("reasimg-landscape")
+				jQuery(this).addClass("reasimg-landscape");
 			}
 		});
 
