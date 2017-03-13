@@ -25,7 +25,7 @@
 		// **
 		var div = jQuery("<div></div>").addClass("gallery-img");
 		var divA = jQuery("<a></a>").attr("onclick", js);
-		var aImg = jQuery("<img></img>").attr("src", image);
+		var aImg = jQuery("<img></img>").attr("src", image).addClass("reasimg");
 		//
 		divA.append(aImg);
 		div.append(divA);

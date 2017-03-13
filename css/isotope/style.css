@@ -54,6 +54,13 @@ Table of contents
 	cursor:pointer;
 }
 
+.reasimg {
+	display: block;
+	max-width:230px;
+	max-height:95px;
+	width: auto;
+	height: auto;
+}
 
 body{ font-family: 'Open Sans', sans-serif; -webkit-font-smoothing: antialiased; font-size:13px; color:#626262; line-height:23px; letter-spacing: 0.02em }
 a{ color: #000; }
