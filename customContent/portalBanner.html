@@ -186,6 +186,7 @@ jQuery(document).ready(function() {
     // load the css file
     loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/css/main.css");
     loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/css/orderInfoCopy.css");
+    loadCSS("https://marcomcentral.app.pti.com/printone/Css/bootstrap.min.css");
 
     // load the js file
     //loadJS("one.js");
@@ -210,11 +211,11 @@ jQuery(document).ready(function() {
 
     // re-style button Order Print
     var btnOrderPrint = jQuery("#ctl00_content_CtlAddToCart_ProductOrderInfoController_AddToCartActionBox_mAddToCartAction_btnAddToCart");
-    btnOrderPrint.removeClass().addClass("angBtn");
+    btnOrderPrint.removeClass().addClass("btn btn-lg btn-success");
 
     // re-style button Download or Email
     var btnOrderPrint = jQuery("#btnDigitalAssetOrder");
-    btnOrderPrint.removeClass().addClass("angBtn");
+    btnOrderPrint.removeClass().addClass("btn btn-lg btn-success");
 
     // re-style button Adding to cart
     var btnOrderPrint = jQuery("#ctl00_content_CtlAddToCart_ProductOrderInfoController_AddToCartActionBox_mAddToCartAction_btnAddingItem");

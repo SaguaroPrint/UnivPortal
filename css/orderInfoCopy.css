@@ -265,6 +265,7 @@ body {
 }
 
 /* angular style buttons */
+/*
 .angBtn {
   padding: 10px 16px;
   font-size: 18px;
@@ -323,7 +324,7 @@ body {
 .angBtnWhite:hover {
   text-decoration: none !important;
   color: #398439 !important;
-  /*background-color: white !important;*/
+  background-color: white !important;
   background-color: #eeeeee !important;
 }
 
@@ -337,6 +338,11 @@ body {
   color: red !important;
   background-color: white !important;
   border-color: #4cae4c !important;
+}
+*/
+
+btnWhite {
+  color: #FFF !important;
 }
 
 .CheckoutBreadCrumbs {
