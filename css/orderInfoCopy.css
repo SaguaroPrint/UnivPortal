@@ -345,3 +345,43 @@ body {
   float: none;
   font-size: 18px;
 }
+
+#CtlCart input[type=text] {
+  font-size:14px;
+  border:1px solid #CCC;
+  color:#888;
+  height:20px;
+  line-height:15px;
+  margin-bottom:3px;
+  margin-right:6px;
+  margin-top:3px;
+  outline:0 none;
+  padding:4px 0px 4px 4px;
+  width:100%;
+  border-radius:4px;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  -webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+#CtlCart select {
+  font-size:14px;
+  border:1px solid #CCC;
+  color:#888,height:100%;
+  line-height:15px;
+  margin-bottom:3px;
+  max-width:300px;
+  margin-right:6px;
+  margin-top:3px;
+  outline:0 none;
+  padding:5px 0px 5px 5px;
+  width:100%;
+  border-radius:4px;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  -webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
