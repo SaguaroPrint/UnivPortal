@@ -127,9 +127,11 @@ jQuery(document).ready(function() {
     jQuery("#ctl00_ctl08_CatalogSearchBox_txtSearchText").remove();
     jQuery(".spSearch").remove();
     // remove User menu (for guest)
-    jQuery("#ctl00_ctl08_lblUserName").remove();
-    jQuery("#ctl00_ctl08_imgDivider1").remove();
-    jQuery("#ctl00_ctl08_spUserName").remove();
+    if (jQuery("#ctl00_ctl08_lblUserName").text() == "Guest User") {
+      jQuery("#ctl00_ctl08_lblUserName").remove();
+      jQuery("#ctl00_ctl08_imgDivider1").remove();
+      jQuery("#ctl00_ctl08_spUserName").remove();
+    }
 
     //Main Menu modifications
     var mccMenuLeftCart = jQuery(".NavTop > div").children().last();
@@ -305,6 +307,10 @@ jQuery(document).ready(function() {
     // Checkout button
     var btnOrderPrint = jQuery("#ctl00_content_CurrentCart_btnOrderCart");
     btnOrderPrint.removeClass().addClass("angBtn");
+
+    // align top search bar
+    jQuery("#divSearchCart").css("float","left");
+    jQuery("#divSearchCart table tbody tr td:last-child").css("white-space","nowrap");
 
     // *********** Home page *************
     // Main table shadow
