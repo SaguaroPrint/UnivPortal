@@ -25,9 +25,10 @@ body {
   /* height: auto; */
 }
 
-#fname_LabelCell{
+.middleAlign {
 	vertical-align: middle !important;
 }
+
 #fname_InputCell{
   vertical-align: top;
   border: medium none !important;

@@ -225,6 +225,9 @@ jQuery(document).ready(function() {
     var inputs = jQuery("#ENUSmain input");
     inputs.addClass("form-control");
 
+    // align input labels
+    jQuery("[id$=LabelCell]").addClass("middleAlign");
+
     // remove white spaces after buttons
     var el = document.evaluate( '//*[@id="CtlCart"]/tbody/tr/td/table/tbody/tr/td[1]/div[8]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
     if (el) {
