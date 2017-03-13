@@ -1,7 +1,5 @@
-	
-	
 	jQuery(window).on('load', function() {
-	
+			
 			function getReasCookies() {
 				var reasCookies = {};
 				var cookie = document.cookie;
@@ -20,93 +18,56 @@
 				return reasCookies;
 			}
 			
-			var c = getReasCookies();
-			if (c["reasCatalog"]) {
-				var catalog = JSON.parse(unescape(c["reasCatalog"]));
-				var filterCol = newFilter(catalog);
-				var gridGallery = newGridGallery();
-				var ul = gridGallery.ul;
-				var galleryCol = gridGallery.galleryCol;	
-				var imageGallery = isotopeSection(filterCol, galleryCol);
-				
-				/*
-reasCatalog	{
-	"catalog": [{
-		"PromoPoster": "Promo Poster"
-	}, {
-		"LuggageTags": "Luggage Tags"
-	}]
-}
-
-
-reasCategoryMarketingAssets	{
-	"items": ["Contest Postcard", "Downloadable Logo", "Company brochure"]
-}
-
-
-reasProductBusinessCard {
-
-	"name": "Business Card",
-	"description": "It's a business card",
-	"js": "location.href='https://eu.marcomcentral.app.pti.com/Ricoh_EU_Training/Ungureanu_Travel/addToCart.aspx?uigroup_id=4352&product_id=7&node_id=1714';return false;",
-	"image": "https://images-eu.marcomcentral.app.pti.com/printonelogos/images/55/103/thumbnails/1690/BusCard_Preview.png"
-
-
-}
-*/
-				for (var category in catalog) {
-					if (category != "*") {
-						var products = JSON.parse(unescape(c["reasCategory" + category]));
-						for (var i = 0; i < products.items.length; i++) {
-							var product = JSON.parse(unescape(c[products.items[i]]));
-							var li = newLi(product.js ,product.image, product.description, product.name, category);	
-							ul.append(li);
+			function removeOriginalCatalog() {
+				jQuery('#catalogContent').remove();
+			}
+			
+			var gallery = {
+				test: function() {
+					var c = getReasCookies();
+					if (c["reasCatalog"]) {
+						return {ready: true, c: c};
+					} else {
+						var data = createGalleryCookieData();
+						return {ready: false, c: data};
+					}
+				},
+				draw: function(c) {
+					var catalog = JSON.parse(unescape(c["reasCatalog"]));
+					var gridGallery = newGridGallery();
+					var ul = gridGallery.ul;
+					var imageGallery = isotopeSection(newFilter(catalog), gridGallery.galleryCol);
+					
+					for (var category in catalog) {
+						if (category != "*") {
+							var products = JSON.parse(unescape(c["reasCategory" + category]));
+							for (var i = 0; i < products.items.length; i++) {
+								var product = JSON.parse(unescape(c[products.items[i]]));
+								var li = newLi(product.js ,product.image, product.description, product.name, category);	
+								ul.append(li);
+							}
 						}
 					}
+					
+					var result = document.evaluate('//*[@id="ENUSmain"]/tbody/tr/td/div[1]', 
+						document, null, 5, null);
+					var el = result.iterateNext();	
+					jQuery(el).append(imageGallery);
+					removeOriginalCatalog();
+					loadIsotope();
+					document.getElementById('ENUSmain').style.visibility = 'visible';
 				}
-				
-				var result = document.evaluate('//*[@id="ENUSmain"]/tbody/tr/td/div[1]', 
-					document, null, 5, null);
-				var el = result.iterateNext();
-	
-				jQuery(el).append(imageGallery);
-				jQuery("#catalogContent").remove();
-				loadIsotope();
-				document.getElementById('ENUSmain').style.visibility = 'visible';
-				
-				return;
-			} 
-	
-			var fetchItems = [];
-			var filters = {}
-			filters["*"] = "ALL";
-			
-/*
-reasCatalog {
-	"MarketingAssets": "Marketing Assets",
-	"Identity": "Identity",
-	"LabTime": "Lab Time",
-	"JobSubmission": "Job Submission"
-}
-*/			
-			var obj = getItems();
-			var reasCatalog = "{\"*\":\"ALL\"";
-			for(var i=0; i < obj.l.length; i++) {
-				var category = obj.l[i].innerHTML;
-				var inner = category;
-				var filter = category.replace(/\s/g, '');
-				filters[filter] = inner;
-				reasCatalog += ",\"" + filter + "\":\"" + inner + "\"";
-				fetchItems.push(getCatalogItems(obj.l[i].id, filter, inner));
 			}
-			reasCatalog += "}";
-			document.cookie = "reasCatalog=" + escape(reasCatalog);
-			
-			var filterCol = newFilter(filters);
-			var gridGallery = newGridGallery();
-			var ul = gridGallery.ul;
-			var galleryCol = gridGallery.galleryCol;	
-			var imageGallery = isotopeSection(filterCol, galleryCol);			
+				
+			var data = gallery.test();	
+			if (data.ready)
+				gallery.draw(data.c);
+			else {
+				jQuery.when.apply(null, data.c).done(function(args) {
+					var c = getReasCookies();
+					gallery.draw(c);
+				})
+			}
 			
 			function getItems(data) {
 				var items;
@@ -120,8 +81,8 @@ reasCatalog {
 				var images = items.find('input[id$="SelectItem"]');
 				var descriptions = items.find('span[id$="Description"]');	
 				return {i: items, l: links, im: images, d: descriptions};
-			}			
-	
+			}
+			
 			function getCatalogItems(catalogId, filter, category) {
 				theForm.__EVENTTARGET.value = catalogId.replace(/_/g, '$');
 				return jQuery.ajax({
@@ -136,11 +97,9 @@ reasCatalog {
 							var js = jQuery(products.l[i]).attr("onclick");
 							var description = products.d[i].innerHTML;
 							var image = products.im[i].src;
-							var li = newLi(js ,image, description, name, filter);		
 							var item = "{ \"name\":\"" + name + "\",\"description\":\"" + description + "\",\"js\":\"" + js.replace(/\"/g, '\'') + "\",\"image\":\"" + image + "\"} ";
 							document.cookie = "reasProduct" + name.replace(/\s/g, '') + "=" + escape(item);
 							reasCategory += "\"reasProduct" + name.replace(/\s/g, '') + "\"" + ((i == (products.l.length - 1))?"":",");
-							ul.append(li);
 						}
 						reasCategory += "]}";
 						document.cookie = "reasCategory" + filter + "=" + escape(reasCategory);
@@ -148,22 +107,28 @@ reasCatalog {
 					done: function(data) {
 					}
 				});
-			}
-
-			function removeOriginalCatalog() {
-				var catalogContent = jQuery('#catalogContent');
-				catalogContent.remove();
-			}
+			}			
 			
-			jQuery.when.apply(null, fetchItems).done(function(args) {
-				/*   //*[@id="ENUSmain"]/tbody/tr/td/div[1]  */
-				var result = document.evaluate('//*[@id="ENUSmain"]/tbody/tr/td/div[1]', 
-					document, null, 5, null);
-				var el = result.iterateNext();
+			function createGalleryCookieData() {
 	
-				jQuery(el).append(imageGallery);
-				jQuery("#catalogContent").remove();
-				loadIsotope();
-				document.getElementById('ENUSmain').style.visibility = 'visible';
-			});		
-	})
+				var fetchItems = [];
+				var filters = {}
+				filters["*"] = "ALL";
+			
+				var obj = getItems();
+				var reasCatalog = "{\"*\":\"ALL\"";
+			
+				for(var i=0; i < obj.l.length; i++) {
+					var category = obj.l[i].innerHTML;
+					var inner = category;
+					var filter = category.replace(/\s/g, '');
+					filters[filter] = inner;
+					reasCatalog += ",\"" + filter + "\":\"" + inner + "\"";
+					fetchItems.push(getCatalogItems(obj.l[i].id, filter, inner));
+				}
+				reasCatalog += "}";
+				document.cookie = "reasCatalog=" + escape(reasCatalog);
+				
+				return fetchItems;
+			}			
+	})	
