@@ -27,13 +27,13 @@
 		var divA = jQuery("<a></a>").attr("onclick", js);
 		var aImg = jQuery("<img></img>").attr("src", image).addClass("reasimg");
 		
-		$(aImg).load(function () {
+		/*$(aImg).load(function () {
 			if (this.width/this.height <= 0.8) {
 				jQuery(this).removeClass("reasimg").addClass("reasimg-portret");
 			} else {
 				jQuery(this).removeClass("reasimg").addClass("reasimg-landscape");
 			}
-		});
+		});*/
 
 		//
 		divA.append(aImg);
