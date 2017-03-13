@@ -53,20 +53,23 @@ Table of contents
 .reasisoli {
 	cursor:pointer;
 }
+.reasimg {
+	display: none;
+}
 
 .reasimg-landscape {
-	display: block;
+	display: block !important;
 	max-width:600px;
 	max-height:375px;
-	width: auto;
+	width: auto !important;
 	height: auto;
 }
 
 .reasimg-portret{
-	display: block;
+	display: block !important;
 	max-width:600px;
 	max-height:750px;
-	width: auto;
+	width: auto !important;
 	height: auto;
 }
 
