@@ -59,16 +59,16 @@ Table of contents
 
 .reasimg-landscape {
 	display: block !important;
-	max-width:600px;
-	max-height:375px;
+	max-width:219px;
+	max-height:137px;
 	width: auto !important;
 	height: auto;
 }
 
 .reasimg-portret{
 	display: block !important;
-	max-width:600px;
-	max-height:750px;
+	max-width:219px;
+	max-height:274px;
 	width: auto !important;
 	height: auto;
 }
