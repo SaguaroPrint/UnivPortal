@@ -50,6 +50,11 @@ Table of contents
     Reset
 ====================================== */
 
+.reasisoli {
+	cursor:pointer;
+}
+
+
 body{ font-family: 'Open Sans', sans-serif; -webkit-font-smoothing: antialiased; font-size:13px; color:#626262; line-height:23px; letter-spacing: 0.02em }
 a{ color: #000; }
 a:hover{ color: #575757; }

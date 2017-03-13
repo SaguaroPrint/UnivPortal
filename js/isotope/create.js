@@ -80,9 +80,9 @@
 			var a = jQuery("<a></a>");
 			a.attr("data-filter", ((filter == "*")?"":".") + filter);
 			a.html(inner);
-			var li = jQuery("<li></li>").addClass("nav");
+			var li = jQuery("<li></li>").addClass("nav reasisoli");
 			if (i == 0) {
-				li.addClass("nav active");
+				li.addClass("active");
 			}
 			li.append(a);
 			ul.append(li);	
