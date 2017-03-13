@@ -95,11 +95,13 @@
 						for(var i=0; i < products.l.length; i++) {
 							var name = products.l[i].innerHTML;
 							var js = jQuery(products.l[i]).attr("onclick");
-							var description = products.d[i].innerHTML;
-							var image = products.im[i].src;
-							var item = "{ \"name\":\"" + name + "\",\"description\":\"" + description + "\",\"js\":\"" + js.replace(/\"/g, '\'') + "\",\"image\":\"" + image + "\"} ";
-							document.cookie = "reasProduct" + name.replace(/\s/g, '') + "=" + escape(item);
-							reasCategory += "\"reasProduct" + name.replace(/\s/g, '') + "\"" + ((i == (products.l.length - 1))?"":",");
+							if (js) {
+								var description = products.d[i].innerHTML;
+								var image = products.im[i].src;
+								var item = "{ \"name\":\"" + name + "\",\"description\":\"" + description + "\",\"js\":\"" + js.replace(/\"/g, '\'') + "\",\"image\":\"" + image + "\"} ";
+								document.cookie = "reasProduct" + name.replace(/\s/g, '') + "=" + escape(item);
+								reasCategory += "\"reasProduct" + name.replace(/\s/g, '') + "\"" + ((i == (products.l.length - 1))?"":",");
+							}
 						}
 						reasCategory += "]}";
 						document.cookie = "reasCategory" + filter + "=" + escape(reasCategory);
