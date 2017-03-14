@@ -21,6 +21,9 @@ a, a:link {
 
 jQuery(document).ready(function() {
 
+  // remove Nav bar
+  jQuery("#navBarEnhanced").remove();
+
   // place site icon
   var link = document.querySelector("src", "https://rawgit.com/SaguaroPrint/saguaroprint.github.io/master/img/logo_min_university.png") || document.createElement('link');
   link.type = 'image/x-icon';
@@ -238,6 +241,12 @@ jQuery(document).ready(function() {
 
     // align input labels
     jQuery("td[id$='LabelCell']").css("vertical-align", "middle");
+
+    // remove border preview table
+    var el = document.evaluate( '/*[@id="ctl00_content_CtlAddToCart_InteractivityContainer_panelInteractivity"]/table', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
+    if (el) {
+        el.style.borderCollapse = "initial";
+    }
 
     // bootstrap select for country field
     //jQuery("#country").addClass("selectpicker");

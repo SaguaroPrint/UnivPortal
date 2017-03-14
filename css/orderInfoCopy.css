@@ -410,7 +410,7 @@ select {
 }
 
 .pflabel {
-  vertical-align: top;
+  vertical-align: top !important;
   padding-top: 10px;
 }
 
