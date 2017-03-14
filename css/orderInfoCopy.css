@@ -9,7 +9,7 @@ body {
 }
 
 table {
-  border-collapse: initial;
+  border-collapse: initial !important;
 }
 
 #tdForm {
