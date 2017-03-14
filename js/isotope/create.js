@@ -13,7 +13,7 @@
 
 
 	function newLi(js, image, textP, textA, filter) {
-		var smallP = jQuery("<p></p>").html(textP);
+		var smallP = jQuery("<p></p>").html(textP).addClass("reas-product-description");
 		var a = jQuery("<a></a>").attr("onclick", js).html(textA);
 		var h3 = jQuery("<h3></h3>");
 		var caption = jQuery("<figcaption></figcaption>");
@@ -25,16 +25,8 @@
 		// **
 		var div = jQuery("<div></div>").addClass("gallery-img");
 		var divA = jQuery("<a></a>").attr("onclick", js);
-		var aImg = jQuery("<img></img>").attr("src", image).addClass("reasimg");
+		var aImg = jQuery("<img></img>").attr("src", image).addClass("reas-img");
 		
-		/*$(aImg).load(function () {
-			if (this.width/this.height <= 0.8) {
-				jQuery(this).removeClass("reasimg").addClass("reasimg-portret");
-			} else {
-				jQuery(this).removeClass("reasimg").addClass("reasimg-landscape");
-			}
-		});*/
-
 		//
 		divA.append(aImg);
 		div.append(divA);

@@ -54,8 +54,13 @@ Table of contents
 	cursor:pointer;
 }
 
+.reas-product-description {
+	overflow: hidden;
+    text-overflow: ellipsis;	
+	white-space: nowrap; 
+}
 
-.reasimg {
+.reas-img {
 	object-fit: cover;
 	width: 220px;
 	height: 200px;
@@ -1281,9 +1286,6 @@ figure:hover img { -ms-transform: scale(1.1,1.1); -webkit-transform: scale(1.1,1
 }
 .work-with-title .grid li figcaption h3, .work-with-title .grid figcaption h3 a, .work-with-title .grid li figcaption p {
 	color: #888888;
-	overflow: hidden;
-    text-overflow: ellipsis;	
-	white-space: nowrap; 
 }
 .work-with-title .grid figcaption h3 a { display: block}
 .work-with-title .grid li:hover figcaption h3, .work-with-title .grid li:hover figcaption h3 a{color: #000 }
