@@ -8,14 +8,18 @@ body {
   color: #777;
 }
 
+table {
+  border-collapse: initial;
+}
+
 #tdForm {
-	min-width:500px;
+	/*min-width:500px;
   float: left;
-  width: 50%;
+  width: 50%;*/
   background: #F9F9F9;
   padding: 25px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  display: inline-block;
+  /*display: inline-block;*/
 }
 
 #tdProof{

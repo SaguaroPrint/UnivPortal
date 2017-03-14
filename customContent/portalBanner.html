@@ -7,12 +7,17 @@
   width: 80% !important;
   margin: auto;
 }
-
+/*
+a:visited {
+    color: #FFF;
+}
+a, a:link {
+    color: #FFF;
+}
+*/
 </style>
 
 <script>
-
-
 
 jQuery(document).ready(function() {
 
@@ -319,11 +324,11 @@ jQuery(document).ready(function() {
 
     // re-style Complete order button
     var btnOrderPrint = jQuery("#ctl00_content_CartConfirm_btnContinue");
-    btnOrderPrint.removeClass().addClass("angBtn");
+    btnOrderPrint.removeClass().addClass("btn btn-lg btn-success btnWhiteText");
 
     // re-syle back button
     var btnOrderPrint = jQuery("#ctl00_content_CartConfirm_btnBack");
-    btnOrderPrint.removeClass().addClass("angbtnWhiteText");
+    btnOrderPrint.removeClass().addClass("angBtnWhite");
 
     // drop shadow on cart table
     jQuery("#CtlCart").css("box-shadow", " 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24)");
@@ -332,7 +337,23 @@ jQuery(document).ready(function() {
     // *********** Cart page ***********************
     // Checkout button
     var btnOrderPrint = jQuery("#ctl00_content_CurrentCart_btnOrderCart");
-    btnOrderPrint.removeClass().addClass("angBtn");
+    btnOrderPrint.removeClass().addClass("btn btn-lg btn-success");
+
+    // Save Bascket button
+    var btnOrderPrint = jQuery("#ctl00_content_CurrentCart_btnSaveCart");
+    btnOrderPrint.removeClass().addClass("angBtnWhite");
+
+    // Back to Catalogue button
+    var btnOrderPrint = jQuery("#ctl00_content_CurrentCart_lnkBackToCatalog");
+    btnOrderPrint.removeClass().addClass("btn btn-info");
+
+    var btnOrderPrint = jQuery("#ctl00_content_CurrentCart_lnkBackToCatalog");
+    btnOrderPrint.removeClass().addClass("btn btn-info");
+
+      var el = document.evaluate( '//*[@id="divMainContent"]/table[2]/tbody/tr', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
+      if (el) {
+          el.style.verticalAlign = "middle";
+      }
 
     // align top search bar
     jQuery("#divSearchCart").css("float","left");
