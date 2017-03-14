@@ -163,10 +163,10 @@ body {
 #country{
 
 	width: 100%;
-    border: 1px solid #ccc;
-    background: #FFF;
-    margin: 0 0 5px;
-    padding: 10px;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;s
+  /*padding: 10px;*/
 }
 
 #Text_Email_Address_LabelCell{

@@ -16,6 +16,13 @@
 
 jQuery(document).ready(function() {
 
+  // place site icon
+  var link = document.querySelector("src", "https://rawgit.com/SaguaroPrint/saguaroprint.github.io/master/img/logo_min_university.png") || document.createElement('link');
+  link.type = 'image/x-icon';
+  link.rel = 'shortcut icon';
+  link.href = 'https://rawgit.com/SaguaroPrint/saguaroprint.github.io/master/img/logo_min_university.png';
+  document.getElementsByTagName('head')[0].appendChild(link);
+
   // full width Table
   var el = document.querySelector("#ENUSmain");
   el.style.width = "100%";
@@ -228,7 +235,7 @@ jQuery(document).ready(function() {
     jQuery("td[id$='LabelCell']").css("vertical-align", "middle");
 
     // bootstrap select for country field
-    jQuery("#country").addClass("selectpicker");
+    //jQuery("#country").addClass("selectpicker");
 
     // remove white spaces after buttons
     var el = document.evaluate( '//*[@id="CtlCart"]/tbody/tr/td/table/tbody/tr/td[1]/div[8]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
