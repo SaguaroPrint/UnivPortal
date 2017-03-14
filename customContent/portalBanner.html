@@ -217,15 +217,15 @@ jQuery(document).ready(function() {
 
     // re-style button Order Print
     var btnOrderPrint = jQuery("#ctl00_content_CtlAddToCart_ProductOrderInfoController_AddToCartActionBox_mAddToCartAction_btnAddToCart");
-    btnOrderPrint.removeClass().addClass("btn btn-lg btn-success btnWhite");
+    btnOrderPrint.removeClass().addClass("btn btn-lg btn-success btnWhiteText");
 
     // re-style button Download or Email
     var btnOrderPrint = jQuery("#btnDigitalAssetOrder");
-    btnOrderPrint.removeClass().addClass("btn btn-lg btn-success btnWhite");
+    btnOrderPrint.removeClass().addClass("btn btn-lg btn-success btnWhiteText");
 
     // re-style button Adding to cart
     var btnOrderPrint = jQuery("#ctl00_content_CtlAddToCart_ProductOrderInfoController_AddToCartActionBox_mAddToCartAction_btnAddingItem");
-    btnOrderPrint.removeClass().addClass("angBtnWhite");
+    btnOrderPrint.removeClass().addClass("angbtnWhite");
 
     // re-style input fields
     var inputs = jQuery("#ENUSmain input[type=text]");
@@ -259,16 +259,17 @@ jQuery(document).ready(function() {
 
     // re-syle back button
     var btnOrderPrint = jQuery("#ctl00_content_CartShipping_btnBack");
-    btnOrderPrint.removeClass().addClass("angBtnWhite");
+    btnOrderPrint.removeClass().addClass("angbtnWhiteText");
 
     // re-style remove cart items button
     var btnOrderPrint = jQuery("#ctl00_content_CartShipping_btnRemoveItems");
-    btnOrderPrint.removeClass().addClass("angBtnWhite angBtnWhiteRed");
+    btnOrderPrint.removeClass().addClass("angbtnWhiteText angBtnWhiteRed");
 
-    jQuery("#ctl00_content_CartShipping_CtlAddressSelector_ctlAddressForm_ddlCountry").change(function () {
+    /*jQuery("#ctl00_content_CartShipping_CtlAddressSelector_ctlAddressForm_ddlCountry").change(function () {
       var inputs = jQuery("#ENUSmain input[type=text]");
       inputs.addClass("form-control");
-    });
+    }); */
+
 
     //input fields
     /*
@@ -322,7 +323,7 @@ jQuery(document).ready(function() {
 
     // re-syle back button
     var btnOrderPrint = jQuery("#ctl00_content_CartConfirm_btnBack");
-    btnOrderPrint.removeClass().addClass("angBtnWhite");
+    btnOrderPrint.removeClass().addClass("angbtnWhiteText");
 
     // drop shadow on cart table
     jQuery("#CtlCart").css("box-shadow", " 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24)");

@@ -295,7 +295,7 @@ body {
 .angBtn:visited {
   text-decoration: none !important;
 }
-
+*/
 .angBtnWhite {
   padding: 10px 16px;
   font-size: 18px;
@@ -324,7 +324,7 @@ body {
   background-color: white !important;
   background-color: #eeeeee !important;
 }
-
+/*
 .angBtnWhiteRed {
   padding: 5px 8px;
   font-size: 15px;
@@ -338,7 +338,7 @@ body {
 }
 */
 
-.btnWhite {
+.btnWhiteText {
   color: #FFF !important;
   margin-right: 10px;
 }
