@@ -368,6 +368,17 @@ body {
   background-color: white !important;
 }
 
+.angBtnWhiteGreen {
+  color: gray !important;
+  background-color: white !important;
+}
+
+.angBtnWhiteGreen:hover {
+  text-decoration: none !important;
+  color: green !important;
+  background-color: white !important;
+}
+
 
 .btnWhiteText {
   color: #FFF !important;
