@@ -1224,7 +1224,7 @@ footer ul.list-inline li:first-child {padding-left: 6px}
 .grid-gallery figure img { display: block; width: 100%; opacity: 1; cursor: pointer; }
 .grid-gallery figcaption h3 { margin: 0 0 8px; padding:0; text-transform:uppercase; }
 .grid-gallery figcaption i { font-size: 32px; color: #aeaeae; margin-bottom: 20px}
-.grid-gallery figcaption h3 a, .grid-gallery figcaption h3 { letter-spacing: 4px; font-weight: 400; color: #e3e3e3}
+.grid-gallery figcaption h3 a, .grid-gallery figcaption h3 { letter-spacing: 4px; font-weight: 400; color: black; text-decoration: none}
 .grid-gallery figcaption p { display:block; font-size:12px; letter-spacing:3px; text-transform:uppercase; text-decoration:none; color: #aeaeae; margin-bottom: 0 }
 .grid { margin: 0 auto; }
 .grid li { box-sizing: border-box; float: left; margin: 0; width: 25%; display: inline-table;  }
