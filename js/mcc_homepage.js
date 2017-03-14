@@ -46,6 +46,7 @@ jQuery(document).ready(function() {
     jQuery("#ctl00_ctl08_lblUserName").remove();
     jQuery("#ctl00_ctl08_imgDivider1").remove();
     jQuery("#ctl00_ctl08_spUserName").remove();
+    jQuery("#sn_share").remove();
 
 
     //Main Menu modifications.
