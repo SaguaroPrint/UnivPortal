@@ -243,10 +243,11 @@ jQuery(document).ready(function() {
     jQuery("td[id$='LabelCell']").css("vertical-align", "middle");
 
     // remove border preview table
-    var el = document.evaluate( '/*[@id="ctl00_content_CtlAddToCart_InteractivityContainer_panelInteractivity"]/table', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
+    jQuery('table.MarginTop12.FullPageWidth').css("border-collapse", "initial");
+    /*var el = document.evaluate( '/*[@id="ctl00_content_CtlAddToCart_InteractivityContainer_panelInteractivity"]/table', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
     if (el) {
         el.style.borderCollapse = "initial";
-    }
+    }*/
 
     // bootstrap select for country field
     //jQuery("#country").addClass("selectpicker");
