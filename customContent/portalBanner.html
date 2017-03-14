@@ -186,7 +186,12 @@ jQuery(document).ready(function() {
     // load the css file
     loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/css/main.css");
     loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/css/orderInfoCopy.css");
-    loadCSS("https://marcomcentral.app.pti.com/printone/Css/bootstrap.min.css");
+    //loadCSS("https://marcomcentral.app.pti.com/printone/Css/bootstrap.min.css");
+
+
+    // bootstrap select
+    loadCSS("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css");
+    loadJS("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js");
 
     // load the js file
     //loadJS("one.js");
@@ -226,7 +231,10 @@ jQuery(document).ready(function() {
     inputs.addClass("form-control");
 
     // align input labels
-    jQuery("[id$=LabelCell]").addClass("middleAlign");
+    jQuery("td[id$='LabelCell']").css("vertical-align", "middle");
+
+    // bootstrap select for country field
+    jQuery("#country").addClass("selectpicker");
 
     // remove white spaces after buttons
     var el = document.evaluate( '//*[@id="CtlCart"]/tbody/tr/td/table/tbody/tr/td[1]/div[8]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
