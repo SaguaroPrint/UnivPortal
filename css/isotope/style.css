@@ -54,11 +54,14 @@ Table of contents
 	cursor:pointer;
 }
 
-/*
+
 .reasimg {
-	display: none;
+	object-fit: cover;
+	width: 220px;
+	height: 200px;
 }
 
+/*
 .reasimg-landscape {
 	display: block !important;
 	max-width:219px;
