@@ -379,9 +379,34 @@ jQuery(document).ready(function() {
     }
 
     // align top search bar
-    //jQuery("#divSearchCart").css("float","left");
-    //jQuery("#divSearchCart table tbody tr td:last-child").css("white-space","nowrap");
-    jQuery("#divSearchCart table tbody tr td:last-child").css("LAST TD");
+
+    // move search button to new td
+    var tdElem = jQuery("<td></td>");
+    var srchBtn = jQuery("#ctl00_content_CurrentCart_btnSearch");
+    var lastTd = jQuery("#divSearchCart table tbody tr td:last-child");
+    tdElem.insertAfter(lastTd);
+    tdElem.append(srchBtn);
+
+    //srchBtn = jQuery("#ctl00_content_CurrentCart_btnSearch");
+    srchBtn.removeClass().addClass("btn btn-sm btn-info");
+    tdElem.css("vertical-align", "middle");
+
+    // set width for search box
+    jQuery("#ctl00_content_CurrentCart_txtSearchText").parent().css("width", "200px");
+    jQuery("#ctl00_content_CurrentCart_txtSearchText").css({
+        "font-size": "",
+        "width" : "200px"
+      });
+
+    // add space around elments
+    tableTds = jQuery("#divSearchCart table tbody tr td");
+    tableTds.css("padding", "5px");
+
+    // remove space under search box
+    var el = document.evaluate( '//*[@id="divSearchCart"]/table/tbody/tr/td[3]/text()', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
+    if (el) {
+        el.remove();
+    }
 
     // *********** Home page *************
     // Main table shadow
