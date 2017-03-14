@@ -367,7 +367,7 @@ jQuery(document).ready(function() {
 
     // Remove items from cart button
     var btn = jQuery("#ctl00_content_CurrentCart_btnRemoveItems");
-    btn.removeClass().addClass("btn btn-default");
+    btn.removeClass().addClass("btn btn-sm btn-default angBtnWhiteRed");
 
     var el = document.evaluate( '//*[@id="divMainContent"]/table[2]/tbody/tr', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
     if (el) {

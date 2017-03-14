@@ -356,10 +356,10 @@ body {
   background-color: white !important;
   background-color: #eeeeee !important;
 }
-/*
+
 .angBtnWhiteRed {
-  padding: 5px 8px;
-  font-size: 15px;
+  color: gray !important;
+  background-color: white !important;
 }
 
 .angBtnWhiteRed:hover {
@@ -368,7 +368,7 @@ body {
   background-color: white !important;
   border-color: #4cae4c !important;
 }
-*/
+
 
 .btnWhiteText {
   color: #FFF !important;
@@ -454,4 +454,8 @@ select {
 
 #flashPreview {
   width: 99%;
+}
+
+.btn {
+  color: white !important;
 }
