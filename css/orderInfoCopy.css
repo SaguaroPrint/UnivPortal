@@ -395,3 +395,10 @@ select {
 .Width100Pct {
   padding: 25px;
 }
+
+.btn-l-green {
+  .btn;
+  .btn-lg;
+  .btn-success;
+  .btnWhite;
+}

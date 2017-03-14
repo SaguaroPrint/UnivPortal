@@ -191,8 +191,8 @@ jQuery(document).ready(function() {
     //loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/bootstrap-select/bootstrap-theme.min.css");
     //loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/bootstrap-select/bootstrap.min.css");
     //loadJS("https://rawgit.com/SaguaroPrint/UnivPortal/master/bootstrap-select/bootstrap.min.js");
-    loadCSS("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css");
-    loadJS("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js");
+    //loadCSS("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css");
+    //loadJS("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js");
 
     // load the js file
     //loadJS("one.js");
@@ -228,7 +228,7 @@ jQuery(document).ready(function() {
     btnOrderPrint.removeClass().addClass("angBtnWhite");
 
     // re-style input fields
-    var inputs = jQuery("#ENUSmain input");
+    var inputs = jQuery("#ENUSmain input[type=text]");
     inputs.addClass("form-control");
 
     // align input labels
@@ -264,6 +264,11 @@ jQuery(document).ready(function() {
     // re-style remove cart items button
     var btnOrderPrint = jQuery("#ctl00_content_CartShipping_btnRemoveItems");
     btnOrderPrint.removeClass().addClass("angBtnWhite angBtnWhiteRed");
+
+    jQuery("#ctl00_content_CartShipping_CtlAddressSelector_ctlAddressForm_ddlCountry").change(function () {
+      var inputs = jQuery("#ENUSmain input[type=text]");
+      inputs.addClass("form-control");
+    });
 
     //input fields
     /*
