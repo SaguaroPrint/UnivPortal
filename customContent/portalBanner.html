@@ -345,8 +345,8 @@ jQuery(document).ready(function() {
     btnOrderPrint.removeClass().addClass("btn btn-lg btn-success btnWhiteText");
 
     // re-syle back button
-    var btnOrderPrint = jQuery("#ctl00_content_CartConfirm_btnBack");
-    btnOrderPrint.removeClass().addClass("angBtnWhite");
+    var btnBack = jQuery("#ctl00_content_CartConfirm_btnBack");
+    btnBack.removeClass().addClass("angBtnWhite");
 
     // drop shadow on cart table
     jQuery("#CtlCart").css("box-shadow", " 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24)");
@@ -354,26 +354,25 @@ jQuery(document).ready(function() {
 
     // *********** Cart page ***********************
     // Checkout button
-    var btnOrderPrint = jQuery("#ctl00_content_CurrentCart_btnOrderCart");
-    btnOrderPrint.removeClass().addClass("btn btn-lg btn-success btnWhiteText");
+    var btnCheckout = jQuery("#ctl00_content_CurrentCart_btnOrderCart");
+    btnCheckout.removeClass().addClass("btn btn-lg btn-success btnWhiteText");
 
     // Save Bascket button
-    var btnOrderPrint = jQuery("#ctl00_content_CurrentCart_btnSaveCart");
-    btnOrderPrint.removeClass().addClass("angBtnWhite");
+    var btnSaveCart = jQuery("#ctl00_content_CurrentCart_btnSaveCart");
+    btnSaveCart.removeClass().addClass("angBtnWhite");
 
     // Back to Catalogue button
-    var btnOrderPrint = jQuery("#ctl00_content_CurrentCart_lnkBackToCatalog");
-    btnOrderPrint.removeClass().addClass("btn btn-info btnWhiteText");
+    var btnBackToCat = jQuery("#ctl00_content_CurrentCart_lnkBackToCatalog");
+    btnBackToCat.removeClass().addClass("btn btn-info");
 
-    //*[@id="divMainContent"]/table[2]/tbody/tr/td[1]/div
+    // Remove items from cart button
+    var btn = jQuery("#ctl00_content_CurrentCart_btnRemoveItems");
+    btn.removeClass().addClass("btn btn-default");
 
-    var btnOrderPrint = jQuery("#ctl00_content_CurrentCart_lnkBackToCatalog");
-    btnOrderPrint.removeClass().addClass("btn btn-info");
-
-      var el = document.evaluate( '//*[@id="divMainContent"]/table[2]/tbody/tr', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
-      if (el) {
-          el.style.verticalAlign = "middle";
-      }
+    var el = document.evaluate( '//*[@id="divMainContent"]/table[2]/tbody/tr', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
+    if (el) {
+        el.style.verticalAlign = "middle";
+    }
 
     // align top search bar
     //jQuery("#divSearchCart").css("float","left");
