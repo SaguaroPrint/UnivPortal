@@ -418,6 +418,8 @@ select {
   padding-top: 10px;
 }
 
-#flashpreview {
+/*Flash preview*/
+
+#flashPreview {
   width: 99%;
 }
