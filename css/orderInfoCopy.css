@@ -8,10 +8,6 @@ body {
   color: #777;
 }
 
-table {
-  border-collapse: initial !important;
-}
-
 #tdForm {
 	/*min-width:500px;
   float: left;
