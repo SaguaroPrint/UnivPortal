@@ -340,6 +340,7 @@ body {
 
 .btnWhite {
   color: #FFF !important;
+  margin-right: 10px;
 }
 
 .CheckoutBreadCrumbs {
