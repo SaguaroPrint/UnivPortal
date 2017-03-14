@@ -417,3 +417,7 @@ select {
   vertical-align: top;
   padding-top: 10px;
 }
+
+#flashpreview {
+  width: 99%;
+}
