@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
 
+.btn {
+  color: white !important;
+}
+
 #CtlBody {
 	width: 80% !important;
 	margin: auto;
@@ -464,8 +468,4 @@ select {
 
 #flashPreview {
   width: 99%;
-}
-
-.btn {
-  color: white !important;
 }
