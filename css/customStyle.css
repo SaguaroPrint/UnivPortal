@@ -365,7 +365,7 @@ body {
 .angBtnWhiteRed:hover {
   text-decoration: none !important;
   color: red !important;
-  background-color: white !important;
+  background-color: #eeeeee !important;
 }
 
 .angBtnWhiteGreen {
@@ -376,7 +376,7 @@ body {
 .angBtnWhiteGreen:hover {
   text-decoration: none !important;
   color: #449d44 !important;
-  background-color: white !important;
+  background-color: #eeeeee !important;
 }
 
 
