@@ -260,8 +260,9 @@ jQuery(document).ready(function() {
     //jQuery("#country").addClass("selectpicker");
 
     // remove white spaces after buttons
-    var el = document.evaluate( '//*[@id="CtlCart"]/tbody/tr/td/table/tbody/tr/td[1]/div[8]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
-    if (el) {
+    //jQuery('#CtlCart > tbody > tr > td > table > tbody > tr > td[1] > div[8]').css("display", "none");
+    //var el = document.evaluate( '//*[@id="CtlCart"]/tbody/tr/td/table/tbody/tr/td[1]/div[8]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
+    /*if (el) {
         el.style.display = "none";
     }
     el = document.evaluate( '//*[@id="CtlCart"]/tbody/tr/td/table/tbody/tr/td[1]/br[3]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
@@ -272,7 +273,7 @@ jQuery(document).ready(function() {
     if (el) {
         el.style.display = "none";
     }
-
+*/
     //  *************** Delivery page *********************
 
     // re-style button Continue

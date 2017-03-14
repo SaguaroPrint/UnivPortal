@@ -1,3 +1,45 @@
+<script>
+jQuery(document).ready(function() {
+	var channel;
+
+	messageHandler = function(e) {
+		window.removeEventListener('message', messageHandler);
+		message = JSON.parse(e.data);
+		if (!message.me)
+			return;
+		if  (message.me != "Marcom University")
+			return;
+		 
+		channel = e;
+
+		theForm.ctl00_content_Login_txtLoginId.value = message.user;
+		theForm.ctl00_content_Login_txtPassword.value = message.password;
+		theForm.__EVENTTARGET.value = "ctl00$content$Login$btnLogin";
+        theForm.__EVENTARGUMENT.value = "";
+		
+		jQuery.ajax({
+			type: theForm.method,
+			url: theForm.action,
+			data: $(theForm).serialize(),
+			success: function (data, textStatus, jqXHR) {
+				channel.source.postMessage("logged!", channel.origin);
+			},
+			error: function (jqXHR, textStatus, errorThrown) {
+				channel.source.postMessage(textStatus + " " +  + errorThrown, channel.origin);
+			},
+			done: function(data) {
+				channel.source.postMessage("done!", channel.origin);
+			},
+			timeout: 10000 
+		});
+
+	}
+
+	window.addEventListener('message', messageHandler, false);
+});
+
+</script>
+
 <head>
 <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 <style>
@@ -85,7 +127,6 @@ padding: 0 !important;
 	min-width: 100%;
 	flex-shrink: 0;
 	object-fit: cover;
-  object-position: 0% 20%;
   border-top: 2px solid #0074c7 !important;
   box-shadow: 0px -3px 4px rgba(0,0,0,.2);
 }
