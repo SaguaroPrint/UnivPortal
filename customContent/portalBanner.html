@@ -22,7 +22,7 @@ a, a:link {
 jQuery(document).ready(function() {
 
   // remove Nav bar
-  jQuery("#navBarEnhanced").remove();
+  //jQuery("#navBarEnhanced").remove();
 
   // place site icon
   var link = document.querySelector("src", "https://rawgit.com/SaguaroPrint/saguaroprint.github.io/master/img/logo_min_university.png") || document.createElement('link');
@@ -233,7 +233,7 @@ jQuery(document).ready(function() {
 
     // re-style button Adding to cart
     var btnOrderPrint = jQuery("#ctl00_content_CtlAddToCart_ProductOrderInfoController_AddToCartActionBox_mAddToCartAction_btnAddingItem");
-    btnOrderPrint.removeClass().addClass("angbtnWhite");
+    btnOrderPrint.removeClass().addClass("angBtnWhite");
 
     // re-style input fields
     var inputs = jQuery("#ENUSmain input[type=text]");
@@ -355,7 +355,7 @@ jQuery(document).ready(function() {
     // *********** Cart page ***********************
     // Checkout button
     var btnOrderPrint = jQuery("#ctl00_content_CurrentCart_btnOrderCart");
-    btnOrderPrint.removeClass().addClass("btn btn-lg btn-success");
+    btnOrderPrint.removeClass().addClass("btn btn-lg btn-success btnWhiteText");
 
     // Save Bascket button
     var btnOrderPrint = jQuery("#ctl00_content_CurrentCart_btnSaveCart");
@@ -363,7 +363,9 @@ jQuery(document).ready(function() {
 
     // Back to Catalogue button
     var btnOrderPrint = jQuery("#ctl00_content_CurrentCart_lnkBackToCatalog");
-    btnOrderPrint.removeClass().addClass("btn btn-info");
+    btnOrderPrint.removeClass().addClass("btn btn-info btnWhiteText");
+
+    //*[@id="divMainContent"]/table[2]/tbody/tr/td[1]/div
 
     var btnOrderPrint = jQuery("#ctl00_content_CurrentCart_lnkBackToCatalog");
     btnOrderPrint.removeClass().addClass("btn btn-info");
