@@ -1,5 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
 
+* {
+    -webkit-box-sizing: initial;
+    -moz-box-sizing: initial;
+    box-sizing: initial;
+}
+
 body {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-weight: 100;
