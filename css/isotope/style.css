@@ -50,6 +50,16 @@ Table of contents
     Reset
 ====================================== */
 
+.reas-ul-filter {
+    display: inline-block;
+	text-transform: uppercase;	
+	margin-bottom: 40px;
+}
+.reas-a-li-filter:hover {
+	border: 0px !important;
+	background-color: transparent !important;
+}
+
 .reasisoli {
 	cursor:pointer;
 }

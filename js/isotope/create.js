@@ -81,6 +81,7 @@
 			var inner = dataFilter[filter];
 			var a = jQuery("<a></a>");
 			a.attr("data-filter", ((filter == "*")?"":".") + filter);
+			a.addClass("reas-a-li-filter");
 			a.html(inner);
 			var li = jQuery("<li></li>").addClass("nav reasisoli");
 			if (i == 0) {
