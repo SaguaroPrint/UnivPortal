@@ -75,6 +75,7 @@
 	
 	function newFilter(dataFilter) {
 		var ul = jQuery("<ul></ul>").addClass("portfolio-filter nav nav-tabs nav-tabs-light wow fadeInUp");
+		ul.attr("id", "reas-ul-filter");
 		// Add filters to the filter collection
 		for (var filter in dataFilter) {
 			var inner = dataFilter[filter];
