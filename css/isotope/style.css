@@ -56,7 +56,7 @@ Table of contents
 	margin-bottom: 40px;
 	height: 39px;
 }
-.reas-a-li-filter:hover  .reas-a-li-filter:focus{
+.reas-a-li-filter:hover, .reas-a-li-filter:focus{
 	background-color: transparent !important;
 	border: 0px transparent !important;
 }
