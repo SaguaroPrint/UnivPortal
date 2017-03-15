@@ -54,7 +54,7 @@ Table of contents
     display: inline-block;
 	text-transform: uppercase;	
 	margin-bottom: 40px;
-	height: 39px;
+	height: auto;
 }
 
 #reas-galleryCol {
