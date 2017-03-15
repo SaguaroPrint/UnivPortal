@@ -50,7 +50,7 @@ Table of contents
     Reset
 ====================================== */
 
-.reas-ul-filter {
+#reas-ul-filter {
     display: inline-block;
 	text-transform: uppercase;	
 	margin-bottom: 40px;
