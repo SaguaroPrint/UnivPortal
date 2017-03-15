@@ -55,6 +55,7 @@
 		var ul = jQuery("<ul></ul>").addClass("grid masonry-items");
 		var divContent = jQuery("<div></div>").addClass("tab-content");
 		var galleryCol =jQuery("<div></div>").addClass("col-md-12 grid-gallery overflow-hidden");
+		galleryCol.attr("id", "reas-galleryCol");
 		
 		divContent.append(ul);
 		galleryCol.append(divContent);

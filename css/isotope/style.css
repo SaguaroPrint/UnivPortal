@@ -56,8 +56,15 @@ Table of contents
 	margin-bottom: 40px;
 	height: 39px;
 }
+
+#reas-galleryCol {
+	
+}
 .reas-a-li-filter:hover, .reas-a-li-filter:focus{
 	background-color: white !important;
+}
+.reas-a-li-filter {
+	z-index:10;
 }
 
 .reasisoli {
