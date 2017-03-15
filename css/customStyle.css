@@ -384,7 +384,7 @@ body {
 }
 
 .angBtnWhiteGray {
-  color: #EEE !important;
+  color: gray !important;
   background-color: white !important;
   margin-top: 10px;
 }
