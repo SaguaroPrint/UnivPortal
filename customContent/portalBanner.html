@@ -276,17 +276,47 @@ jQuery(document).ready(function() {
 */
     //  *************** Delivery page *********************
 
-    // re-style button Continue
-    var btnOrderPrint = jQuery("#ctl00_content_CartShipping_btnContinue");
-    btnOrderPrint.removeClass().addClass("angBtn");
+    // Continue button
+    var btn = jQuery("#ctl00_content_CartShipping_btnContinue");
+    btn.removeClass().addClass("btn btn-lg btn-success btnWhiteText");
 
-    // re-syle back button
-    var btnOrderPrint = jQuery("#ctl00_content_CartShipping_btnBack");
-    btnOrderPrint.removeClass().addClass("angbtnWhiteText");
+    // Back button
+    btn = jQuery("#ctl00_content_CartShipping_btnBack");
+    btn.removeClass().addClass("angBtnWhite");
 
-    // re-style remove cart items button
-    var btnOrderPrint = jQuery("#ctl00_content_CartShipping_btnRemoveItems");
-    btnOrderPrint.removeClass().addClass("angbtnWhiteText angBtnWhiteRed");
+    // Remove button
+    btn = jQuery("#ctl00_content_CartShipping_btnRemoveItems");
+    btn.removeClass().addClass("btn btn-sm btn-default angBtnWhiteRed");
+
+    // Recalculate  button
+    btn = jQuery("#ctl00_content_CartShipping_btnRecalc");
+    btn.removeClass().addClass("btn btn-sm btn-default angBtnWhiteGreen");
+
+
+    //  *************** Invoicing page *********************
+
+    // Continue button
+    var btn = jQuery("#ctl00_content_CartBilling_btnContinue");
+    btn.removeClass().addClass("btn btn-lg btn-success btnWhiteText");
+
+    // Back button
+    btn = jQuery("#ctl00_content_CartBilling_btnBack");
+    btn.removeClass().addClass("angBtnWhite");
+
+    // Remove button
+    btn = jQuery("#ctl00_content_CartBilling_btnRemoveItems");
+    btn.removeClass().addClass("btn btn-sm btn-default angBtnWhiteRed");
+
+    // Save address  button
+    btn = jQuery("#ctl00_content_CartBilling_CtlAddressSelector_btnSaveAddress");
+    btn.removeClass().addClass("btn btn-sm btn-default angBtnWhiteGreen");
+
+    // Select Address button
+    btn = jQuery("#ctl00_content_CartBilling_CtlAddressSelector_btnSelectAddress");
+    btn.removeClass().addClass("btn btn-sm btn-default angBtnWhiteGray");
+
+
+
 
     /*jQuery("#ctl00_content_CartShipping_CtlAddressSelector_ctlAddressForm_ddlCountry").change(function () {
       var inputs = jQuery("#ENUSmain input[type=text]");
