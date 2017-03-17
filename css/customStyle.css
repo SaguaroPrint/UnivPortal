@@ -221,10 +221,7 @@ body {
 /*Product Proof Styles*/
 
 .ContentBoxGrey {
-    padding: 0px 0px 0px 0px;
-  border: 1px solid #BCBEC0;
-    background-color: #F9F9F9;;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	border-top: 1px solid #BCBEC0;
 }
 
 /*Product Proof Styles End*/
