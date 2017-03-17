@@ -19,6 +19,14 @@
 #ctl00_content_ImageControlHeader {
 		object-position: 0% 40%;
 }
+#ctl00_content_TextUserAttributeList_divButtons {
+	width: 100%;
+    text-align: right;
+    border-top: 1px solid #BCBEC0;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+}
 
 #colorbox {
     -webkit-box-sizing: initial;
@@ -220,9 +228,7 @@ body {
 
 /*Product Proof Styles*/
 
-.ContentBoxGrey {
-	border-top: 1px solid #BCBEC0;
-}
+
 
 /*Product Proof Styles End*/
 
