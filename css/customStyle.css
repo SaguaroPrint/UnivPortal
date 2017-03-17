@@ -7,6 +7,8 @@
 #CtlBody {
 	width: 80% !important;
 	margin: auto;
+	box-shadow: rgb(34, 34, 34) 1px 2px 12px 0px;
+    border: 1px solid #BCBEC0;
 }
 
 
@@ -22,10 +24,7 @@
 #ctl00_content_TextUserAttributeList_divButtons {
 	width: 100%;
     text-align: right;
-    border-top: 1px solid #BCBEC0;
-    border-left: 0px;
-    border-right: 0px;
-    border-bottom: 0px;
+    border: 0px;
 }
 
 #colorbox {
