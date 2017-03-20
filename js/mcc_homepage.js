@@ -62,7 +62,7 @@ jQuery(document).ready(function() {
 	
 	//Build the Banner Section  (Row -> Column -> Span Headers -> Search Box) 
 		
-	jQuery(".MastHead").append('<div class="container"><div class="row" id="bannerRow"><div class="col-md-12" id="bannerColumn"><span id="bannerHead">Welcome to our University Courses Portal</span><span id="bannersubhead"> Find any course on our portal in minutes</span><div id="#searchbox"><button class="btn btn-sm btn-success" id="searchButton"><i class="fa fa-search" id="searchicon" aria-hidden="true"></i> Search </button><input type="text" id="searchField"></div></div></div></div>');
+	jQuery(".MastHead").append('<div class="container"><div class="row" id="bannerRow"><div class="col-md-12" id="bannerColumn"><span id="bannerHead">Welcome to our University Courses Portal</span><span id="bannersubhead"> Find any course on our portal in minutes</span><div id="searchbox"><button class="btn btn-sm btn-success" id="searchButton"><i class="fa fa-search" id="searchicon" aria-hidden="true"></i> Search </button><input type="text" id="searchField"></div></div></div></div>');
 
     // redirect to landing page
     var logoutHref = jQuery("#ctl00_ctl08_btnLogOut").attr("href");
