@@ -474,3 +474,71 @@ select {
 #flashPreview {
   width: 99%;
 }
+
+
+/* Header banner Customization */
+.MastHead{
+	height: 300px;
+	background: #4eabca url(https://images.printable.com/printonelogos/images/2220/17351/banners/26727/university_bg_sm.png) no-repeat 30% 190%;
+}
+
+#bannerRow {
+	float:right;
+}
+
+#bannerColumn {
+
+	    /* border: 1px solid black; */
+    margin-top: 110px;
+    display: block;
+    /* float: right; */
+    padding: 5px;
+    margin-right: 100px;
+}
+
+#bannerHead{
+
+    margin-top: 110px;
+    display: block;
+    padding: 5px;
+    margin-right: 100px;
+}
+
+#bannersubhead
+{   
+    margin-top: 110px;
+    display: block;
+    padding: 5px;
+    margin-right: 100px;
+}
+
+#searchbox {
+
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#searchicon{
+	 
+	float: right;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+#searchButton {
+	
+	float: right;
+    vertical-align: middle;
+    display: inline-block;
+    background-color: #575a74 !important;
+    border-color: #434457 !important;
+}
+#searchButton:hover{
+    float: right;
+    vertical-align: middle;
+    display: inline-block;
+    background-color: #f79b1d !important;
+    border-color: #e98d10 !important;
+}
