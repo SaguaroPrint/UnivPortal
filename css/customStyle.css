@@ -9,25 +9,23 @@
 	margin: auto;
 }
 
-#ctl00_ImageControlPageHeader {
-		max-height: 300px;
-		min-width: 100%;
-		flex-shrink: 0;
-		object-fit: cover;
-		object-position: 0% 40%;
-		border-top: 2px solid #0074c7 !important;
-		border-bottom: 2px solid #0074c7 !important;
-    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2), 0px -3px 4px rgba(0,0,0,.2);
+#divMainContent {
+    box-shadow: rgb(34, 34, 34) 1px 2px 12px 0px;
 }
 
 /* for login page */
 #CtlHead {
-		border-bottom: 2px solid #0074c7;
+	border-bottom: 2px solid #0074c7;
     box-shadow: 0px 3px 4px rgba(0,0,0,.2);
 }
 
 #ctl00_content_ImageControlHeader {
 		object-position: 0% 40%;
+}
+#ctl00_content_TextUserAttributeList_divButtons {
+	width: 100%;
+    text-align: right;
+    border: 0px;
 }
 
 #colorbox {
@@ -230,12 +228,7 @@ body {
 
 /*Product Proof Styles*/
 
-.ContentBoxGrey {
-    padding: 0px 0px 0px 0px;
-  border: 1px solid #BCBEC0;
-    background-color: #F9F9F9;;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
+
 
 /*Product Proof Styles End*/
 

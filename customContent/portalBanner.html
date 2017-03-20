@@ -36,32 +36,6 @@ jQuery(document).ready(function() {
   el.style.width = "100%";
   el.style.minWidth = "1000px";
 
-  // banner style
-  var el = document.querySelector("#ctl00_ImageControlPageHeader");
-  if (el) {
-    el.style.maxHeight = "300px";
-    el.style.minWidth = "100%";
-    el.style.flexShrink = "0";
-    el.style.objectFit = "cover";
-    el.style.objectPosition = "0% 40%";
-    el.style.borderTop = "2px solid #0074c7 !important";
-    el.style.borderBottom = "2px solid #0074c7 !important";
-    el.style.boxShadow = "0px 3px 4px rgba(0, 0, 0, 0.2), 0px -3px 4px rgba(0,0,0,.2)";
-  }
-
-
-  //Banner customization
-  jQuery("#ctl00_ImageControlPageHeader").css({
-      "max-height": "200px",
-      "min-width": "100%",
-      "flex-shrink": "0",
-      "object-fit": "cover",
-      "object-position": "0% 40%",
-      // "border-top": "2px solid #0074c7 !important",
-      // "border-bottom": "2px solid #0074c7 !important",
-      // "box-shadow": "0px 3px 4px rgba(0, 0, 0, 0.2), 0px -3px 4px rgba(0,0,0,.2)",
-  });
-
   // logo style
     var logoImg = jQuery("<img></img>");
     logoImg.attr("src", "https://rawgit.com/SaguaroPrint/saguaroprint.github.io/master/img/logo_min_university.png");
@@ -80,11 +54,6 @@ jQuery(document).ready(function() {
       "max-height": "45px",
       "margin-left": "5px"
     });
-
-    jQuery("#PageType01").css({
-        "background-color": "#09121B"
-    });
-
 
     // top menu style
     var navTop =   jQuery(".NavTop");
@@ -106,62 +75,112 @@ jQuery(document).ready(function() {
     });
 
     // add Home and Catalogue links in main menu
-    mccMenuLeftCart = jQuery(".NavTop > div > div:first");
-    mccMenuLeftCart.css({
-      "float": "",
-      "display": "inline-block",
-      "vertical-align": "middle",
-      "text-transform": "uppercase",
-      "margin-top": "10px",
-      "margin-bottom": "auto"
-    });
+ //   mccMenuLeftCart = jQuery(".NavTop > div > div:first");
+ //   mccMenuLeftCart.css({
+ //     "float": "",
+ //     "display": "inline-block",
+ //     "vertical-align": "middle",
+ //     "text-transform": "uppercase",
+ //     "margin-top": "10px",
+ //     "margin-bottom": "auto"
+ //   });
 
     // Catalogue link
-    var newBtns = "<a id='reas-ctlgBtn' href='https://marcomcentral.app.pti.com/printone/catalog.aspx?uigroup_id=26727'>Catalogue</a>";
-    mccMenuLeftCart.prepend(newBtns);
-
+ //   var newBtns = "<a id='reas-ctlgBtn' href='https://marcomcentral.app.pti.com/printone/catalog.aspx?uigroup_id=26727'>Catalogue</a>";
+ //   mccMenuLeftCart.prepend(newBtns);
+//
     // append divider
-    var divImg = jQuery("#ctl00_ctl08_imgDivider1");
-    var catLink = jQuery("#reas-ctlgBtn");
-    catLink.prepend(divImg.clone());
+ //   var divImg = jQuery("#ctl00_ctl08_imgDivider1");
+ //   var catLink = jQuery("#reas-ctlgBtn");
+ //   catLink.prepend(divImg.clone());
 
     // Home link
-    newBtns = "<a id='reas-homeBtn' href='https://marcomcentral.app.pti.com/printone/home.aspx?uigroup_id=26727'>Home</a>";
-    mccMenuLeftCart.prepend(newBtns);
+ //   newBtns = "<a id='reas-homeBtn' href='https://marcomcentral.app.pti.com/printone/home.aspx?uigroup_id=26727'>Home</a>";
+ //   mccMenuLeftCart.prepend(newBtns);
 
     // append divider
-    var divImg = jQuery("#ctl00_ctl08_imgDivider1");
-    mccMenuLeftCart.append(divImg.clone());
+ //   var divImg = jQuery("#ctl00_ctl08_imgDivider1");
+ //   mccMenuLeftCart.append(divImg.clone());
 
     // menu links style
-    var links = navTop.find("a");
-    links.css({
-      "color": "#333",
-      "font-family": "Helvetica Neue,Helvetica,Arial",
-      "font-size": "14px",
-      "text-decoration": "none",
-      "font-weight": "600"
-    });
+//    var links = navTop.find("a");
+//    links.css({
+//      "color": "#333",
+//      "font-family": "Helvetica Neue,Helvetica,Arial",
+//      "font-size": "14px",
+//      "text-decoration": "none",
+//      "font-weight": "600"
+//    });
 
     //hover function
-    links.hover(function() {
-        jQuery(this).css({
-          "color": "#d42000",
-          "border-bottom": "2px solid #d42000",
-          "padding-bottom": "3px",
-          "text-decoration": "none"
-        });
-    }, function() {
-        jQuery(this).css({
-          "color": "#333",
-          "border-bottom": ""
-        });
-    });
+//    links.hover(function() {
+//        jQuery(this).css({
+//          "color": "#d42000",
+//          "border-bottom": "2px solid #d42000",
+//          "padding-bottom": "3px",
+//          "text-decoration": "none"
+//        });
+//    }, function() {
+//        jQuery(this).css({
+//          "color": "#333",
+//          "border-bottom": ""
+//        });
+//    });
 
+
+
+	mccMenuLeftCart = jQuery(".NavTop > div:first");
+	mccMenuLeftCart.css("display", "none");
 
     //Add logo and Text
-    navTop.prepend(logoTxt);
-    navTop.prepend(logoImg);
+	navTop.append(logoImg);
+    navTop.append(logoTxt);
+
+
+	
+	var basketItems = jQuery("#ctl00_ctl08_lnkCart");
+	
+	var ulMenu = jQuery("<ul></ul>").addClass("nav navbar-nav").css("float", "right");
+	ulMenu.append("<li class='active'><a href='https://marcomcentral.app.pti.com/printone/home.aspx?uigroup_id=26727'>Home</a></li>");
+	ulMenu.append("<li><a href='https://marcomcentral.app.pti.com/printone/catalog.aspx?uigroup_id=26727'>Catalogue</a></li>");
+	ulMenu.append("<li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/cart.aspx?uigroup_id=26727'>Basket <span class='glyphicon glyphicon-shopping-cart'></span> " + basketItems.html() + "</a></li>");
+	
+	ulMenu.append("<li id='dropdown-submenu' class='dropdown'><a href='#' class='dropdown-toggle' data-toggle='dropdown'>Mister Student <span class='caret'></span></a><ul id='dropdown-submenu-holder' class='dropdown-menu'><li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/profile.aspx?uigroup_id=26727&mode=1'>My Profile</a></li><li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/manageOrders.aspx?uigroup_id=26727'>Order Manager</a></li><li><a href='javascript:openDownloadHistoryModal();'>Download History</a></li></ul></li>");
+	ulMenuLogOutA = jQuery("<a></a>");
+	ulMenuLogOutA.attr("href", "javascript:__doPostBack('ctl00$ctl08$btnLogOut',''); window.location.href = 'https://ricoheurope.github.io'");
+	ulMenuLogOutA.html("Log out");
+	ulMenuLogOutLi = jQuery("<li></li>");
+	ulMenuLogOutLi.append(ulMenuLogOutA);
+	ulMenu.append(ulMenuLogOutLi);
+	userDropdownSubmenu = ulMenu.find("#dropdown-submenu-holder");
+	
+	navTop.append(ulMenu);
+	jQuery(document).unbind("click.bs.data-api.dropdown");
+	jQuery(document).bind("click.bs.data-api.dropdown", function() {
+		userDropdownSubmenu.css("display", "none");
+	});	
+	
+	jQuery("#dropdown-submenu").click(function() {
+		userDropdownSubmenu.css("display", "inline");
+		event.stopPropagation();
+	});
+
+	/*
+	navTop.append(" \
+			<ul class='nav navbar-nav'> \
+            <li class='active'><a href='https://marcomcentral.app.pti.com/printone/home.aspx?uigroup_id=26727'>Home</a></li> \
+            <li><a href='https://marcomcentral.app.pti.com/printone/catalog.aspx?uigroup_id=26727'>Catalogue</a></li> \
+            <li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/cart.aspx?uigroup_id=26727'>Basket</a></li> \
+            <li class='dropdown'> \
+              <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>Mister Student <span class='caret'></span></a> \
+              <ul class='dropdown-menu'> \
+                <li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/profile.aspx?uigroup_id=26727&mode=1'>My Profile</a></li> \
+                <li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/manageOrders.aspx?uigroup_id=26727'>Order Manager</a></li> \
+                <li><a href='javascript:openDownloadHistoryModal(); return false;'>Download History</a></li> \
+              </ul> \
+            </li> \
+			<li><a href='javascript:__doPostBack('ctl00$ctl08$btnLogOut',''); window.location.href = 'https://ricoheurope.github.io''>Log out</a></li> \
+          </ul>");*/
 
     //remove DOM elements
     jQuery("#ctl00_ctl08_CatalogSearchBox_txtSearchText").remove();
@@ -422,7 +441,7 @@ jQuery(document).ready(function() {
     btnBack.removeClass().addClass("angBtnWhite");
 
     // drop shadow on cart table
-    jQuery("#CtlCart").css("box-shadow", " 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24)");
+  //  jQuery("#CtlCart").css("box-shadow", " 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24)");
 
 
     // *********** Cart page ***********************
