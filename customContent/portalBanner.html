@@ -247,6 +247,8 @@ jQuery(document).ready(function() {
         var jsLink = jQuery("<script type='text/javascript' src='" + src + "'>");
         jQuery("head").append(jsLink);
     };
+	
+	
 
     // load the css file
     loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/css/customStyle.css");
@@ -522,7 +524,8 @@ jQuery(document).ready(function() {
 
 
 
-
+	//Append Elements to banner PAge
+	jQuery(".MastHead").append('<div class="container"><div class="row" id="bannerRow"><div class="col-md-12" id="bannerColumn"><span id="bannerHead">Welcome to our University Portal</span><span id="bannersubhead">Find any available resources below</span><div class="#searchbox"><input type="text" id="searchField"><span class="input-group-bt"><button class="btn btn-sm btn-success" id="searchButton"><i class="fa fa-search" id="searchicon" aria-hidden="true"></i> Search </button></span></div></div></div></div>');
 
 
 
@@ -534,4 +537,6 @@ jQuery(document).ready(function() {
     // display the page once all styling is applied
     jQuery("#ENUSmain").css("display", "table");
 });
+
+	
 </script>
