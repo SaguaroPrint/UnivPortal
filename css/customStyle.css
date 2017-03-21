@@ -529,7 +529,7 @@ select {
 	color:#ffffff;
 }
 #searchField {
-	width: 95%;
+	margin-right:10px;
 }
 
 #searchButton {
