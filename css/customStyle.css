@@ -541,7 +541,6 @@ select {
     border-color: #434457 !important;
     padding: 3px;
     height: 34px;
-    width: 100%;
     border-radius: 4px;
 }
 #searchButton:hover{
@@ -552,7 +551,6 @@ select {
     border-color: #e98d10 !important;
     padding: 3px;
     height: 34px;
-    width: 100%;
     border-radius: 4px;
    
 }
