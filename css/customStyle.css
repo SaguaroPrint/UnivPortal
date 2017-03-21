@@ -516,12 +516,9 @@ select {
 
 #searchbox {
 
-    display: block;
-    margin-top: 20px;
-	float: left;
-    width: 250px;
-
-    margin-right: 10px;
+	position: relative;
+    display: flex;
+    width: 100%;
 
 }
 #searchicon{
