@@ -520,6 +520,7 @@ select {
     margin-top: 20px;
 	float: left;
     width: 250px;
+
     margin-right: 10px;
 
 }
@@ -530,19 +531,31 @@ select {
     vertical-align: middle;
 	color:#ffffff;
 }
+#searchField {
+	width: 95%;
+}
 
 #searchButton {
 	
 	float: right;
     vertical-align: middle;
-    display: inline-block;
+    display: block;
     background-color: #575a74 !important;
     border-color: #434457 !important;
+    padding: 3px;
+    height: 34px;
+    width: 100%;
+    border-radius: 4px;
 }
 #searchButton:hover{
     float: right;
     vertical-align: middle;
-    display: inline-block;
+    display: block;
     background-color: #f79b1d !important;
     border-color: #e98d10 !important;
+    padding: 3px;
+    height: 34px;
+    width: 100%;
+    border-radius: 4px;
+   
 }
