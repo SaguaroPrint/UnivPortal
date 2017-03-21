@@ -25,10 +25,10 @@ jQuery(document).ready(function() {
   jQuery("#navBarEnhanced").remove();
 
   // place site icon
-  var link = document.querySelector("src", "https://rawgit.com/SaguaroPrint/saguaroprint.github.io/master/img/logo_min_university.png") || document.createElement('link');
+  var link = document.querySelector("src", "https://rawgit.com/SaguaroPrint/UnivPortal/master/img/univ_icon.png") || document.createElement('link');
   link.type = 'image/x-icon';
   link.rel = 'shortcut icon';
-  link.href = 'https://rawgit.com/SaguaroPrint/saguaroprint.github.io/master/img/logo_min_university.png';
+  link.href = 'https://rawgit.com/SaguaroPrint/UnivPortal/master/img/univ_icon.png';
   document.getElementsByTagName('head')[0].appendChild(link);
 
   // full width Table
@@ -137,14 +137,14 @@ jQuery(document).ready(function() {
     navTop.append(logoTxt);
 
 
-	
+
 	var basketItems = jQuery("#ctl00_ctl08_lnkCart");
-	
+
 	var ulMenu = jQuery("<ul></ul>").addClass("nav navbar-nav").css("float", "right").attr("id", "mainMenu");
 	ulMenu.append("<li class='active'><a href='https://marcomcentral.app.pti.com/printone/home.aspx?uigroup_id=26727'>Home</a></li>");
 	ulMenu.append("<li><a href='https://marcomcentral.app.pti.com/printone/catalog.aspx?uigroup_id=26727'>Catalogue</a></li>");
 	ulMenu.append("<li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/cart.aspx?uigroup_id=26727'>Basket <span class='glyphicon glyphicon-shopping-cart'></span> " + basketItems.html() + "</a></li>");
-	
+
 	ulMenu.append("<li id='dropdown-submenu' class='dropdown'><a href='#' class='dropdown-toggle' data-toggle='dropdown'>Mister Student <span class='caret'></span></a><ul id='dropdown-submenu-holder' class='dropdown-menu'><li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/profile.aspx?uigroup_id=26727&mode=1'>My Profile</a></li><li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/manageOrders.aspx?uigroup_id=26727'>Order Manager</a></li><li><a href='javascript:openDownloadHistoryModal();'>Download History</a></li></ul></li>");
 	ulMenuLogOutA = jQuery("<a></a>");
 	ulMenuLogOutA.attr("href", "javascript:__doPostBack('ctl00$ctl08$btnLogOut',''); window.location.href = 'https://ricoheurope.github.io'");
@@ -153,13 +153,13 @@ jQuery(document).ready(function() {
 	ulMenuLogOutLi.append(ulMenuLogOutA);
 	ulMenu.append(ulMenuLogOutLi);
 	userDropdownSubmenu = ulMenu.find("#dropdown-submenu-holder");
-	
+
 	navTop.append(ulMenu);
 	jQuery(document).unbind("click.bs.data-api.dropdown");
 	jQuery(document).bind("click.bs.data-api.dropdown", function() {
 		userDropdownSubmenu.css("display", "none");
-	});	
-	
+	});
+
 	jQuery("#dropdown-submenu").click(function() {
 		userDropdownSubmenu.css("display", "inline");
 		event.stopPropagation();
