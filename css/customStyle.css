@@ -224,6 +224,11 @@ body {
     padding: 10px;
 }
 
+
+
+select[name=ctl00$content$TextUserAttributeList$CtlUserPropertiesSecurityQuestion$ddlSecurityQuestion] { 
+    width: 300px
+}
 /* End of Form Style */
 
 /*Product Proof Styles*/
