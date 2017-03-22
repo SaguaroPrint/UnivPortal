@@ -137,6 +137,19 @@ jQuery(document).ready(function() {
 //        });
 //    });
 
+// keep footer down
+function footerPosition({
+          	   var scroll = jQuery('body').height() + 80) > jQuery('body').get(0).scrollHeight;
+          	   if (scroll) {
+          	    jQuery("#CtlFooter").css("top", "80px").
+          	     css("position", "relative");
+          	   } else {
+          	    jQuery("#CtlFooter").css("top", (jQuery(window).height() - 80) + "px").
+          	     css("position", "absolute");
+          	   }
+  });
+  footerPosition();
+
 
 
 	mccMenuLeftCart = jQuery(".NavTop > div:first");
@@ -250,8 +263,8 @@ jQuery(document).ready(function() {
         var jsLink = jQuery("<script type='text/javascript' src='" + src + "'>");
         jQuery("head").append(jsLink);
     };
-	
-	
+
+
 
     // load the css file
     loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/css/customStyle.css");
@@ -531,5 +544,5 @@ jQuery(document).ready(function() {
     jQuery("#ENUSmain").css("display", "table");
 });
 
-	
+
 </script>
