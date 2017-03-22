@@ -515,15 +515,8 @@ jQuery(document).ready(function() {
     // *********** Home page *************
     // Main table shadow
     jQuery(".FeaturedProducts").css("-webkit-box-shadow", "1px 2px 12px 0px #222");
-
-
-
-
-	jQuery("ctl00_content_CartShipping_CtlAddressSelector_ctlAddressForm_ddlCountry").attr("onchange" ,"");
-
-
-
-
+	jQuery("#ctl00_content_CartShipping_CtlAddressSelector_ctlAddressForm_ddlCountry").attr("onchange", null);
+	
 	//Append Elements to banner PAge
 	jQuery(".MastHead").append('<div class="container"><div class="row" id="bannerRow"><div class="col-md-12" id="bannerColumn"><span id="bannerHead">Welcome to our University Portal</span><span id="bannersubhead">Find any available resources below</span><div class="form-inline" id="formMiddlealign"><div class="form-group"><input class="form-control" id="searchField" type="text"><span class="input-group"><button class="btn btn-sm btn-success" id="searchButton"><i class="fa fa-search" id="searchicon" aria-hidden="true"></i> Search </button></span></div></div></div></div></div>');
 
