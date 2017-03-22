@@ -84,7 +84,7 @@
 			a.attr("data-filter", ((filter == "*")?"":".") + filter);
 			a.addClass("reas-a-li-filter");
 			a.html(inner);
-			var li = jQuery("<li></li>").addClass("nav reasisoli");
+			var li = jQuery("<li></li>").addClass("nav reasisoli" + ((filter == "*")?" active":""));
 			if (i == 0) {
 				li.addClass("active");
 			}
