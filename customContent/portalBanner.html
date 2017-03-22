@@ -477,6 +477,19 @@ jQuery(document).ready(function() {
         el.style.verticalAlign = "middle";
     }
 
+    // add space to left
+    var firstColumn = jQuery("#ctl00_content_CurrentCart_CtlCartItemList_CtlCartItems tr td:first-child");
+    firstColumn.css("padding-left", "10px");
+
+    // add space between between checkbox and bin icon
+    firstColumn.next().css({
+    	"padding-right": "5px",
+    	"padding-top": "2px",
+    });
+
+    // add space to right
+    jQuery("#ctl00_content_CurrentCart_CtlCartItemList_CtlCartItems tr td:last-child").css("padding-right", "10px");
+
     // align top search bar
 
     // move search button to new td
