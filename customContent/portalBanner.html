@@ -477,11 +477,12 @@ jQuery(document).ready(function() {
         el.style.verticalAlign = "middle";
     }
 
+    // ***** Current cart - add spacing
     // add space to left
     var firstColumn = jQuery("#ctl00_content_CurrentCart_CtlCartItemList_CtlCartItems tr td:first-child");
     firstColumn.css("padding-left", "10px");
 
-    // add space between between checkbox and bin icon
+    // add space between checkbox and bin icon
     firstColumn.next().css({
     	"padding-right": "5px",
     	"padding-top": "2px",
@@ -489,6 +490,19 @@ jQuery(document).ready(function() {
 
     // add space to right
     jQuery("#ctl00_content_CurrentCart_CtlCartItemList_CtlCartItems tr td:last-child").css("padding-right", "10px");
+
+    // **** Saved cart - add spacing
+    // add space to left
+    var firstColumn = jQuery("#ctl00_content_ManageShoppingLists_CtlCartItemList_CtlCartItems tr td:first-child");
+    firstColumn.css("padding-left", "10px");
+
+    // add space between checkbox and bin icon
+    firstColumn.next().css({
+      "padding-right": "5px",
+      "padding-top": "2px",
+    });
+    // add space to right
+    jQuery("#ctl00_content_ManageShoppingLists_CtlCartItemList_CtlCartItems tr td:last-child").css("padding-right", "10px");
 
     // align top search bar
 
@@ -519,9 +533,16 @@ jQuery(document).ready(function() {
         el.remove();
     }
 
-    // Saved cart
+    // ******** Saved cart **********
+    // Add Selected to Shopping Basket
     var btn = jQuery("#ctl00_content_ManageShoppingLists_btnAddToCart");
     btn.removeClass().addClass("btn btn-success");
+
+    // Remove items from cart button
+    btn = jQuery("#ctl00_content_ManageShoppingLists_btnRemoveItems");
+    btn.removeClass().addClass("btn btn-sm btn-default angBtnWhiteRed");
+
+
 
 
     // *********** Home page *************
