@@ -534,9 +534,14 @@ jQuery(document).ready(function() {
     }
 
     // ******** Saved cart **********
-    // Add Selected to Shopping Basket
+    // Add Selected to Shopping Basket button
     var btn = jQuery("#ctl00_content_ManageShoppingLists_btnAddToCart");
     btn.removeClass().addClass("btn btn-success");
+
+    // add table shadow
+    if (btn.length > 0) {
+      jQuery("#CtlBody").css("box-shadow", "rgb(34, 34, 34) 1px 2px 12px 0px");
+    }
 
     // Remove items from cart button
     btn = jQuery("#ctl00_content_ManageShoppingLists_btnRemoveItems");
@@ -559,6 +564,13 @@ jQuery(document).ready(function() {
     var div = jQuery("#ctl00_content_TextUserAttributeList_divButtons");
     div.css("background-color", "#3f919c");
 
+    // align security question
+    var labelProfile = jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_SecurityQuestionSelect").css("vertical-align", "middle");
+
+    // add table shadow
+    if (labelProfile.length > 0) {
+      jQuery("#CtlBody").css("box-shadow", "rgb(34, 34, 34) 1px 2px 12px 0px");
+    }
 
 
 // remove event on shipping country
