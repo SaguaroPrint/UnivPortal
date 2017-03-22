@@ -21,6 +21,95 @@ a, a:link {
     height: 300px;
 }
 
+/* Header banner Customization */
+
+#bannerRow {
+	
+}
+
+#bannerColumn {
+
+    margin-top: 110px;
+    display: block;
+    padding: 5px;
+}
+
+#bannerHead{
+
+    display: block;
+    padding: 5px;
+    text-align: center;
+	color: #ffffff;
+    font-size: 38px;
+	font-weight:600;
+}
+#formMiddlealign {
+
+text-align: center;
+}
+
+#bannersubhead
+{
+    display: block;
+    padding: 5px;
+	text-align: center;
+	color: #ffffff;
+    font-size: 32px;
+}
+
+#searchbox {
+	padding-left:10px;
+	position: relative;
+    max-width: 500px;
+	width:550px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 20px;
+
+}
+#searchicon{
+
+	float:left;
+    margin-right: 5px;
+    vertical-align: middle;
+	color:#ffffff;
+}
+#searchField {
+	padding-left:5px;
+	border: 1px solid white;
+	background-color: rgba(245, 245, 245, 0.64);
+	height: 34px;
+	width:75%;
+	border-radius: 5px;
+}
+#searchField::placeholder {
+	color: white;
+	padding-left:5px;
+}
+
+#searchButton {
+
+	float: right;
+    vertical-align: middle;
+    display: block;
+    background-color: #575a74 !important;
+    border-color: #434457 !important;
+    padding: 5px;
+    height: 34px;
+    border-radius: 4px;
+}
+#searchButton:hover{
+    float: right;
+    vertical-align: middle;
+    display: block;
+    background-color: #f79b1d !important;
+    border-color: #e98d10 !important;
+    padding: 5px;
+    height: 34px;
+    border-radius: 4px;
+
+}
+
 
 </style>
 
@@ -565,10 +654,11 @@ jQuery(document).ready(function() {
     div.css("background-color", "#3f919c");
 
     // align security question
-    var labelProfile = jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_SecurityQuestionSelect").css("vertical-align", "middle");
+    var row = jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_SecurityQuestionSelect").parent();
+    row.css("vertical-align", "middle");
 
     // add table shadow
-    if (labelProfile.length > 0) {
+    if (row.length > 0) {
       jQuery("#CtlBody").css("box-shadow", "rgb(34, 34, 34) 1px 2px 12px 0px");
     }
 
@@ -591,7 +681,7 @@ if (divCtlCartItemsAlt.length > 0) {
 
 
 //Append Elements to banner Page
-jQuery(".MastHead").append('<div class="container"><div class="row" id="bannerRow"><div class="col-md-12" id="bannerColumn"><span id="bannerHead">Welcome to our University Portal</span><span id="bannersubhead">Find any available resources below</span><div class="#searchbox"><input type="text" id="searchField"><span class="input-group-bt"><button class="btn btn-sm btn-success" id="searchButton"><i class="fa fa-search" id="searchicon" aria-hidden="true"></i> Search </button></span></div></div></div></div>');
+jQuery(".MastHead").append('<div class="container"><div class="row" id="bannerRow"><div class="col-md-12" id="bannerColumn"><span id="bannerHead">Welcome to our University Portal</span><span id="bannersubhead">Find any available resources below</span><div id="searchbox"><input type="text" id="searchField"><span class="input-group-bt"><button class="btn btn-sm btn-success" id="searchButton"><i class="fa fa-search" id="searchicon" aria-hidden="true"></i> Search </button></span></div></div></div></div>');
 
 
 
