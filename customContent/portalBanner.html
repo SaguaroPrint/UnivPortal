@@ -25,6 +25,7 @@ a, a:link {
 	box-shadow: rgb(34, 34, 34) 1px 2px 12px 0px;
 }
 
+
 </style>
 
 <script>
@@ -48,7 +49,7 @@ jQuery(document).ready(function() {
 
   // logo style
     var logoImg = jQuery("<img></img>");
-    logoImg.attr("src", "https://rawgit.com/SaguaroPrint/UnivPortal/master/img/university_logo.png");
+    logoImg.attr("src", "https://rawgit.com/SaguaroPrint/UnivPortal/master/img/university_logo2.png");
     logoImg.css({
       "float": "left",
       "vertical-align": "middle",
@@ -250,8 +251,6 @@ jQuery(document).ready(function() {
         var jsLink = jQuery("<script type='text/javascript' src='" + src + "'>");
         jQuery("head").append(jsLink);
     };
-	
-	
 
     // load the css file
     loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/css/customStyle.css");
@@ -515,10 +514,25 @@ jQuery(document).ready(function() {
     // *********** Home page *************
     // Main table shadow
     jQuery(".FeaturedProducts").css("-webkit-box-shadow", "1px 2px 12px 0px #222");
-	jQuery("#ctl00_content_CartShipping_CtlAddressSelector_ctlAddressForm_ddlCountry").attr("onchange", null);
-	
-	//Append Elements to banner PAge
-	jQuery(".MastHead").append('<div class="container"><div class="row" id="bannerRow"><div class="col-md-12" id="bannerColumn"><span id="bannerHead">Welcome to our University Portal</span><span id="bannersubhead">Find any available resources below</span><div class="form-inline" id="formMiddlealign"><div class="form-group"><input class="form-control" id="searchField" type="text"><span class="input-group"><button class="btn btn-sm btn-success" id="searchButton"><i class="fa fa-search" id="searchicon" aria-hidden="true"></i> Search </button></span></div></div></div></div></div>');
+
+
+
+
+
+jQuery("#ctl00_content_CartShipping_CtlAddressSelector_ctlAddressForm_ddlCountry").attr("onchange", null);
+
+	var  divBillingPoInstructions = jQuery("#ctl00_content_CartBilling_divBillingPoInstructions");
+	if (divBillingPoInstructions) {
+		jQuery("#CtlBody").css("box-shadow", "rgb(34, 34, 34) 1px 2px 12px 0px");
+		divBillingPoInstructions.remove();
+	}
+
+//Append Elements to banner Page
+jQuery(".MastHead").append('<div class="container"><div class="row" id="bannerRow"><div class="col-md-12" id="bannerColumn"><span id="bannerHead">Welcome to our University Portal</span><span id="bannersubhead">Find any available resources below</span><div class="#searchbox"><input type="text" id="searchField"><span class="input-group-bt"><button class="btn btn-sm btn-success" id="searchButton"><i class="fa fa-search" id="searchicon" aria-hidden="true"></i> Search </button></span></div></div></div></div>');
+
+
+
+
 
 
 
@@ -530,6 +544,4 @@ jQuery(document).ready(function() {
     // display the page once all styling is applied
     jQuery("#ENUSmain").css("display", "table");
 });
-
-	
 </script>
