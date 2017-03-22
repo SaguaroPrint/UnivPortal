@@ -504,7 +504,7 @@ select {
     padding: 5px;
     text-align: center;
 	color: #ffffff;
-    font-size: x-large;
+    font-size: 38px;
 	font-weight:600;
 }
 #formMiddlealign {
@@ -518,12 +518,16 @@ text-align: center;
     padding: 5px;
 	text-align: center;
 	color: #ffffff;
-    font-size: large;
+    font-size: 32px;
 }
 
 #searchbox {
 
-	text-align: center;
+	position: relative;
+    max-width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 20px;
 
 }
 #searchicon{
@@ -536,6 +540,10 @@ text-align: center;
 #searchField {
 	margin-right:10px;
 }
+#searchField::placeholder {
+	color: white;
+	padding-left:5px;
+}
 
 #searchButton {
 
@@ -544,7 +552,7 @@ text-align: center;
     display: block;
     background-color: #575a74 !important;
     border-color: #434457 !important;
-    padding: 3px;
+    padding: 5px;
     height: 34px;
     border-radius: 4px;
 }
@@ -554,7 +562,7 @@ text-align: center;
     display: block;
     background-color: #f79b1d !important;
     border-color: #e98d10 !important;
-    padding: 3px;
+    padding: 5px;
     height: 34px;
     border-radius: 4px;
 
