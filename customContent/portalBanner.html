@@ -494,18 +494,17 @@ jQuery(document).ready(function() {
 
     // move search button to new td
     var tdElem = jQuery("<td></td>");
-    var srchBtn = jQuery("#ctl00_content_CurrentCart_btnSearch");
+    var srchBtn = jQuery("#ctl00_content_CurrentCart_btnSearch, #ctl00_content_ManageShoppingLists_btnSearch");
     var lastTd = jQuery("#divSearchCart table tbody tr td:last-child");
     tdElem.insertAfter(lastTd);
     tdElem.append(srchBtn);
 
-    //srchBtn = jQuery("#ctl00_content_CurrentCart_btnSearch");
     srchBtn.removeClass().addClass("btn btn-sm btn-info");
     tdElem.css("vertical-align", "middle");
 
     // set width for search box
-    jQuery("#ctl00_content_CurrentCart_txtSearchText").parent().css("width", "200px");
-    jQuery("#ctl00_content_CurrentCart_txtSearchText").css({
+    jQuery("#ctl00_content_CurrentCart_txtSearchText, #ctl00_content_ManageShoppingLists_txtSearchText").parent().css("width", "200px");
+    jQuery("#ctl00_content_CurrentCart_txtSearchText, #ctl00_content_ManageShoppingLists_txtSearchText").css({
         "font-size": "",
         "width" : "200px"
       });
