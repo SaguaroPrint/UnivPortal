@@ -552,11 +552,11 @@ text-align: center;
 .searchField:focus {
 	width: 300px;
 	background-color: #fff;
-  border-color: #CCC;
+  border-color: #CCC !important;
 
-	-webkit-box-shadow: 0 0 5px rgba(204,204,204,.5);
-	-moz-box-shadow: 0 0 5px rgba(204,204,204,.5);
-	box-shadow: 0 0 5px rgba(204,204,204,.5);
+	-webkit-box-shadow: 0 0 5px rgba(204,204,204,.5) !important;
+	-moz-box-shadow: 0 0 5px rgba(204,204,204,.5) !important;
+	box-shadow: 0 0 5px rgba(204,204,204,.5) !important;
 }
 
 #searchbox span input:first-child {
