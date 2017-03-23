@@ -350,7 +350,7 @@ select[name="ctl00$content$TextUserAttributeList$CtlUserPropertiesSecurityQuesti
   vertical-align: middle;
   cursor: pointer;
   background-image: none;
-  border: 2px solid;
+  border: 1px solid;
   white-space: nowrap;
   user-select: none;
   text-decoration: none;
