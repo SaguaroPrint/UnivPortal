@@ -130,7 +130,7 @@ text-align: center;
 }
 
 .bntCustomMain:hover{
-	
+
 	background-color: #3f919c;
     border-color: #3f919c;
 }
@@ -393,9 +393,9 @@ jQuery(document).ready(function() {
     var instr = jQuery("#ctl00_content_CtlAddToCart_ProductDescription_Stringcontrol2");
     instr.before(instrIcon);
     instr.remove();
-	
+
 	//remove Grey background from shoping basket table
-	
+
 	jQuery(".ContentBoxGrey").removeClass("ContentBoxGrey");
 
     // remove classes for buttons container
@@ -460,7 +460,7 @@ jQuery(document).ready(function() {
 	var btnContinueText = btn.text().replace("»","");
 	btn.text(btnContinueText);
     btn.removeClass().addClass("btn btn-success btnWhiteText").append(" <i class='fa fa-chevron-circle-right' aria-hidden='true'></i>");
-	
+
 
     // Back button
     btn = jQuery("#ctl00_content_CartShipping_btnBack");
@@ -489,11 +489,11 @@ jQuery(document).ready(function() {
 	var btnContinue = jQuery("#ctl00_content_CartBilling_btnContinue");
 	var btnContinueText = btnContinue.text().replace("»","");
 	btnContinue.text(btnContinueText);
-	
-    
+
+
     btnContinue.removeClass().addClass("btn btn-success btnWhiteText").append(" <i class='fa fa-chevron-circle-right' aria-hidden='true'></i>").prepend("<i class='fa fa-shopping-cart' aria-hidden='true'></i> ");
 
-	
+
     // Back button
     btn = jQuery("#ctl00_content_CartBilling_btnBack");
     btn.removeClass().addClass("btn bntCustomMain").prepend("<i class='fa fa-chevron-circle-left' aria-hidden='true'></i> ");
@@ -579,13 +579,13 @@ jQuery(document).ready(function() {
 
     // *********** Cart page ***********************
     // Checkout button
-		
+
     var btnCheckout = jQuery("#ctl00_content_CurrentCart_btnOrderCart");
 	var btnCheckoutText = btnCheckout.text().replace("»","");
 	btnCheckout.text(btnCheckoutText);
 	btnCheckout.removeClass().addClass("btn btn-success btnWhiteText").append(" <i class='fa fa-chevron-circle-right' aria-hidden='true'></i>").prepend("<i class='fa fa-shopping-cart' aria-hidden='true'></i> ");
 
-	
+
     // Save Bascket button
     var btnSaveCart = jQuery("#ctl00_content_CurrentCart_btnSaveCart");
     btnSaveCart.removeClass().addClass("btn bntCustomMain");
@@ -594,11 +594,11 @@ jQuery(document).ready(function() {
 
     // Back to Catalogue button
 	jQuery(".ButtonRowFloatL b:first").remove();
-	
+
     var btnBackToCat = jQuery("#ctl00_content_CurrentCart_lnkBackToCatalog");
     btnBackToCat.removeClass().addClass("btn bntCustomMain").prepend("<i class='fa fa-chevron-circle-left' aria-hidden='true'></i> ");
-	
-	
+
+
 
     // Remove items from cart button
     var btn = jQuery("#ctl00_content_CurrentCart_btnRemoveItems");
@@ -742,7 +742,7 @@ jQuery(".MastHead").append('\
     </div>');
 
     // move Search
-    jQuery("#ctl00_ctl08_CatalogSearchBox_txtSearchText").appendTo(jQuery("#searchbox")).addClass("searchField").attr("value", "Search Catalogue...");
+    jQuery("#ctl00_ctl08_CatalogSearchBox_txtSearchText").appendTo(jQuery("#searchbox")).removeClass().addClass("form-control searchField").attr("value", "Search Catalogue...");
 
 
 
