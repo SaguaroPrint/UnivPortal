@@ -225,10 +225,11 @@ body {
     margin: 0 0 5px;
     padding: 10px;
 }
-
+/*
 #ctl00_content_CartShipping_pnlShippingAction {
 	box-shadow: rgb(34, 34, 34) 1px 2px 12px 0px;
 }
+*/
 
 select[name="ctl00$content$TextUserAttributeList$CtlUserPropertiesSecurityQuestion$ddlSecurityQuestion"] {
     width: 300px;

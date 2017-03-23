@@ -119,6 +119,21 @@ text-align: center;
   display: none;
 }
 */
+.bntCustomMain {
+
+	background-color: #53667a !important;
+    border-color: #404e5c !important;
+	padding: 6px 12px !important;
+	color: white !important;
+	font-size: 14px;
+
+}
+
+.bntCustomMain:hover{
+	
+	background-color: #3f919c;
+    border-color: #3f919c;
+}
 
 </style>
 
@@ -442,11 +457,14 @@ jQuery(document).ready(function() {
 
     // Continue button
     var btn = jQuery("#ctl00_content_CartShipping_btnContinue");
-    btn.removeClass().addClass("btn btn-lg btn-success btnWhiteText");
+	var btnContinueText = btn.text().replace("»","");
+	btn.text(btnContinueText);
+    btn.removeClass().addClass("btn btn-success btnWhiteText").append(" <i class='fa fa-chevron-circle-right' aria-hidden='true'></i>");
+	
 
     // Back button
     btn = jQuery("#ctl00_content_CartShipping_btnBack");
-    btn.removeClass().addClass("angBtnWhite");
+    btn.removeClass().addClass("btn bntCustomMain").prepend("<i class='fa fa-chevron-circle-left' aria-hidden='true'></i> ");
 
     // Remove button
     btn = jQuery("#ctl00_content_CartShipping_btnRemoveItems");
@@ -468,12 +486,17 @@ jQuery(document).ready(function() {
     //  *************** Invoicing page *********************
 
     // Continue button
-    var btn = jQuery("#ctl00_content_CartBilling_btnContinue");
-    btn.removeClass().addClass("btn btn-lg btn-success btnWhiteText");
+	var btnContinue = jQuery("#ctl00_content_CartBilling_btnContinue");
+	var btnContinueText = btnContinue.text().replace("»","");
+	btnContinue.text(btnContinueText);
+	
+    
+    btnContinue.removeClass().addClass("btn btn-success btnWhiteText").append(" <i class='fa fa-chevron-circle-right' aria-hidden='true'></i>").prepend("<i class='fa fa-shopping-cart' aria-hidden='true'></i> ");
 
+	
     // Back button
     btn = jQuery("#ctl00_content_CartBilling_btnBack");
-    btn.removeClass().addClass("angBtnWhite");
+    btn.removeClass().addClass("btn bntCustomMain").prepend("<i class='fa fa-chevron-circle-left' aria-hidden='true'></i> ");
 
     // Remove button
     btn = jQuery("#ctl00_content_CartBilling_btnRemoveItems");
@@ -544,7 +567,7 @@ jQuery(document).ready(function() {
 
     // re-style Complete order button
     var btnOrderPrint = jQuery("#ctl00_content_CartConfirm_btnContinue");
-    btnOrderPrint.removeClass().addClass("btn btn-lg btn-success btnWhiteText");
+    btnOrderPrint.removeClass().addClass("btn btn-success btnWhiteText").append(" <i class='fa fa-chevron-circle-right' aria-hidden='true'></i>").prepend("<i class='fa fa-shopping-cart' aria-hidden='true'></i> ");
 
     // re-syle back button
     var btnBack = jQuery("#ctl00_content_CartConfirm_btnBack");
@@ -556,16 +579,26 @@ jQuery(document).ready(function() {
 
     // *********** Cart page ***********************
     // Checkout button
+		
     var btnCheckout = jQuery("#ctl00_content_CurrentCart_btnOrderCart");
-    btnCheckout.removeClass().addClass("btn btn-success btnWhiteText");
+	var btnCheckoutText = btnCheckout.text().replace("»","");
+	btnCheckout.text(btnCheckoutText);
+	btnCheckout.removeClass().addClass("btn btn-success btnWhiteText").append(" <i class='fa fa-chevron-circle-right' aria-hidden='true'></i>").prepend("<i class='fa fa-shopping-cart' aria-hidden='true'></i> ");
 
+	
     // Save Bascket button
     var btnSaveCart = jQuery("#ctl00_content_CurrentCart_btnSaveCart");
-    btnSaveCart.removeClass().addClass("btn btn-info bntCustomMain");
+    btnSaveCart.removeClass().addClass("btn bntCustomMain");
+	//var btnSaveCartText = btnSaveCart.text();
+	btnSaveCart.prepend("<i class='fa fa-shopping-basket' aria-hidden='true'></i> ");
 
     // Back to Catalogue button
+	jQuery(".ButtonRowFloatL b:first").remove();
+	
     var btnBackToCat = jQuery("#ctl00_content_CurrentCart_lnkBackToCatalog");
-    btnBackToCat.removeClass().addClass("btn btn-info bntCustomMain");
+    btnBackToCat.removeClass().addClass("btn bntCustomMain").prepend("<i class='fa fa-chevron-circle-left' aria-hidden='true'></i> ");
+	
+	
 
     // Remove items from cart button
     var btn = jQuery("#ctl00_content_CurrentCart_btnRemoveItems");
@@ -616,7 +649,7 @@ jQuery(document).ready(function() {
     tdElem.insertAfter(lastTd);
     tdElem.append(srchBtn);
 
-    srchBtn.removeClass().addClass("btn btn-sm bntCustomMain");
+    srchBtn.removeClass().addClass("btn btn-sm bntCustomMain").prepend("<i class='fa fa-search' aria-hidden='true'></i> ");
     tdElem.css("vertical-align", "middle");
 
     // set width for search box
