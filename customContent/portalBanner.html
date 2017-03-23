@@ -378,13 +378,17 @@ jQuery(document).ready(function() {
     var instr = jQuery("#ctl00_content_CtlAddToCart_ProductDescription_Stringcontrol2");
     instr.before(instrIcon);
     instr.remove();
+	
+	//remove Grey background from shoping basket table
+	
+	jQuery(".ContentBoxGrey").removeClass("ContentBoxGrey");
 
     // remove classes for buttons container
     jQuery("#Table5").removeClass();
 
     // re-style button Order Print
     var btnOrderPrint = jQuery("#ctl00_content_CtlAddToCart_ProductOrderInfoController_AddToCartActionBox_mAddToCartAction_btnAddToCart");
-    btnOrderPrint.removeClass().addClass("btn btn-lg btn-success btnWhiteText");
+    btnOrderPrint.removeClass().addClass("btn btn-success btnWhiteText");
 
     // re-style button Download or Email
     var btnOrderPrint = jQuery("#btnDigitalAssetOrder");
@@ -553,15 +557,15 @@ jQuery(document).ready(function() {
     // *********** Cart page ***********************
     // Checkout button
     var btnCheckout = jQuery("#ctl00_content_CurrentCart_btnOrderCart");
-    btnCheckout.removeClass().addClass("btn btn-lg btn-success btnWhiteText");
+    btnCheckout.removeClass().addClass("btn btn-success btnWhiteText");
 
     // Save Bascket button
     var btnSaveCart = jQuery("#ctl00_content_CurrentCart_btnSaveCart");
-    btnSaveCart.removeClass().addClass("angBtnWhite");
+    btnSaveCart.removeClass().addClass("btn btn-info bntCustomMain");
 
     // Back to Catalogue button
     var btnBackToCat = jQuery("#ctl00_content_CurrentCart_lnkBackToCatalog");
-    btnBackToCat.removeClass().addClass("btn btn-info");
+    btnBackToCat.removeClass().addClass("btn btn-info bntCustomMain");
 
     // Remove items from cart button
     var btn = jQuery("#ctl00_content_CurrentCart_btnRemoveItems");
@@ -612,7 +616,7 @@ jQuery(document).ready(function() {
     tdElem.insertAfter(lastTd);
     tdElem.append(srchBtn);
 
-    srchBtn.removeClass().addClass("btn btn-sm btn-info");
+    srchBtn.removeClass().addClass("btn btn-sm bntCustomMain");
     tdElem.css("vertical-align", "middle");
 
     // set width for search box

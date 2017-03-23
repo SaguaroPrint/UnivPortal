@@ -413,6 +413,32 @@ select[name="ctl00$content$TextUserAttributeList$CtlUserPropertiesSecurityQuesti
   float: none;
   font-size: 18px;
 }
+
+/* Buttons redesign */
+
+.bntCustomMain {
+
+	background-color: #53667a !important;
+    border-color: #404e5c !important;
+	padding: 6px 12px !important;
+	color: white !important;
+	font-size: 14px;
+
+}
+
+.bntCustomMain:hover{
+	
+	background-color: #3f919c;
+    border-color: #3f919c;
+}
+
+.btnCustomCTA {
+
+
+}
+
+
+/*--------------------*/
 /*
 input[type=text] {
   font-size: 14px !important;
