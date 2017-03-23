@@ -645,3 +645,19 @@ text-align: center;
 .ColLeft {
     width: 50%;
 }
+/*Shopping bag /tab modified "Current and Saved"*/
+
+.Tab, .CartTab {
+	white-space: nowrap;
+    padding-left: 18px;
+    padding-right: 18px;
+    font-weight: bold;
+    font-size: 13px;
+    text-align: center;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a:focus, a:hover {
+	color: #23527c;
+}
