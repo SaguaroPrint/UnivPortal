@@ -558,6 +558,11 @@ text-align: center;
 	-moz-box-shadow: 0 0 5px rgba(204,204,204,.5);
 	box-shadow: 0 0 5px rgba(204,204,204,.5);
 }
+
+#searchbox span input:first-child {
+  display: none;
+}
+
 /*
 #searchicon{
 
