@@ -543,9 +543,9 @@ text-align: center;
 	-moz-border-radius: 1px;
 	border-radius: 5px;
 
-	-webkit-transition: all .5s;
-	-moz-transition: all .5s;
-	transition: all .5s;
+	-webkit-transition: all .5s !important;
+	-moz-transition: all .5s !important;
+	transition: all .5s !important;
   color: white !important;
 }
 
