@@ -249,27 +249,27 @@ jQuery(document).ready(function() {
 
 
 
-	mccMenuLeftCart = jQuery(".NavTop > div:first");
+  // hide old menu
+  mccMenuLeftCart = jQuery(".NavTop > div:first");
 	mccMenuLeftCart.css("display", "none");
 
     //Add logo and Text
 	navTop.append(logoImg);
-  //navTop.append(logoTxt);
-
-
+  //navTop.append(log oTxt);
 
 	var basketItems = jQuery("#ctl00_ctl08_lnkCart");
 
 	var ulMenu = jQuery("<ul></ul>").addClass("nav navbar-nav").css("float", "right").attr("id", "mainMenu");
-	ulMenu.append("<li class='active'><a href='https://marcomcentral.app.pti.com/printone/home.aspx?uigroup_id=26727'>Home</a></li>");
-	ulMenu.append("<li><a href='https://marcomcentral.app.pti.com/printone/catalog.aspx?uigroup_id=26727'>Catalogue</a></li>");
-	ulMenu.append("<li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/cart.aspx?uigroup_id=26727'>Basket <span class='glyphicon glyphicon-shopping-cart'></span> " + basketItems.html() + "</a></li>");
+	ulMenu.append("<li id='mainMenuHome' class='active'><a href='https://marcomcentral.app.pti.com/printone/home.aspx?uigroup_id=26727'>Home</a></li>");
+	ulMenu.append("<li id='mainMenuCatalogue'><a href='https://marcomcentral.app.pti.com/printone/catalog.aspx?uigroup_id=26727'>Catalogue</a></li>");
+	ulMenu.append("<li id='mainMenuCart'><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/cart.aspx?uigroup_id=26727'>Basket <span class='glyphicon glyphicon-shopping-cart'></span> " + basketItems.html() + "</a></li>");
 
-	ulMenu.append("<li id='dropdown-submenu' class='dropdown'><a href='#' class='dropdown-toggle' data-toggle='dropdown'>Mister Student <span class='caret'></span></a><ul id='dropdown-submenu-holder' class='dropdown-menu'><li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/profile.aspx?uigroup_id=26727&mode=1'>My Profile</a></li><li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/manageOrders.aspx?uigroup_id=26727'>Order Manager</a></li><li><a href='javascript:openDownloadHistoryModal();'>Download History</a></li></ul></li>");
+  var username = jQuery("#ctl00_ctl08_spUserName").text();
+	ulMenu.append("<li id='dropdown-submenu' class='dropdown'><a href='#' class='dropdown-toggle' data-toggle='dropdown'>" + username + " <span class='caret'></span></a><ul id='dropdown-submenu-holder' class='dropdown-menu'><li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/profile.aspx?uigroup_id=26727&mode=1'>My Profile</a></li><li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/manageOrders.aspx?uigroup_id=26727'>Order Manager</a></li><li><a href='javascript:openDownloadHistoryModal();'>Download History</a></li></ul></li>");
 	ulMenuLogOutA = jQuery("<a></a>");
 	ulMenuLogOutA.attr("href", "javascript:__doPostBack('ctl00$ctl08$btnLogOut',''); window.location.href = 'https://ricoheurope.github.io'");
 	ulMenuLogOutA.html("Log out");
-	ulMenuLogOutLi = jQuery("<li></li>");
+	ulMenuLogOutLi = jQuery("<li id='mainMenuLogout'></li>");
 	ulMenuLogOutLi.append(ulMenuLogOutA);
 	ulMenu.append(ulMenuLogOutLi);
 	userDropdownSubmenu = ulMenu.find("#dropdown-submenu-holder");
@@ -284,6 +284,14 @@ jQuery(document).ready(function() {
 		userDropdownSubmenu.css("display", "inline");
 		event.stopPropagation();
 	});
+
+
+    // remove User menu (for guest)
+    if (jQuery("#ctl00_ctl08_lblUserName").text() == "Guest User") {
+      jQuery("#mainMenuHome").remove();
+      jQuery("#mainMenuCatalogue").remove();
+      jQuery("#dropdown-submenu").remove();
+    }
 
 	/*
 	navTop.append(" \
@@ -305,13 +313,6 @@ jQuery(document).ready(function() {
     //remove DOM elements
     //jQuery("#ctl00_ctl08_CatalogSearchBox_txtSearchText").remove();
     //jQuery(".spSearch").remove();
-
-    // remove User menu (for guest)
-    if (jQuery("#ctl00_ctl08_lblUserName").text() == "Guest User") {
-      jQuery("#ctl00_ctl08_lblUserName").remove();
-      jQuery("#ctl00_ctl08_imgDivider1").remove();
-      jQuery("#ctl00_ctl08_spUserName").remove();
-    }
 
     //Main Menu modifications
     var mccMenuLeftCart = jQuery(".NavTop > div").children().last();
