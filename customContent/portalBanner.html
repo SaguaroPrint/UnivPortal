@@ -608,7 +608,7 @@ jQuery(document).ready(function() {
     var btn = jQuery("#ctl00_content_CurrentCart_btnUpdate");
     btn.removeClass().addClass("btn btn-sm btn-default angBtnWhiteGreen");
 
-    var el = document.evaluate( '//*[@id="divMainContent"]/table[2]/tbody/tr', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
+    var el = document.evaluate( '//*[@id="divMainContent"]/table[2]/tbody/tr', document, null, 5, null ).singleNodeValue;
     if (el) {
         el.style.verticalAlign = "middle";
     }
