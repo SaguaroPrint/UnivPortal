@@ -639,7 +639,8 @@ text-align: center;
 
 /* Home page thumbnails */
 .SampleImage {
-    width: 100%;
+    /*width: 100%;*/
+    width: 300px;
     height: 200px;
     object-fit: cover;
     object-position: 0 0;
