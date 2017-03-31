@@ -20,7 +20,7 @@
 		//
 		h3.append(a);
 		caption.append(h3);
-		caption.append(smallP);
+		//caption.append(smallP);
 
 		// **
 		var div = jQuery("<div></div>").addClass("gallery-img");
