@@ -609,10 +609,12 @@ jQuery(document).ready(function() {
     var btn = jQuery("#ctl00_content_CurrentCart_btnUpdate");
     btn.removeClass().addClass("btn btn-sm btn-default angBtnWhiteGreen");
 
+/* IE issue
     var el = document.evaluate( '//*[@id="divMainContent"]/table[2]/tbody/tr', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
     if (el) {
         el.style.verticalAlign = "middle";
     }
+*/
 
     // ***** Current cart - add spacing
     // add space to left
@@ -665,14 +667,8 @@ jQuery(document).ready(function() {
     tableTds.css("padding", "5px");
 
     // remove space under search box
-    var el = document.evaluate( '//*[@id="divSearchCart"]/table/tbody/tr/td[3]/text()', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
-    if (el) {
-        el.remove();
-    }
-/*
-    var el = jQuery("#divSearchCart > table > tbody > tr > td:eq(3) text()");
-    el.remove();
-*/
+    var searchInput = jQuery("#ctl00_content_CurrentCart_txtSearchText");
+    searchInput.parent().html(searchInput);
 
     // ******** Saved cart **********
     // Add Selected to Shopping Basket button
@@ -707,25 +703,28 @@ jQuery(document).ready(function() {
 
     // custom security question
     var el = jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_txtCustomQuestion");
-    el.removeClass.addClass("form-control");
+    el.removeClass().addClass("form-control");
 
     // security question answer
     el = jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_txtAnswer");
-    el.removeClass.addClass("form-control");
-    el.css("width", "300px;");
-
+    el.removeClass().addClass("form-control");
+    el.css({"width" : "300px",
+            "display": "initial",
+            "margin-top": "5px"
+            });
     //confirm answer
     el = jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_txtConfirmAnswer");
-    el.removeClass.addClass("form-control");
-    el.css("width", "300px;");
+    el.removeClass().addClass("form-control");
+    el.css({"width" : "300px",
+            "display": "initial",
+            "margin-top": "5px"
+            });
 
-
-
-    // align security question
-    var row = jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_SecurityQuestionSelect").parent();
-    row.css("vertical-align", "middle");
-
-
+    // align security questions
+    jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_trSelectQuestion").css("vertical-align", "middle");
+    jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_trCustomQuestion").css("vertical-align", "middle");
+    jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_trAnswer").css("vertical-align", "middle");
+    jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_trConfirmAnswer").css("vertical-align", "middle");
 
 	/*
     // add table shadow

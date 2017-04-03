@@ -1,5 +1,5 @@
 	jQuery(window).on('load', function() {
-			
+
 			function getReasCookies() {
 				var reasCookies = {};
 				var cookie = document.cookie;
@@ -17,11 +17,11 @@
 				}
 				return reasCookies;
 			}
-			
+
 			function removeOriginalCatalog() {
 				jQuery('#catalogContent').remove();
 			}
-			
+
 			var gallery = {
 				test: function() {
 					var c = getReasCookies();
@@ -37,29 +37,32 @@
 					var gridGallery = newGridGallery();
 					var ul = gridGallery.ul;
 					var imageGallery = isotopeSection(newFilter(catalog), gridGallery.galleryCol);
-					
+
 					for (var category in catalog) {
 						if (category != "*") {
 							var products = JSON.parse(unescape(c["reasCategory" + category]));
 							for (var i = 0; i < products.items.length; i++) {
 								var product = JSON.parse(unescape(c[products.items[i]]));
-								var li = newLi(product.js ,product.image, product.description, product.name, category);	
+								var li = newLi(product.js ,product.image, product.description, product.name, category);
 								ul.append(li);
 							}
 						}
 					}
-					
-					var result = document.evaluate('//*[@id="ENUSmain"]/tbody/tr/td/div[1]', 
+
+					/*
+					var result = document.evaluate('//*[@id="ENUSmain"]/tbody/tr/td/div[1]',
 						document, null, 5, null);
-					var el = result.iterateNext();	
+					var el = result.iterateNext();
+					*/
+					var el = jQuery("#ctl00_content_RadScriptManager1").siblings("div").first();
 					jQuery(el).append(imageGallery);
 					removeOriginalCatalog();
 					loadIsotope();
 					document.getElementById('ENUSmain').style.visibility = 'visible';
 				}
 			}
-				
-			var data = gallery.test();	
+
+			var data = gallery.test();
 			if (data.ready)
 				gallery.draw(data.c);
 			else {
@@ -68,7 +71,7 @@
 					gallery.draw(c);
 				})
 			}
-			
+
 			function getItems(data) {
 				var items;
 				if (data) {
@@ -79,10 +82,10 @@
 				}
 				var links = items.find('a[id$="SelectName"]');
 				var images = items.find('input[id$="SelectItem"]');
-				var descriptions = items.find('span[id$="Description"]');	
+				var descriptions = items.find('span[id$="Description"]');
 				return {i: items, l: links, im: images, d: descriptions};
 			}
-			
+
 			function getCatalogItems(catalogId, filter, category) {
 				theForm.__EVENTTARGET.value = catalogId.replace(/_/g, '$');
 				return jQuery.ajax({
@@ -109,17 +112,17 @@
 					done: function(data) {
 					}
 				});
-			}			
-			
+			}
+
 			function createGalleryCookieData() {
-	
+
 				var fetchItems = [];
 				var filters = {}
 				filters["*"] = "ALL";
-			
+
 				var obj = getItems();
 				var reasCatalog = "{\"*\":\"ALL\"";
-			
+
 				for(var i=0; i < obj.l.length; i++) {
 					var category = obj.l[i].innerHTML;
 					var inner = category;
@@ -130,7 +133,7 @@
 				}
 				reasCatalog += "}";
 				document.cookie = "reasCatalog=" + escape(reasCatalog);
-				
+
 				return fetchItems;
-			}			
-	})	
+			}
+	})
