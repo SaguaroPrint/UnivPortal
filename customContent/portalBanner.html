@@ -705,9 +705,27 @@ jQuery(document).ready(function() {
     var div = jQuery("#ctl00_content_TextUserAttributeList_divButtons");
     div.css("background-color", "#3f919c");
 
+    // custom security question
+    var el = jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_txtCustomQuestion");
+    el.removeClass.addClass("form-control");
+
+    // security question answer
+    el = jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_txtAnswer");
+    el.removeClass.addClass("form-control");
+    el.css("width", "300px;");
+
+    //confirm answer
+    el = jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_txtConfirmAnswer");
+    el.removeClass.addClass("form-control");
+    el.css("width", "300px;");
+
+
+
     // align security question
     var row = jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_SecurityQuestionSelect").parent();
     row.css("vertical-align", "middle");
+
+
 
 	/*
     // add table shadow
