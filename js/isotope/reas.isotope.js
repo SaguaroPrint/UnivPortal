@@ -33,16 +33,16 @@
 					}
 				},
 				draw: function(c) {
-					var catalog = JSON.parse(c["reasCatalog"].replace(/%/g, '\"'));
+					var catalog = JSON.parse(unescape(c["reasCatalog"]));
 					var gridGallery = newGridGallery();
 					var ul = gridGallery.ul;
 					var imageGallery = isotopeSection(newFilter(catalog), gridGallery.galleryCol);
 
 					for (var category in catalog) {
 						if (category != "*") {
-							var products = JSON.parse(c["reasCategory" + category].replace(/%/g, '\"'));
+							var products = JSON.parse(unescape(c["reasCategory" + category]));
 							for (var i = 0; i < products.items.length; i++) {
-								var product = JSON.parse(c[products.items[i]].replace(/%/g, '\"').replace(/^/g, '\''));
+								var product = JSON.parse(unescape(c[products.items[i]]));
 								var li = newLi(product.js ,product.image, product.description, product.name, category);
 								ul.append(li);
 							}
@@ -101,13 +101,13 @@
 							if (js) {
 								var description = products.d[i].innerHTML;
 								var image = products.im[i].src;
-								var item = "{ \"name\":\"" + name + "\",\"description\":\"" + description + "\",\"js\":\"" + js.replace(/\"/g, '^') + "\",\"image\":\"" + image + "\"} ";
-								document.cookie = "reasProduct" + name.replace(/\s/g, '') + "=" + item.replace(/\"/g, '%');
+								var item = "{ \"name\":\"" + name + "\",\"description\":\"" + description + "\",\"js\":\"" + js.replace(/\"/g, '\'') + "\",\"image\":\"" + image + "\"} ";
+								document.cookie = "reasProduct" + name.replace(/\s/g, '') + "=" + escape(item);
 								reasCategory += "\"reasProduct" + name.replace(/\s/g, '') + "\"" + ((i == (products.l.length - 1))?"":",");
 							}
 						}
 						reasCategory += "]}";
-						document.cookie = "reasCategory" + filter + "=" + reasCategory.replace(/\"/g, '%');
+						document.cookie = "reasCategory" + filter + "=" + escape(reasCategory);
 					},
 					done: function(data) {
 					}
@@ -132,7 +132,7 @@
 					fetchItems.push(getCatalogItems(obj.l[i].id, filter, inner));
 				}
 				reasCatalog += "}";
-				document.cookie = "reasCatalog=" + reasCatalog.replace(/\"/g, '%');
+				document.cookie = "reasCatalog=" + escape(reasCatalog);
 
 				return fetchItems;
 			}
