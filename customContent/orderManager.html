@@ -1,0 +1,104 @@
+<script type="text/javascript">
+
+jQuery(document).ready(function() {
+  // ***************** Order Manager / Manage Orders *****************************
+
+    // hide old table
+    jQuery("#CtlCart").css("display","none");
+
+    var searchDiv = jQuery("<div id='searchDiv' class='col-md-12'></div>");
+    searchDiv.css({
+        "background-color" : "#eeeeee"
+        });
+    searchDiv.insertAfter("#CtlCart");
+
+    // move 'Search for' text
+    var el = jQuery("#ctl00_content_OrderSearchAdvanced_stringcontrol1");
+    el.appendTo(searchDiv);
+
+    // move 'Orders' radio and label
+    var ordersGroup = jQuery("<span id='ordersGroup'></span>");
+    ordersGroup.css({
+          "margin" : "10px"
+        });
+    var label = jQuery("#ctl00_content_OrderSearchAdvanced_ddlSearchTypes_0").next();
+    jQuery("#ctl00_content_OrderSearchAdvanced_ddlSearchTypes_0").css("margin-right","5px").appendTo(ordersGroup);
+    label.appendTo(ordersGroup);
+    ordersGroup.appendTo(searchDiv);
+
+    // move Order No
+    el = jQuery("#ctl00_content_OrderSearchAdvanced_ddlSearchFields");
+    el.css({
+          "width" : "150px",
+          "margin" : "10px"
+        });
+    el.appendTo(searchDiv);
+
+    // move Display by Order
+    el = jQuery("#ctl00_content_OrderSearchAdvanced_ddlResultsFormat");
+    el.css({
+          "width" : "150px",
+          "margin" : "10px"
+        });
+    el.appendTo(searchDiv);
+
+    // move 'From Date'
+    //jQuery("#ctl00_content_OrderSearchAdvanced_dateFrom").css("width", "300px").appendTo(searchDiv);
+    var fromDateGroup = jQuery("<span id='fromDateGroup'></span>");
+    fromDateGroup.css({
+          "margin" : "10px",
+          "width" : "100px"
+        });
+    // label
+    jQuery("#ctl00_content_OrderSearchAdvanced_dateFrom_lblText").appendTo(fromDateGroup);
+    // dropdown
+    jQuery("#ctl00_content_OrderSearchAdvanced_dateFrom_txtInput").css("display", "inline").appendTo(fromDateGroup);
+    // icon
+    jQuery('<i class="fa fa-calendar" aria-hidden="true"></i>').appendTo(fromDateGroup);
+    fromDateGroup.appendTo(searchDiv);
+
+    // move 'To Date'
+    //jQuery("#ctl00_content_OrderSearchAdvanced_dateTo").css("width", "300px").appendTo(searchDiv);
+    var toDateGroup = jQuery("<span id='toDateGroup'></span>");
+    toDateGroup.css({
+        "margin" : "10px",
+        "width" : "100px"
+        });
+    // label
+    jQuery("#ctl00_content_OrderSearchAdvanced_dateTo_lblText").appendTo(toDateGroup);
+    // dropdown
+    jQuery("#ctl00_content_OrderSearchAdvanced_dateTo_txtInput").css("display", "inline").appendTo(toDateGroup);
+    // icon
+    jQuery('<i class="fa fa-calendar" aria-hidden="true"></i>').appendTo(toDateGroup);
+    toDateGroup.appendTo(searchDiv);
+
+    // move search input
+    el = jQuery("#ctl00_content_OrderSearchAdvanced_txtSearchText")
+    el.css({
+        "margin" : "10px",
+        "width" : "300px",
+        "display" : "inline"
+        });
+    el.appendTo(searchDiv);
+
+
+    // move status drop down
+    el = jQuery("#ctl00_content_OrderSearchAdvanced_ddlStatus");
+    el.css({
+        "margin" : "10px",
+        "width" : "300px"
+        });
+    el.appendTo(searchDiv);
+
+    // move search button
+    var btn = jQuery("#ctl00_content_OrderSearchAdvanced_btnSearch");
+    btn.css({
+        "margin" : "10px",
+        "display" : "inline-cell"
+        });
+    btn.removeClass().addClass("btn btn-primary");
+    btn.appendTo(searchDiv);
+	
+	
+});
+</script>
