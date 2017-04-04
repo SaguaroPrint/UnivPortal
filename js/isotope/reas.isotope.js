@@ -33,16 +33,16 @@
 					}
 				},
 				draw: function(c) {
-					var catalog = JSON.parse(LZString.decompress(unescape(c["reasCatalog"])));
+					var catalog = JSON.parse(c["reasCatalog"].replace(/%%/g, '\"'));
 					var gridGallery = newGridGallery();
 					var ul = gridGallery.ul;
 					var imageGallery = isotopeSection(newFilter(catalog), gridGallery.galleryCol);
 
 					for (var category in catalog) {
 						if (category != "*") {
-							var products = JSON.parse(LZString.decompress(unescape(c["reasCategory" + category])));
+							var products = JSON.parse(c["reasCategory" + category].replace(/%%/g, '\"'));
 							for (var i = 0; i < products.items.length; i++) {
-								var product = JSON.parse(LZString.decompress(unescape(c[products.items[i]])));
+								var product = JSON.parse(c[products.items[i]].replace(/%%/g, '\"'));
 								var li = newLi(product.js ,product.image, product.description, product.name, category);
 								ul.append(li);
 							}
@@ -102,12 +102,12 @@
 								var description = products.d[i].innerHTML;
 								var image = products.im[i].src;
 								var item = "{ \"name\":\"" + name + "\",\"description\":\"" + description + "\",\"js\":\"" + js.replace(/\"/g, '\'') + "\",\"image\":\"" + image + "\"} ";
-								document.cookie = "reasProduct" + name.replace(/\s/g, '') + "=" + LZString.compress(escape(item));
+								document.cookie = "reasProduct" + name.replace(/\s/g, '') + "=" + item.replace(/\"/g, '%%');
 								reasCategory += "\"reasProduct" + name.replace(/\s/g, '') + "\"" + ((i == (products.l.length - 1))?"":",");
 							}
 						}
 						reasCategory += "]}";
-						document.cookie = "reasCategory" + filter + "=" + LZString.compress(escape(reasCategory));
+						document.cookie = "reasCategory" + filter + "=" + reasCategory.replace(/\"/g, '%%');
 					},
 					done: function(data) {
 					}
@@ -132,7 +132,7 @@
 					fetchItems.push(getCatalogItems(obj.l[i].id, filter, inner));
 				}
 				reasCatalog += "}";
-				document.cookie = "reasCatalog=" + LZString.compress(escape(reasCatalog));
+				document.cookie = "reasCatalog=" + reasCatalog.replace(/\"/g, '%%');
 
 				return fetchItems;
 			}
