@@ -1,16 +1,25 @@
 <script type="text/javascript">
 
-jQuery(document).ready(function() {
-  // ***************** Order Manager / Manage Orders *****************************
+/****** Order Manager *********/
 
+jQuery(document).ready(function() {
     // hide old table
-    jQuery("#CtlCart").css("display","none");
+    jQuery("#CtlCart > thead").css("display","none");
+
+    jQuery("#CtlCartItems").css({
+        "border": "1px solid #BCBEC0"
+    })
+
+    jQuery("#CtlCart").css({
+        "border": "none"
+    })
+
 
     var searchDiv = jQuery("<div id='searchDiv' class='col-md-12'></div>");
     searchDiv.css({
         "background-color" : "#eeeeee"
         });
-    searchDiv.insertAfter("#CtlCart");
+    searchDiv.insertBefore("#CtlCart");
 
     // move 'Search for' text
     var el = jQuery("#ctl00_content_OrderSearchAdvanced_stringcontrol1");
@@ -54,7 +63,20 @@ jQuery(document).ready(function() {
     // dropdown
     jQuery("#ctl00_content_OrderSearchAdvanced_dateFrom_txtInput").css("display", "inline").appendTo(fromDateGroup);
     // icon
-    jQuery('<i class="fa fa-calendar" aria-hidden="true"></i>').appendTo(fromDateGroup);
+    //jQuery('<i class="fa fa-calendar" aria-hidden="true"></i>').appendTo(fromDateGroup);
+    el = jQuery("#ctl00_content_OrderSearchAdvanced_dateFrom");
+    el.css({
+        "display" : "inline-block"
+    });
+    el.appendTo(fromDateGroup);
+    // change loading gif position
+    jQuery("#ctl00_content_OrderSearchAdvanced_dateFrom_loadingContainer").removeClass().removeAttr("style").css({
+      "position": "",
+      "left": "",
+      "top": "",
+      "float": "right",
+      "z-index": "999"
+    });
     fromDateGroup.appendTo(searchDiv);
 
     // move 'To Date'
@@ -98,7 +120,7 @@ jQuery(document).ready(function() {
         });
     btn.removeClass().addClass("btn btn-primary");
     btn.appendTo(searchDiv);
-	
-	
+
+
 });
 </script>
