@@ -33,16 +33,16 @@
 					}
 				},
 				draw: function(c) {
-					var catalog = JSON.parse(unescape(c["reasCatalog"]));
+					var catalog = JSON.parse(LZString.decompress(c["reasCatalog"]));
 					var gridGallery = newGridGallery();
 					var ul = gridGallery.ul;
 					var imageGallery = isotopeSection(newFilter(catalog), gridGallery.galleryCol);
 
 					for (var category in catalog) {
 						if (category != "*") {
-							var products = JSON.parse(unescape(c["reasCategory" + category]));
+							var products = JSON.parse(LZString.decompress(c["reasCategory" + category]));
 							for (var i = 0; i < products.items.length; i++) {
-								var product = JSON.parse(unescape(c[products.items[i]]));
+								var product = JSON.parse(LZString.decompress(c[products.items[i]]));
 								var li = newLi(product.js ,product.image, product.description, product.name, category);
 								ul.append(li);
 							}
@@ -102,12 +102,12 @@
 								var description = products.d[i].innerHTML;
 								var image = products.im[i].src;
 								var item = "{ \"name\":\"" + name + "\",\"description\":\"" + description + "\",\"js\":\"" + js.replace(/\"/g, '\'') + "\",\"image\":\"" + image + "\"} ";
-								document.cookie = "reasProduct" + name.replace(/\s/g, '') + "=" + escape(item);
+								document.cookie = "reasProduct" + name.replace(/\s/g, '') + "=" + LZString.compress(item);
 								reasCategory += "\"reasProduct" + name.replace(/\s/g, '') + "\"" + ((i == (products.l.length - 1))?"":",");
 							}
 						}
 						reasCategory += "]}";
-						document.cookie = "reasCategory" + filter + "=" + escape(reasCategory);
+						document.cookie = "reasCategory" + filter + "=" + LZString.compress(reasCategory);
 					},
 					done: function(data) {
 					}
@@ -132,7 +132,7 @@
 					fetchItems.push(getCatalogItems(obj.l[i].id, filter, inner));
 				}
 				reasCatalog += "}";
-				document.cookie = "reasCatalog=" + escape(reasCatalog);
+				document.cookie = "reasCatalog=" + LZString.compress(reasCatalog);
 
 				return fetchItems;
 			}
