@@ -690,4 +690,5 @@ text-align: center;
 /* Mange orders table head padding */
 .CtlCartItems thead td {
     padding: 5px 2px 5px 5px;
+    font-size: initial;
 }
