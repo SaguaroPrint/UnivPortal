@@ -700,7 +700,6 @@ text-align: center;
 
 /* Manage orders loading icon */
 #ctl00_content_OrderSearchAdvanced_dateFrom_loadingContainer, #ctl00_content_OrderSearchAdvanced_dateTo_loadingContainer {
-  position: relative;
-  left: 20px;
-  top: 0px;
+  left: 20px !important;
+  top: 0px !important;
 }
