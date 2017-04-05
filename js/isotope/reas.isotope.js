@@ -43,7 +43,7 @@
 							var products = JSON.parse(c["reasCategory" + category].replace(/%/g, '\"'));
 							for (var i = 0; i < products.items.length; i++) {
 								var itemp = c[products.items[i]];
-								itemp = itemp.replace(/^/g, '\'');
+								itemp = itemp.replace(/>/g, '\'');
 								itemp = itemp.replace(/%/g, '\"');
 								var product = JSON.parse(itemp);
 								var li = newLi(product.js ,product.image, product.description, product.name, category);
@@ -104,7 +104,7 @@
 							if (js) {
 								var description = products.d[i].innerHTML;
 								var image = products.im[i].src;
-								var item = "{ \"name\":\"" + name + "\",\"description\":\"" + description + "\",\"js\":\"" + js.replace(/\'/g, '^') + "\",\"image\":\"" + image + "\"} ";
+								var item = "{ \"name\":\"" + name + "\",\"description\":\"" + description + "\",\"js\":\"" + js.replace(/\'/g, '>') + "\",\"image\":\"" + image + "\"} ";
 								document.cookie = "reasProduct" + name.replace(/\s/g, '') + "=" + item.replace(/\"/g, '%');
 								reasCategory += "\"reasProduct" + name.replace(/\s/g, '') + "\"" + ((i == (products.l.length - 1))?"":",");
 							}
