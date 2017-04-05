@@ -104,7 +104,7 @@
 							if (js) {
 								var description = products.d[i].innerHTML;
 								var image = products.im[i].src;
-								var item = "{ \"name\":\"" + name + "\",\"description\":\"" + description + "\",\"js\":\"" + js.replace(/\"/g, '^') + "\",\"image\":\"" + image + "\"} ";
+								var item = "{ \"name\":\"" + name + "\",\"description\":\"" + description + "\",\"js\":\"" + js.replace(/\'/g, '^') + "\",\"image\":\"" + image + "\"} ";
 								document.cookie = "reasProduct" + name.replace(/\s/g, '') + "=" + item.replace(/\"/g, '%');
 								reasCategory += "\"reasProduct" + name.replace(/\s/g, '') + "\"" + ((i == (products.l.length - 1))?"":",");
 							}
