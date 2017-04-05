@@ -686,3 +686,8 @@ text-align: center;
 #ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_trSelectQuestion, #ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_trCustomQuestion, #ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_trAnswer, #ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_trConfirmAnswer {
 	vertical-align: middle;
 }
+
+/* Mange orders table head padding */
+.CtlCartItems thead td {
+    padding: 5px 2px 5px 5px;
+}
