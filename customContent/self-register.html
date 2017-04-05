@@ -11,6 +11,7 @@ jQuery("#aspnetForm").prepend('\
             <p style="text-align:left"><i class="fa fa-info-circle" aria-hidden="true"></i> Attention: All the fields are required to complete the Registration.</p>\
             <hr style="height: 5px; border-top: 0; background: #c4e17f; border-radius: 5px; background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4); background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4); background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4); background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);">\
             <div class="row">\
+                <div class="col-sm-12 col-md-12" id="error_container" style="text-align: center;"></div>\
                 <div class="col-xs-12 col-sm-6 col-md-6">\
                     <div class="form-group">\
                         <input type="text" name="ctl00$content$SelfRegFlow$SelfRegForm$txtFirstName" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1"> </div>\
@@ -88,6 +89,10 @@ jQuery("#CtlHead").css("border-bottom","0");
 jQuery("#PageType01").css("background-color","none");
 jQuery("#CtlFooter").css("position","absolute bottom");
 jQuery(".FooterBottom").css("background-color","#eaeaea");
+
+// link old inputs
+jQuery("#first_name").replaceWith(jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_txtFirstName"));
+jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvFirstName").appendTo(jQuery("#error_container"));
 
 });
 </script>
