@@ -674,6 +674,11 @@ jQuery(document).ready(function() {
     // Add Selected to Shopping Basket button
     var btn = jQuery("#ctl00_content_ManageShoppingLists_btnAddToCart");
     btn.removeClass().addClass("btn btn-success");
+
+    // remove space under search box
+    var searchInput = jQuery("#ctl00_content_ManageShoppingLists_txtSearchText");
+    searchInput.parent().html(searchInput);
+
 	/*
     // add table shadow
     if (btn.length > 0) {
@@ -688,7 +693,9 @@ jQuery(document).ready(function() {
     // Main table shadow
     //jQuery(".FeaturedProducts").css("-webkit-box-shadow", "1px 2px 12px 0px #222");
 	  jQuery(".FeaturedProducts").css("border", "transparent");
+
     // *********** My profile page *************
+    // buttons style update
     var btn = jQuery("#ctl00_content_TextUserAttributeList_btnContnue");
     btn.removeClass().addClass("btn btn-sm btn-default angBtnWhiteGreen");
 
@@ -697,6 +704,9 @@ jQuery(document).ready(function() {
 
     var div = jQuery("#ctl00_content_TextUserAttributeList_divButtons");
     div.css("background-color", "#3f919c");
+
+    // remove white space under the buttons
+    jQuery("#ctl00_content_SelfRegUpdateLayout > br").remove();
 
 /*
     // custom security question
