@@ -692,3 +692,15 @@ text-align: center;
     padding: 5px 2px 5px 5px;
     font-size: initial;
 }
+
+/* Manage orders error message position */
+#ctl00_content_OrderSearchAdvanced_dateTo_inputContainer {
+  display: inline;
+}
+
+/* Manage orders loading icon */
+#ctl00_content_OrderSearchAdvanced_dateFrom_loadingContainer, #ctl00_content_OrderSearchAdvanced_dateTo_loadingContainer {
+  position: relative;
+  left: 20px;
+  top: 0px;
+}
