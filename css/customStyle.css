@@ -722,3 +722,7 @@ span {
 #divSelectDownload, #divSelectEmail {
   margin-left: 5px;
 }
+
+#divPricingGridContainer {
+  margin-top: 10px;
+}
