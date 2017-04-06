@@ -667,7 +667,10 @@ jQuery(".MastHead").append('\
     </div>');
 
     // move Search
-    jQuery("#ctl00_ctl08_CatalogSearchBox_txtSearchText").appendTo(jQuery("#searchbox")).removeClass().addClass("form-control searchField").attr("value", "Search Catalogue...").css("display","inline");
+    //jQuery("#ctl00_ctl08_CatalogSearchBox_txtSearchText").appendTo(jQuery("#searchbox")).removeClass().addClass("form-control searchField").attr("value", "Search Catalogue...").css("display","inline");
+    //jQuery(".spSearch").appendTo(jQuery("#searchbox")).removeClass().addClass("form-control searchField").attr("value", "Search Catalogue...").css("display","inline");
+    jQuery(".spSearch").appendTo(jQuery("#searchbox"));
+    jQuery("#ctl00_ctl08_CatalogSearchBox_txtSearchText").addClass("TDSearchBox CatalogSearchBox tt-query form-control searchField").attr("value", "Search Catalogue...");
 
 
 
@@ -679,8 +682,5 @@ jQuery(".MastHead").append('\
 
     // display the page once all styling is applied
     jQuery("#ENUSmain").css("display", "table");
-
-    window.typeaheadHeader = '<span class="suggestionHeader"><a href="#" class="suggestionHeader advancedSearchLink" onclick="PerformCatalogSearch()">Advanced Search</a></span>';
-
 });
 </script>
