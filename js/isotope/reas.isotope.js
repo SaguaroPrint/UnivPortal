@@ -33,20 +33,20 @@
 					}
 				},
 				draw: function(c) {
-					var catalog = JSON.parse(c["reasCatalog"].replace(/%/g, '\"'));
+					var catalog = JSON.parse(c["reasCatalog"].replace(/~/g, '\"'));
 					var gridGallery = newGridGallery();
 					var ul = gridGallery.ul;
 					var imageGallery = isotopeSection(newFilter(catalog), gridGallery.galleryCol);
 
 					for (var category in catalog) {
 						if (category != "*") {
-							var products = JSON.parse(c["reasCategory" + category].replace(/%/g, '\"'));
+							var products = JSON.parse(c["reasCategory" + category].replace(/~/g, '\"'));
 							for (var i = 0; i < products.items.length; i++) {
 								var itemp = c[products.items[i]];
 								itemp = itemp.replace(/>/g, '\'');
 								itemp = itemp.replace(/~/g, '\"');
 								itemp = itemp.replace(/@/g, '=');
-								itemp = itemp.replace(/\|/g, ';');
+								itemp = itemp.replace(/^/g, ';');
 								var product = JSON.parse(itemp);
 								var li = newLi(product.js ,product.image, product.description, product.name, category);
 								ul.append(li);
@@ -110,13 +110,13 @@
 								item = item.replace(/\'/g, '>');
 								item = item.replace(/\"/g, '~');
 								item = item.replace(/=/g, '@');
-								item = item.replace(/;/g, '|');
+								item = item.replace(/;/g, '^');
 								document.cookie = "reasProduct" + name.replace(/\s/g, '') + "=" + item;
 								reasCategory += "\"reasProduct" + name.replace(/\s/g, '') + "\"" + ((i == (products.l.length - 1))?"":",");
 							}
 						}
 						reasCategory += "]}";
-						document.cookie = "reasCategory" + filter + "=" + reasCategory.replace(/\"/g, '%');
+						document.cookie = "reasCategory" + filter + "=" + reasCategory.replace(/\"/g, '~');
 					},
 					done: function(data) {
 					}
@@ -141,7 +141,7 @@
 					fetchItems.push(getCatalogItems(obj.l[i].id, filter, inner));
 				}
 				reasCatalog += "}";
-				document.cookie = "reasCatalog=" + reasCatalog.replace(/\"/g, '%');
+				document.cookie = "reasCatalog=" + reasCatalog.replace(/\"/g, '~');
 
 				return fetchItems;
 			}
