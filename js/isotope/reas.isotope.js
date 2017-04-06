@@ -43,7 +43,7 @@
 							var products = JSON.parse(c["reasCategory" + category].replace(/~/g, '\"'));
 							for (var i = 0; i < products.items.length; i++) {
 								var itemp = c[products.items[i]];
-								//itemp = itemp.replace(/>/g, '\'');
+								itemp = itemp.replace(/$/g, '\'');
 								itemp = itemp.replace(/~/g, '\"');
 								itemp = itemp.replace(/@/g, '=');
 								itemp = itemp.replace(/\^/g, ';');
@@ -102,7 +102,7 @@
 								var description = products.d[i].innerHTML;
 								var image = products.im[i].src;
 								var item = "{ \"name\":\"" + name + "\",\"description\":\"" + description + "\",\"js\":\"" + js + "\",\"image\":\"" + image + "\"} ";
-								//item = item.replace(/\'/g, '>');
+								item = item.replace(/\'/g, '$');
 								item = item.replace(/\"/g, '~');
 								item = item.replace(/=/g, '@');
 								item = item.replace(/;/g, '^');
