@@ -44,7 +44,7 @@
 							for (var i = 0; i < products.items.length; i++) {
 								var itemp = c[products.items[i]];
 								itemp = itemp.replace(/>/g, '\'');
-								itemp = itemp.replace(/%/g, '\"');
+								itemp = itemp.replace(/~/g, '\"');
 								itemp = itemp.replace(/@/g, '=');
 								itemp = itemp.replace(/\|/g, ';');
 								var product = JSON.parse(itemp);
@@ -108,7 +108,7 @@
 								var image = products.im[i].src;
 								var item = "{ \"name\":\"" + name + "\",\"description\":\"" + description + "\",\"js\":\"" + js + "\",\"image\":\"" + image + "\"} ";
 								item = item.replace(/\'/g, '>');
-								item = item.replace(/\"/g, '%');
+								item = item.replace(/\"/g, '~');
 								item = item.replace(/=/g, '@');
 								item = item.replace(/;/g, '|');
 								document.cookie = "reasProduct" + name.replace(/\s/g, '') + "=" + item;
