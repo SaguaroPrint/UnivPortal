@@ -46,6 +46,7 @@
 								itemp = itemp.replace(/>/g, '\'');
 								itemp = itemp.replace(/%/g, '\"');
 								itemp = itemp.replace(/@/g, '=');
+								item = item.replace(/|/g, ';');
 								var product = JSON.parse(itemp);
 								var li = newLi(product.js ,product.image, product.description, product.name, category);
 								ul.append(li);
@@ -109,6 +110,7 @@
 								item = item.replace(/\'/g, '>');
 								item = item.replace(/\"/g, '%');
 								item = item.replace(/=/g, '@');
+								item = item.replace(/;/g, '|');
 								document.cookie = "reasProduct" + name.replace(/\s/g, '') + "=" + item;
 								reasCategory += "\"reasProduct" + name.replace(/\s/g, '') + "\"" + ((i == (products.l.length - 1))?"":",");
 							}
