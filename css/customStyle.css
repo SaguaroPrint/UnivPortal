@@ -727,3 +727,7 @@ span {
 #ctl00_content_CtlAddToCart_ProductOrderInfoController_AddToCartActionBox_mItemQuantity_panelQty {
   margin-bottom: 10px;
 }
+
+#divPricingGridContainer > table > table {
+  margin-bottom: 10px;
+}
