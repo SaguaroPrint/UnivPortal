@@ -46,7 +46,7 @@
 								itemp = itemp.replace(/>/g, '\'');
 								itemp = itemp.replace(/~/g, '\"');
 								itemp = itemp.replace(/@/g, '=');
-								itemp = itemp.replace(/^/g, ';');
+								itemp = itemp.replace(/\^/g, ';');
 								var product = JSON.parse(itemp);
 								var li = newLi(product.js ,product.image, product.description, product.name, category);
 								ul.append(li);
