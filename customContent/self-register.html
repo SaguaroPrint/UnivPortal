@@ -1,5 +1,20 @@
+<style>
+.error-message {
+  padding: 5px;
+  margin-bottom: 5px;
+}
+</style>
+
 <script>
 jQuery( document ).ready(function(){
+
+// hide existing content
+jQuery("#ENUSmain").css("display", "none");
+jQuery("#CtlBody").css("display", "none");
+jQuery("#CtlHead > tbody").remove();
+jQuery(".NavTop").remove();
+
+// create new content
 jQuery("#aspnetForm").prepend('\
 <div class="container" style="margin-top: 50px; margin-bottom: 50px;">\
     <div class="row">\
@@ -9,58 +24,52 @@ jQuery("#aspnetForm").prepend('\
             <h2 style="text-align:center">Sign Up Today</h2>\
             <p style="text-align:left"><i class="fa fa-info-circle" aria-hidden="true"></i> Please ensure that your Internet Browser is set to accept cookies and that you refresh (reload) pages on every visit before continuing the sign-up process.</p>\
             <p style="text-align:left"><i class="fa fa-info-circle" aria-hidden="true"></i> Attention: All the fields are required to complete the Registration.</p>\
-            <hr style="height: 5px; border-top: 0; background: #c4e17f; border-radius: 5px; background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4); background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4); background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4); background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);">\
             <div class="row">\
-                <div class="col-sm-12 col-md-12" id="error_container" style="text-align: center; padding-bottom: 10px; display: grid"></div>\
+                <div class="col-sm-8 col-md-8 col-md-offset-2" id="error_container" style="text-align: center; padding-bottom: 10px; display: grid"></div>\
                 <div class="col-xs-12 col-sm-6 col-md-6">\
                     <div class="form-group">\
-                        <input type="text" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1"> </div>\
+                        <input type="text" id="first_name" placeholder="First Name"> </div>\
                 </div>\
                 <div class="col-xs-12 col-sm-6 col-md-6">\
                     <div class="form-group">\
-                        <input type="text" name="ctl00$content$SelfRegFlow$SelfRegForm$txtLastName" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">\
+                        <input type="text" id="last_name" placeholder="Last Name">\
                     </div>\
                 </div>\
             </div>\
             <div class="form-group">\
-                <input type="email" name="ctl00$content$SelfRegFlow$SelfRegForm$txtEmail" id="email" class="form-control input-lg" placeholder="Email Address (User ID)" tabindex="3">\
+                <input type="email" id="email" placeholder="Email Address (User ID)">\
             </div>\
             <div class="row">\
                 <div class="col-xs-12 col-sm-6 col-md-6">\
                     <div class="form-group">\
-                        <input type="password" name="ctl00$content$SelfRegFlow$SelfRegForm$txtPassword" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">\
+                        <input type="password" id="password" placeholder="Password">\
                     </div>\
                 </div>\
                 <div class="col-xs-12 col-sm-6 col-md-6">\
                     <div class="form-group">\
-                        <input type="password" name="ctl00$content$SelfRegFlow$SelfRegForm$txtConfirmPassword" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">\
+                        <input type="password" id="password_confirmation" placeholder="Confirm Password">\
                     </div>\
                 </div>\
             </div>\
             <div class="row&quot;">\
                 <div class="form-group">\
-                    <select class="selectpicker" name="ctl00$content$SelfRegFlow$SelfRegForm$ddlSecurityQuestion" id="security_question" onchange="ToggleSecurityQuestion(&quot;ctl00_content_SelfRegFlow_SelfRegForm_ddlSecurityQuestion&quot;)">\
+                    <select class="selectpicker" id="security_question">\
                         <option selected="selected" value="SecurityQuestion1">In what city were you born?</option>\
-                        <option value="SecurityQuestion2">What was the name of your first pet?</option>\
-                        <option value="SecurityQuestion3">What was the name of your best childhood friend?</option>\
-                        <option value="SecurityQuestion4">What colour was your first car?</option>\
-                        <option value="SecurityQuestion5">What was your favourite teacher/x27s last name?</option>\
-                        <option value="SecurityQuestionCustom">Custom Security Question</option>\
                     </select>\
                 </div>\
             </div>\
             <div class="form-group" id="ctl00_content_SelfRegFlow_SelfRegForm_trCustomQuestion">\
-                <input type="text" id="custom_sec_question" class="form-control input-lg" placeholder="Custom Security Question" tabindex="7">\
+                <input type="text" id="custom_sec_question" placeholder="Custom Security Question">\
             </div>\
             <div class="row">\
                 <div class="col-xs-12 col-sm-6 col-md-6">\
                     <div class="form-group">\
-                        <input type="text" name="ctl00$content$SelfRegFlow$SelfRegForm$txtAnswer" id="security_answer" class="form-control input-lg" placeholder="Security Question Answer" tabindex="7">\
+                        <input type="text" id="security_answer" placeholder="Security Question Answer">\
                     </div>\
                 </div>\
                 <div class="col-xs-12 col-sm-6 col-md-6">\
                     <div class="form-group">\
-                        <input type="text" name="ctl00$content$SelfRegFlow$SelfRegForm$txtConfirmAnswer" id="security_answer_confirmation" class="form-control input-lg" placeholder="Confirm Security Question Answer" tabindex="8">\
+                        <input type="text" id="security_answer_confirmation" placeholder="Confirm Security Question Answer">\
                     </div>\
                 </div>\
             </div>\
@@ -78,13 +87,6 @@ jQuery("#PageType01").css({
   "background": "url('https://ricoheurope.github.io/img/banner-bg2.jpg')  no-repeat left center fixed",
   "background-size": "cover"
 });
-
-
-jQuery("#ENUSmain").css("display", "none");
-jQuery("#CtlBody").css("display", "none");
-jQuery("#CtlHead > tbody").remove();
-jQuery(".NavTop").remove();
-
 
 jQuery("#CtlHead").css("border-bottom","0");
 jQuery("#PageType01").css("background-color","none");
@@ -130,6 +132,7 @@ oldElem.attr('style', 'height: 46px !important');
 oldElem.attr("tabindex", "6");
 
 // custom security question
+ToggleSecurityQuestion("ctl00_content_SelfRegFlow_SelfRegForm_ddlSecurityQuestion");
 var oldElem = jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_txtCustomQuestion");
 jQuery("#custom_sec_question").replaceWith(oldElem);
 oldElem.removeClass().addClass("form-control input-lg");
@@ -149,15 +152,15 @@ oldElem.attr("placeholder", "Confirm Security Question Answer").attr("tabindex",
 
 // error handling
 var errContainer = jQuery("#error_container");
-jQuery("div.Error").appendTo(errContainer);
-jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvFirstName").appendTo(errContainer);
-jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvLastName").appendTo(errContainer);
-jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvEmail").appendTo(errContainer);
-jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvEmail2").appendTo(errContainer);
-jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvPassword").appendTo(errContainer);
-jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvConfirmPassword").appendTo(errContainer);
-jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvAnswer").text("Security Question Answer is required").appendTo(errContainer);
-jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvConfirmAnswer").text("Confirm Security Question Answer is required").appendTo(errContainer);
+jQuery("div.Error").removeClass().addClass("alert alert-danger error-message").appendTo(errContainer);
+jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvFirstName").removeAttr("style").removeClass().addClass("alert alert-danger error-message").appendTo(errContainer);
+jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvLastName").removeAttr("style").removeClass().addClass("alert alert-danger error-message").appendTo(errContainer);
+jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvEmail").removeAttr("style").removeClass().addClass("alert alert-danger error-message").appendTo(errContainer);
+jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvPassword").removeAttr("style").removeClass().addClass("alert alert-danger error-message").appendTo(errContainer);
+jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvConfirmPassword").removeAttr("style").removeClass().addClass("alert alert-danger error-message").appendTo(errContainer);
+jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvAnswer").text("Security Question Answer is required").removeAttr("style").removeClass().addClass("alert alert-danger error-message").appendTo(errContainer);
+jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvConfirmAnswer").text("Confirm Security Question Answer is required").removeAttr("style").removeClass().addClass("alert alert-danger error-message").appendTo(errContainer);
+jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvEmail2").css("color", "").addClass("alert alert-danger error-message").appendTo(errContainer);
 
 });
 </script>
