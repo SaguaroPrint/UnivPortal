@@ -1,18 +1,11 @@
-	jQuery(window).on('load', function() {
+jQuery(window).on('load', function() {
 
 			function getReasCookies() {
 				var reasCookies = {};
-				var cookie = document.cookie;
-				var pairs = cookie.split(";");
-				var i = 0;
-				for (var i =0; i< pairs.length; i++) {
-					var pair = pairs[i].split("=");
-					var name = pair[0];
-					if (name.charAt(0) == " ") {
-						name = name.substring(1, name.length);
-					}
+				for (var i = 0; i < localStorage.length; i++){
+					var name = localStorage.key(i);
 					if (name.startsWith("reas")) {
-						reasCookies[name] = pair[1];
+						reasCookies[name] = unescape(localStorage.getItem(name));
 					}
 				}
 				return reasCookies;
@@ -33,21 +26,16 @@
 					}
 				},
 				draw: function(c) {
-					var catalog = JSON.parse(c["reasCatalog"].replace(/~/g, '\"'));
+					var catalog = JSON.parse(c["reasCatalog"]);
 					var gridGallery = newGridGallery();
 					var ul = gridGallery.ul;
 					var imageGallery = isotopeSection(newFilter(catalog), gridGallery.galleryCol);
 
 					for (var category in catalog) {
 						if (category != "*") {
-							var products = JSON.parse(c["reasCategory" + category].replace(/~/g, '\"'));
+							var products = JSON.parse(c["reasCategory" + category]);
 							for (var i = 0; i < products.items.length; i++) {
-								var itemp = c[products.items[i]];
-								itemp = itemp.replace(/$/g, '\'');
-								itemp = itemp.replace(/~/g, '\"');
-								itemp = itemp.replace(/@/g, '=');
-								itemp = itemp.replace(/\^/g, ';');
-								var product = JSON.parse(itemp);
+								var product = JSON.parse(c[products.items[i]]);
 								var li = newLi(product.js ,product.image, product.description, product.name, category);
 								ul.append(li);
 							}
@@ -102,16 +90,12 @@
 								var description = products.d[i].innerHTML;
 								var image = products.im[i].src;
 								var item = "{ \"name\":\"" + name + "\",\"description\":\"" + description + "\",\"js\":\"" + js + "\",\"image\":\"" + image + "\"} ";
-								item = item.replace(/\'/g, '$');
-								item = item.replace(/\"/g, '~');
-								item = item.replace(/=/g, '@');
-								item = item.replace(/;/g, '^');
-								document.cookie = "reasProduct" + name.replace(/\s/g, '') + "=" + item;
+								localStorage.setItem("reasProduct" + name.replace(/\s/g, ''), escape(item));
 								reasCategory += "\"reasProduct" + name.replace(/\s/g, '') + "\"" + ((i == (products.l.length - 1))?"":",");
 							}
 						}
 						reasCategory += "]}";
-						document.cookie = "reasCategory" + filter + "=" + reasCategory.replace(/\"/g, '~');
+						localStorage.setItem("reasCategory" + filter, escape(reasCategory));
 					},
 					done: function(data) {
 					}
@@ -136,7 +120,7 @@
 					fetchItems.push(getCatalogItems(obj.l[i].id, filter, inner));
 				}
 				reasCatalog += "}";
-				document.cookie = "reasCatalog=" + reasCatalog.replace(/\"/g, '~');
+				localStorage.setItem("reasCatalog" , escape(reasCatalog));
 
 				return fetchItems;
 			}
