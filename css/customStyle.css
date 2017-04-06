@@ -46,19 +46,19 @@ body {
 #tdForm {
 	/*min-width:500px;
   float: left;
-  width: 50%;*/
-  background: #F9F9F9;
+  background: #F9F9F9; */
+  width: 47%;
   padding: 25px;
-  box-shadow: rgb(189, 189, 189) 1px 2px 12px 0px;
-  /*display: inline-block;*/
+  /*box-shadow: rgb(189, 189, 189) 1px 2px 12px 0px;
+  display: inline-block;*/
 }
 
 #tdProof{
-	width:50%;
+	width:47%;
   padding: 25px;
   max-width: 750px;
-  box-shadow: rgb(189, 189, 189) 1px 2px 12px 0px;
-  /* height: auto; */
+  /*box-shadow: rgb(189, 189, 189) 1px 2px 12px 0px;
+  height: auto; */
 }
 
 #fname_InputCell{
