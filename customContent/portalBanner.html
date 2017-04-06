@@ -669,10 +669,13 @@ jQuery(".MastHead").append('\
     // move Search
     //jQuery("#ctl00_ctl08_CatalogSearchBox_txtSearchText").appendTo(jQuery("#searchbox")).removeClass().addClass("form-control searchField").attr("value", "Search Catalogue...").css("display","inline");
     //jQuery(".spSearch").appendTo(jQuery("#searchbox")).removeClass().addClass("form-control searchField").attr("value", "Search Catalogue...").css("display","inline");
+
+    jQuery(".spSearch").css({
+      "float": "",
+      "display": ""
+    });
     jQuery(".spSearch").appendTo(jQuery("#searchbox"));
     jQuery("#ctl00_ctl08_CatalogSearchBox_txtSearchText").addClass("TDSearchBox CatalogSearchBox tt-query form-control searchField").attr("value", "Search Catalogue...");
-
-
 
 
     // redirect to landing page at logout
