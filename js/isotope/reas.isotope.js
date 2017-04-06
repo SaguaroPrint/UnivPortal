@@ -43,7 +43,7 @@
 							var products = JSON.parse(c["reasCategory" + category].replace(/~/g, '\"'));
 							for (var i = 0; i < products.items.length; i++) {
 								var itemp = c[products.items[i]];
-								itemp = itemp.replace(/>/g, '\'');
+								//itemp = itemp.replace(/>/g, '\'');
 								itemp = itemp.replace(/~/g, '\"');
 								itemp = itemp.replace(/@/g, '=');
 								itemp = itemp.replace(/\^/g, ';');
@@ -54,11 +54,6 @@
 						}
 					}
 
-					/*
-					var result = document.evaluate('//*[@id="ENUSmain"]/tbody/tr/td/div[1]',
-						document, null, 5, null);
-					var el = result.iterateNext();
-					*/
 					var el = jQuery("#ctl00_content_RadScriptManager1").siblings("div").first();
 					jQuery(el).append(imageGallery);
 					removeOriginalCatalog();
@@ -107,7 +102,7 @@
 								var description = products.d[i].innerHTML;
 								var image = products.im[i].src;
 								var item = "{ \"name\":\"" + name + "\",\"description\":\"" + description + "\",\"js\":\"" + js + "\",\"image\":\"" + image + "\"} ";
-								item = item.replace(/\'/g, '>');
+								//item = item.replace(/\'/g, '>');
 								item = item.replace(/\"/g, '~');
 								item = item.replace(/=/g, '@');
 								item = item.replace(/;/g, '^');
