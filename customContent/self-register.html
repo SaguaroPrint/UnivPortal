@@ -11,10 +11,10 @@ jQuery("#aspnetForm").prepend('\
             <p style="text-align:left"><i class="fa fa-info-circle" aria-hidden="true"></i> Attention: All the fields are required to complete the Registration.</p>\
             <hr style="height: 5px; border-top: 0; background: #c4e17f; border-radius: 5px; background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4); background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4); background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4); background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);">\
             <div class="row">\
-                <div class="col-sm-12 col-md-12" id="error_container" style="text-align: center;"></div>\
+                <div class="col-sm-12 col-md-12" id="error_container" style="text-align: center; padding-bottom: 10px; display: grid"></div>\
                 <div class="col-xs-12 col-sm-6 col-md-6">\
                     <div class="form-group">\
-                        <input type="text" name="ctl00$content$SelfRegFlow$SelfRegForm$txtFirstName" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1"> </div>\
+                        <input type="text" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1"> </div>\
                 </div>\
                 <div class="col-xs-12 col-sm-6 col-md-6">\
                     <div class="form-group">\
@@ -23,7 +23,7 @@ jQuery("#aspnetForm").prepend('\
                 </div>\
             </div>\
             <div class="form-group">\
-                <input type="email" name="ctl00$content$SelfRegFlow$SelfRegForm$txtEmail" id="ctl00_content_SelfRegFlow_SelfRegForm_txtEmail" class="form-control input-lg" placeholder="Email Address" tabindex="4">\
+                <input type="email" name="ctl00$content$SelfRegFlow$SelfRegForm$txtEmail" id="email" class="form-control input-lg" placeholder="Email Address (User ID)" tabindex="3">\
             </div>\
             <div class="row">\
                 <div class="col-xs-12 col-sm-6 col-md-6">\
@@ -39,7 +39,7 @@ jQuery("#aspnetForm").prepend('\
             </div>\
             <div class="row&quot;">\
                 <div class="form-group">\
-                    <select class="selectpicker" name="ctl00$content$SelfRegFlow$SelfRegForm$ddlSecurityQuestion" id="ctl00_content_SelfRegFlow_SelfRegForm_ddlSecurityQuestion" onchange="ToggleSecurityQuestion(&quot;ctl00_content_SelfRegFlow_SelfRegForm_ddlSecurityQuestion&quot;)">\
+                    <select class="selectpicker" name="ctl00$content$SelfRegFlow$SelfRegForm$ddlSecurityQuestion" id="security_question" onchange="ToggleSecurityQuestion(&quot;ctl00_content_SelfRegFlow_SelfRegForm_ddlSecurityQuestion&quot;)">\
                         <option selected="selected" value="SecurityQuestion1">In what city were you born?</option>\
                         <option value="SecurityQuestion2">What was the name of your first pet?</option>\
                         <option value="SecurityQuestion3">What was the name of your best childhood friend?</option>\
@@ -49,15 +49,18 @@ jQuery("#aspnetForm").prepend('\
                     </select>\
                 </div>\
             </div>\
+            <div class="form-group" id="ctl00_content_SelfRegFlow_SelfRegForm_trCustomQuestion">\
+                <input type="text" id="custom_sec_question" class="form-control input-lg" placeholder="Custom Security Question" tabindex="7">\
+            </div>\
             <div class="row">\
                 <div class="col-xs-12 col-sm-6 col-md-6">\
                     <div class="form-group">\
-                        <input type="text" name="ctl00$content$SelfRegFlow$SelfRegForm$txtAnswer" id="password" class="form-control input-lg" placeholder="Security Question Answer" tabindex="7">\
+                        <input type="text" name="ctl00$content$SelfRegFlow$SelfRegForm$txtAnswer" id="security_answer" class="form-control input-lg" placeholder="Security Question Answer" tabindex="7">\
                     </div>\
                 </div>\
                 <div class="col-xs-12 col-sm-6 col-md-6">\
                     <div class="form-group">\
-                        <input type="text" name="ctl00$content$SelfRegFlow$SelfRegForm$txtConfirmAnswer" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Security Question Answer" tabindex="8">\
+                        <input type="text" name="ctl00$content$SelfRegFlow$SelfRegForm$txtConfirmAnswer" id="security_answer_confirmation" class="form-control input-lg" placeholder="Confirm Security Question Answer" tabindex="8">\
                     </div>\
                 </div>\
             </div>\
@@ -65,7 +68,6 @@ jQuery("#aspnetForm").prepend('\
             <div class="row">\
                 <div class="col-xs-12 col-md-12"><a href=\x27javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions( "ctl00$content$SelfRegFlow$btnSubmitForm", "", true, "", "", false, true))\x27 type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="9">Register</a>\
                 </div>\
-								<div class="Error"></div>\
             </div>\
         </div>\
     </div>\
@@ -77,11 +79,10 @@ jQuery("#PageType01").css({
   "background-size": "cover"
 });
 
-/*
-jQuery("#ENUSmain").remove();
-jQuery("#CtlBody").remove();
+
+jQuery("#ENUSmain").css("display", "none");
+jQuery("#CtlBody").css("display", "none");
 jQuery("#CtlHead > tbody").remove();
-*/
 jQuery(".NavTop").remove();
 
 
@@ -91,8 +92,72 @@ jQuery("#CtlFooter").css("position","absolute bottom");
 jQuery(".FooterBottom").css("background-color","#eaeaea");
 
 // link old inputs
-jQuery("#first_name").replaceWith(jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_txtFirstName"));
-jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvFirstName").appendTo(jQuery("#error_container"));
+// first name
+var oldElem = jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_txtFirstName");
+jQuery("#first_name").replaceWith(oldElem);
+oldElem.removeClass().addClass("form-control input-lg");
+oldElem.attr("placeholder", "First Name").attr("tabindex", "1");
+
+// last name
+var oldElem = jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_txtLastName");
+jQuery("#last_name").replaceWith(oldElem);
+oldElem.removeClass().addClass("form-control input-lg");
+oldElem.attr("placeholder", "Last Name").attr("tabindex", "2");
+
+// email
+var oldElem = jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_txtEmail");
+jQuery("#email").replaceWith(oldElem);
+oldElem.removeClass().addClass("form-control input-lg");
+oldElem.attr("placeholder", "Email Address (User ID)").attr("tabindex", "3");
+
+// password
+var oldElem = jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_txtPassword");
+jQuery("#password").replaceWith(oldElem);
+oldElem.removeClass().addClass("form-control input-lg");
+oldElem.attr("placeholder", "Password").attr("tabindex", "4");
+
+// confirm password
+var oldElem = jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_txtConfirmPassword");
+jQuery("#password_confirmation").replaceWith(oldElem);
+oldElem.removeClass().addClass("form-control input-lg");
+oldElem.attr("placeholder", "Confirm Password").attr("tabindex", "5");
+
+// security question
+var oldElem = jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_ddlSecurityQuestion");
+jQuery("#security_question").replaceWith(oldElem);
+oldElem.removeClass().addClass("selectpicker");
+oldElem.attr('style', 'height: 46px !important');
+oldElem.attr("tabindex", "6");
+
+// custom security question
+var oldElem = jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_txtCustomQuestion");
+jQuery("#custom_sec_question").replaceWith(oldElem);
+oldElem.removeClass().addClass("form-control input-lg");
+oldElem.removeAttr("style").attr("placeholder", "Type Custom Security Question").attr("tabindex", "7");
+
+// security answer
+var oldElem = jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_txtAnswer");
+jQuery("#security_answer").replaceWith(oldElem);
+oldElem.removeClass().addClass("form-control input-lg");
+oldElem.attr("placeholder", "Security Question Answer").attr("tabindex", "8");
+
+// confirm security answer
+var oldElem = jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_txtConfirmAnswer");
+jQuery("#security_answer_confirmation").replaceWith(oldElem);
+oldElem.removeClass().addClass("form-control input-lg");
+oldElem.attr("placeholder", "Confirm Security Question Answer").attr("tabindex", "9");
+
+// error handling
+var errContainer = jQuery("#error_container");
+jQuery("div.Error").appendTo(errContainer);
+jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvFirstName").appendTo(errContainer);
+jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvLastName").appendTo(errContainer);
+jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvEmail").appendTo(errContainer);
+jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvEmail2").appendTo(errContainer);
+jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvPassword").appendTo(errContainer);
+jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvConfirmPassword").appendTo(errContainer);
+jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvAnswer").text("Security Question Answer is required").appendTo(errContainer);
+jQuery("#ctl00_content_SelfRegFlow_SelfRegForm_rfvConfirmAnswer").text("Confirm Security Question Answer is required").appendTo(errContainer);
 
 });
 </script>
