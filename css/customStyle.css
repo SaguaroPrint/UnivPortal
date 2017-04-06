@@ -703,3 +703,22 @@ text-align: center;
   left: 20px !important;
   top: 0px !important;
 }
+
+/* product info Delivery */
+span {
+  font-size: 14px !important;
+}
+
+#ctl00_content_CtlAddToCart_SkuPrototypeSelection_mSkuList_ctl01_skuSelect, #ctl00_content_CtlAddToCart_SkuPrototypeSelection_mSkuList_ctl02_skuSelect {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#ctl00_content_CtlAddToCart_DeliveryOptions_divDeliveryOptions td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#divSelectDownload, #divSelectEmail {
+  margin-left: 5px;
+}
