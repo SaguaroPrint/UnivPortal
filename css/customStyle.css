@@ -280,9 +280,10 @@ select[name="ctl00$content$TextUserAttributeList$CtlUserPropertiesSecurityQuesti
     font-size: 24px;
     color: #d42000;
     border-bottom: solid 1px #000000;
+    /*
     -webkit-box-shadow: 0 4px 6px -6px #222;
     -moz-box-shadow: 0 4px 6px -6px #222;
-    box-shadow: 0 4px 6px -6px #222;
+    box-shadow: 0 4px 6px -6px #222; */
     margin-top: 0px;
     margin-right: 0px;
     margin-left: 0px;
