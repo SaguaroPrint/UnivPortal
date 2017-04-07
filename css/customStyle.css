@@ -737,3 +737,8 @@ span {
 #ctl00_content_CurrentCart_CtlCartItemList_CtlCartItems_ctl03_txtQty {
   width: 157px;
 }
+
+/* cart delivery address spacing */
+#ctl00_content_CartShipping_CtlAddressSelector_divCreateNewAddress table td table td {
+  padding-bottom: 5px;
+}
