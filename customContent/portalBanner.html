@@ -4,6 +4,10 @@
   border: 0px;
 }
 
+#CtlFooter {
+  visibility: hidden;
+}
+
 #CtlBody {
   width: 80% !important;
   margin: auto;
@@ -29,185 +33,92 @@
 	background-color: #3f919c;
     border-color: #3f919c;
 }
-
 </style>
 
 <script type="text/javascript">
-
 jQuery(document).ready(function() {
 
-  // remove Nav bar
-  jQuery("#navBarEnhanced").remove();
+    // remove Nav bar
+    jQuery("#navBarEnhanced").remove();
 
-  // place site icon
-  var link = document.querySelector("src", "https://rawgit.com/SaguaroPrint/UnivPortal/master/img/univ_icon.png") || document.createElement('link');
-  link.type = 'image/x-icon';
-  link.rel = 'shortcut icon';
-  link.href = 'https://rawgit.com/SaguaroPrint/UnivPortal/master/img/univ_icon.png';
-  document.getElementsByTagName('head')[0].appendChild(link);
+    // place site icon
+    var link = document.querySelector("src", "https://rawgit.com/SaguaroPrint/UnivPortal/master/img/univ_icon.png") || document.createElement('link');
+    link.type = 'image/x-icon';
+    link.rel = 'shortcut icon';
+    link.href = 'https://rawgit.com/SaguaroPrint/UnivPortal/master/img/univ_icon.png';
+    document.getElementsByTagName('head')[0].appendChild(link);
 
-  // full width Table
-  var el = document.querySelector("#ENUSmain");
-  el.style.width = "100%";
-  el.style.minWidth = "1000px";
+    // full width Table
+    var el = document.querySelector("#ENUSmain");
+    el.style.width = "100%";
+    el.style.minWidth = "1000px";
 
-  // logo style
+    // logo style
     var logoImg = jQuery("<img></img>");
     logoImg.attr("src", "https://rawgit.com/SaguaroPrint/UnivPortal/master/img/university_logo2.png");
     logoImg.css({
-      "float": "left",
-      "vertical-align": "middle",
-      "max-height": "45px",
-      "margin-left": "10%"
+        "float": "left",
+        "vertical-align": "middle",
+        "max-height": "45px",
+        "margin-left": "10%"
     });
-/*
-    var logoTxt = jQuery("<img></img>");
-    logoTxt.attr("src", "https://rawgit.com/SaguaroPrint/UnivPortal/master/img/uoc.png");
-    logoTxt.css({
-      "float": "left",
-      "vertical-align": "middle",
-      "max-height": "45px",
-      "margin-left": "5px"
-    });
-*/
+
     // top menu style
-    var navTop =   jQuery(".NavTop");
+    var navTop = jQuery(".NavTop");
     navTop.css({
-      // "background": "#ffffff",
-      // "padding": "20px 0px",
-      // "font-family": "Helvetica Neue,Helvetica,Arial",
-      // "font-size": "14px",
-      // "color": "#333",
-      // "font-weight": "600"
-      "padding": "15px 0px",
-      "font-family": "Helvetica Neue, Helvetica, Arial",
-      "font-size": "14px",
-      "color": "rgba(51, 51, 51, 1)",
-      "position": "fixed",
-      "z-index": "99",
-      "top": "0px",
-      "box-shadow": "0px 3px 4px rgba(0, 0, 0, 0.2)"
+        "padding": "15px 0px",
+        "font-family": "Helvetica Neue, Helvetica, Arial",
+        "font-size": "14px",
+        "color": "rgba(51, 51, 51, 1)",
+        "position": "fixed",
+        "z-index": "99",
+        "top": "0px",
+        "box-shadow": "0px 3px 4px rgba(0, 0, 0, 0.2)"
     });
 
-    // add Home and Catalogue links in main menu
- //   mccMenuLeftCart = jQuery(".NavTop > div > div:first");
- //   mccMenuLeftCart.css({
- //     "float": "",
- //     "display": "inline-block",
- //     "vertical-align": "middle",
- //     "text-transform": "uppercase",
- //     "margin-top": "10px",
- //     "margin-bottom": "auto"
- //   });
-
-    // Catalogue link
- //   var newBtns = "<a id='reas-ctlgBtn' href='https://marcomcentral.app.pti.com/printone/catalog.aspx?uigroup_id=26727'>Catalogue</a>";
- //   mccMenuLeftCart.prepend(newBtns);
-//
-    // append divider
- //   var divImg = jQuery("#ctl00_ctl08_imgDivider1");
- //   var catLink = jQuery("#reas-ctlgBtn");
- //   catLink.prepend(divImg.clone());
-
-    // Home link
- //   newBtns = "<a id='reas-homeBtn' href='https://marcomcentral.app.pti.com/printone/home.aspx?uigroup_id=26727'>Home</a>";
- //   mccMenuLeftCart.prepend(newBtns);
-
-    // append divider
- //   var divImg = jQuery("#ctl00_ctl08_imgDivider1");
- //   mccMenuLeftCart.append(divImg.clone());
-
-    // menu links style
-//    var links = navTop.find("a");
-//    links.css({
-//      "color": "#333",
-//      "font-family": "Helvetica Neue,Helvetica,Arial",
-//      "font-size": "14px",
-//      "text-decoration": "none",
-//      "font-weight": "600"
-//    });
-
-    //hover function
-//    links.hover(function() {
-//        jQuery(this).css({
-//          "color": "#d42000",
-//          "border-bottom": "2px solid #d42000",
-//          "padding-bottom": "3px",
-//          "text-decoration": "none"
-//        });
-//    }, function() {
-//        jQuery(this).css({
-//          "color": "#333",
-//          "border-bottom": ""
-//        });
-//    });
-
-
-
-  // hide old menu
-  mccMenuLeftCart = jQuery(".NavTop > div:first");
-	mccMenuLeftCart.css("display", "none");
+    // hide old menu
+    mccMenuLeftCart = jQuery(".NavTop > div:first");
+    mccMenuLeftCart.css("display", "none");
 
     //Add logo and Text
-	navTop.append(logoImg);
-  //navTop.append(log oTxt);
+    navTop.append(logoImg);
+    //navTop.append(log oTxt);
 
-	var basketItems = jQuery("#ctl00_ctl08_lnkCart");
+    var basketItems = jQuery("#ctl00_ctl08_lnkCart");
 
-	var ulMenu = jQuery("<ul></ul>").addClass("nav navbar-nav").css("float", "right").attr("id", "mainMenu");
-	ulMenu.append("<li id='mainMenuHome' class='active'><a href='https://marcomcentral.app.pti.com/printone/home.aspx?uigroup_id=26727'>Home</a></li>");
-	ulMenu.append("<li id='mainMenuCatalogue'><a href='https://marcomcentral.app.pti.com/printone/catalog.aspx?uigroup_id=26727'>Catalogue</a></li>");
-	ulMenu.append("<li id='mainMenuCart'><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/cart.aspx?uigroup_id=26727'>Basket <span class='glyphicon glyphicon-shopping-cart'></span> " + basketItems.html() + "</a></li>");
+    var ulMenu = jQuery("<ul></ul>").addClass("nav navbar-nav").css("float", "right").attr("id", "mainMenu");
+    ulMenu.append("<li id='mainMenuHome' class='active'><a href='https://marcomcentral.app.pti.com/printone/home.aspx?uigroup_id=26727'>Home</a></li>");
+    ulMenu.append("<li id='mainMenuCatalogue'><a href='https://marcomcentral.app.pti.com/printone/catalog.aspx?uigroup_id=26727'>Catalogue</a></li>");
+    ulMenu.append("<li id='mainMenuCart'><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/cart.aspx?uigroup_id=26727'>Basket <span class='glyphicon glyphicon-shopping-cart'></span> " + basketItems.html() + "</a></li>");
 
-  var username = jQuery("#ctl00_ctl08_spUserName").text();
-	ulMenu.append("<li id='dropdown-submenu' class='dropdown'><a href='#' class='dropdown-toggle' data-toggle='dropdown'>" + username + " <span class='caret'></span></a><ul id='dropdown-submenu-holder' class='dropdown-menu'><li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/profile.aspx?uigroup_id=26727&mode=1'>My Profile</a></li><li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/manageOrders.aspx?uigroup_id=26727'>Order Manager</a></li><li><a href='javascript:openDownloadHistoryModal();'>Download History</a></li></ul></li>");
-	ulMenuLogOutA = jQuery("<a></a>");
-	ulMenuLogOutA.attr("href", "javascript:__doPostBack('ctl00$ctl08$btnLogOut',''); window.location.href = 'https://ricoheurope.github.io'");
-	ulMenuLogOutA.html("Log out");
-	ulMenuLogOutLi = jQuery("<li id='mainMenuLogout'></li>");
-	ulMenuLogOutLi.append(ulMenuLogOutA);
-	ulMenu.append(ulMenuLogOutLi);
-	userDropdownSubmenu = ulMenu.find("#dropdown-submenu-holder");
+    var username = jQuery("#ctl00_ctl08_spUserName").text();
+    ulMenu.append("<li id='dropdown-submenu' class='dropdown'><a href='#' class='dropdown-toggle' data-toggle='dropdown'>" + username + " <span class='caret'></span></a><ul id='dropdown-submenu-holder' class='dropdown-menu'><li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/profile.aspx?uigroup_id=26727&mode=1'>My Profile</a></li><li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/manageOrders.aspx?uigroup_id=26727'>Order Manager</a></li><li><a href='javascript:openDownloadHistoryModal();'>Download History</a></li></ul></li>");
+    ulMenuLogOutA = jQuery("<a></a>");
+    ulMenuLogOutA.attr("href", "javascript:__doPostBack('ctl00$ctl08$btnLogOut',''); window.location.href = 'https://ricoheurope.github.io'");
+    ulMenuLogOutA.html("Log out");
+    ulMenuLogOutLi = jQuery("<li id='mainMenuLogout'></li>");
+    ulMenuLogOutLi.append(ulMenuLogOutA);
+    ulMenu.append(ulMenuLogOutLi);
+    userDropdownSubmenu = ulMenu.find("#dropdown-submenu-holder");
 
-	navTop.append(ulMenu);
-	jQuery(document).unbind("click.bs.data-api.dropdown");
-	jQuery(document).bind("click.bs.data-api.dropdown", function() {
-		userDropdownSubmenu.css("display", "none");
-	});
+    navTop.append(ulMenu);
+    jQuery(document).unbind("click.bs.data-api.dropdown");
+    jQuery(document).bind("click.bs.data-api.dropdown", function() {
+        userDropdownSubmenu.css("display", "none");
+    });
 
-	jQuery("#dropdown-submenu").click(function(event) {
-		userDropdownSubmenu.css("display", "inline");
-		event.stopPropagation();
-	});
+    jQuery("#dropdown-submenu").click(function(event) {
+        userDropdownSubmenu.css("display", "inline");
+        event.stopPropagation();
+    });
 
 
     // remove User menu (for guest)
     if (jQuery("#ctl00_ctl08_lblUserName").text() == "Guest User") {
-      jQuery("#mainMenuHome").remove();
-      jQuery("#mainMenuCatalogue").remove();
-      jQuery("#dropdown-submenu").remove();
+        jQuery("#mainMenuHome").remove();
+        jQuery("#mainMenuCatalogue").remove();
+        jQuery("#dropdown-submenu").remove();
     }
-
-	/*
-	navTop.append(" \
-			<ul class='nav navbar-nav'> \
-            <li class='active'><a href='https://marcomcentral.app.pti.com/printone/home.aspx?uigroup_id=26727'>Home</a></li> \
-            <li><a href='https://marcomcentral.app.pti.com/printone/catalog.aspx?uigroup_id=26727'>Catalogue</a></li> \
-            <li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/cart.aspx?uigroup_id=26727'>Basket</a></li> \
-            <li class='dropdown'> \
-              <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>Mister Student <span class='caret'></span></a> \
-              <ul class='dropdown-menu'> \
-                <li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/profile.aspx?uigroup_id=26727&mode=1'>My Profile</a></li> \
-                <li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/manageOrders.aspx?uigroup_id=26727'>Order Manager</a></li> \
-                <li><a href='javascript:openDownloadHistoryModal(); return false;'>Download History</a></li> \
-              </ul> \
-            </li> \
-			<li><a href='javascript:__doPostBack('ctl00$ctl08$btnLogOut',''); window.location.href = 'https://ricoheurope.github.io''>Log out</a></li> \
-          </ul>");*/
-
-    //remove DOM elements
-    //jQuery("#ctl00_ctl08_CatalogSearchBox_txtSearchText").remove();
-    //jQuery(".spSearch").remove();
 
     //Main Menu modifications
     var mccMenuLeftCart = jQuery(".NavTop > div").children().last();
@@ -215,20 +126,20 @@ jQuery(document).ready(function() {
 
     // top menu style
     jQuery(mccMenuRightLogout).css({
-      "float": "right",
-      "display": "inline-block",
-      "vertical-align": "middle",
-      "text-transform": "uppercase",
-      "margin-right": "20px",
-      "margin-top": "10px"
+        "float": "right",
+        "display": "inline-block",
+        "vertical-align": "middle",
+        "text-transform": "uppercase",
+        "margin-right": "20px",
+        "margin-top": "10px"
     });
     jQuery(mccMenuLeftCart).css({
-      "float": "",
-      "display": "inline-block",
-      "vertical-align": "middle",
-      "text-transform": "uppercase",
-      "margin-top": "10px",
-      "margin-bottom": "auto"
+        "float": "",
+        "display": "inline-block",
+        "vertical-align": "middle",
+        "text-transform": "uppercase",
+        "margin-top": "10px",
+        "margin-bottom": "auto"
     });
 
     // change cart icon to black
@@ -236,10 +147,10 @@ jQuery(document).ready(function() {
 
     // update bread crums menu
     jQuery("#CtlBrdCrm").css({
-      "width": "80%",
-      "margin": "auto",
-      "float": "none",
-      "font-size": "18px"
+        "width": "80%",
+        "margin": "auto",
+        "float": "none",
+        "font-size": "18px"
     });
 
     /**
@@ -262,15 +173,6 @@ jQuery(document).ready(function() {
     loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/css/customStyle.css");
     //loadCSS("https://marcomcentral.app.pti.com/printone/Css/bootstrap.min.css");
     loadCSS("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
-    //loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/css/isotope/bootstrap.css");
-
-
-    // bootstrap select
-    //loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/bootstrap-select/bootstrap-theme.min.css");
-    //loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/bootstrap-select/bootstrap.min.css");
-    //loadJS("https://rawgit.com/SaguaroPrint/UnivPortal/master/bootstrap-select/bootstrap.min.js");
-    //loadCSS("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css");
-    //loadJS("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js");
 
     // load the js file
     //loadJS("one.js");
@@ -290,9 +192,9 @@ jQuery(document).ready(function() {
     instr.before(instrIcon);
     instr.remove();
 
-	//remove Grey background from shoping basket table
+    //remove Grey background from shoping basket table
 
-	jQuery(".ContentBoxGrey").removeClass("ContentBoxGrey");
+    jQuery(".ContentBoxGrey").removeClass("ContentBoxGrey");
 
     // remove classes for buttons container
     jQuery("#Table5").removeClass();
@@ -321,40 +223,17 @@ jQuery(document).ready(function() {
 
     // fix bootstrap modal width
     jQuery('#cboxWrapper').css({
-      "-webkit-box-sizing": "initial",
-      "-moz-box-sizing": "initial",
-      "box-sizing": "initial"
+        "-webkit-box-sizing": "initial",
+        "-moz-box-sizing": "initial",
+        "box-sizing": "initial"
     });
 
-    /*var el = document.evaluate( '/*[@id="ctl00_content_CtlAddToCart_InteractivityContainer_panelInteractivity"]/table', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
-    if (el) {
-        el.style.borderCollapse = "initial";
-    }*/
-
-    // bootstrap select for country field
-    //jQuery("#country").addClass("selectpicker");
-
-    // remove white spaces after buttons
-    //jQuery('#CtlCart > tbody > tr > td > table > tbody > tr > td[1] > div[8]').css("display", "none");
-    //var el = document.evaluate( '//*[@id="CtlCart"]/tbody/tr/td/table/tbody/tr/td[1]/div[8]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
-    /*if (el) {
-        el.style.display = "none";
-    }
-    el = document.evaluate( '//*[@id="CtlCart"]/tbody/tr/td/table/tbody/tr/td[1]/br[3]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
-    if (el) {
-        el.style.display = "none";
-    }
-    el = document.evaluate( '//*[@id="CtlCart"]/tbody/tr/td/table/tbody/tr/td[1]/br[4]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
-    if (el) {
-        el.style.display = "none";
-    }
-*/
     //  *************** Delivery page *********************
 
     // Continue button
     var btn = jQuery("#ctl00_content_CartShipping_btnContinue");
-	var btnContinueText = btn.text().replace("»","");
-	btn.text(btnContinueText);
+    var btnContinueText = btn.text().replace("»", "");
+    btn.text(btnContinueText);
     btn.removeClass().addClass("btn btn-success btnWhiteText").append(" <i class='fa fa-chevron-circle-right' aria-hidden='true'></i>");
 
 
@@ -382,9 +261,9 @@ jQuery(document).ready(function() {
     //  *************** Invoicing page *********************
 
     // Continue button
-	var btnContinue = jQuery("#ctl00_content_CartBilling_btnContinue");
-	var btnContinueText = btnContinue.text().replace("»","");
-	btnContinue.text(btnContinueText);
+    var btnContinue = jQuery("#ctl00_content_CartBilling_btnContinue");
+    var btnContinueText = btnContinue.text().replace("»", "");
+    btnContinue.text(btnContinueText);
 
 
     btnContinue.removeClass().addClass("btn btn-success btnWhiteText").append(" <i class='fa fa-chevron-circle-right' aria-hidden='true'></i>").prepend("<i class='fa fa-shopping-cart' aria-hidden='true'></i> ");
@@ -407,58 +286,6 @@ jQuery(document).ready(function() {
     btn.removeClass().addClass("btn btn-sm btn-default angBtnWhiteGray");
 
 
-
-
-    /*jQuery("#ctl00_content_CartShipping_CtlAddressSelector_ctlAddressForm_ddlCountry").change(function () {
-      var inputs = jQuery("#ENUSmain input[type=text]");
-      inputs.addClass("form-control");
-    }); */
-
-
-    //input fields
-    /*
-    jQuery("#CtlCart input[type=text]").css({
-      "font-size":"14px",
-      "border":"1px solid #CCC",
-      "color":"#888",
-      "height":"20px",
-      "line-height":"15px",
-      "margin-bottom":"3px",
-      "margin-right":"6px",
-      "margin-top":"3px",
-      "outline":"0 none",
-      "padding":"4px 0px 4px 4px",
-      "width":"100%",
-      "border-radius":"4px",
-      "-webkit-border-radius":"4px",
-      "-moz-border-radius":"4px",
-      "-webkit-box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075)",
-      "box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075)",
-      "-moz-box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075)"
-    });
-
-    //select fields
-    jQuery("#CtlCart select").css({
-      "font-size":"14px",
-      "border":"1px solid #CCC",
-      "color":"#888","height":"100%",
-      "line-height":"15px",
-      "margin-bottom":"3px",
-      "max-width":"300px",
-      "margin-right":"6px",
-      "margin-top":"3px",
-      "outline":"0 none",
-      "padding":"5px 0px 5px 5px",
-      "width":"100%",
-      "border-radius":"4px",
-      "-webkit-border-radius":"4px",
-      "-moz-border-radius":"4px",
-      "-webkit-box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075)",
-      "box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075)",
-      "-moz-box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075)"
-  });*/
-
-
     // *********** Complete Order page ************
 
     // re-style Complete order button
@@ -470,26 +297,26 @@ jQuery(document).ready(function() {
     btnBack.removeClass().addClass("angBtnWhite");
 
     // drop shadow on cart table
-  //  jQuery("#CtlCart").css("box-shadow", " 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24)");
+    //  jQuery("#CtlCart").css("box-shadow", " 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24)");
 
 
     // *********** Cart page ***********************
     // Checkout button
 
     var btnCheckout = jQuery("#ctl00_content_CurrentCart_btnOrderCart");
-	var btnCheckoutText = btnCheckout.text().replace("»","");
-	btnCheckout.text(btnCheckoutText);
-	btnCheckout.removeClass().addClass("btn btn-success btnWhiteText").append(" <i class='fa fa-chevron-circle-right' aria-hidden='true'></i>").prepend("<i class='fa fa-shopping-cart' aria-hidden='true'></i> ");
+    var btnCheckoutText = btnCheckout.text().replace("»", "");
+    btnCheckout.text(btnCheckoutText);
+    btnCheckout.removeClass().addClass("btn btn-success btnWhiteText").append(" <i class='fa fa-chevron-circle-right' aria-hidden='true'></i>").prepend("<i class='fa fa-shopping-cart' aria-hidden='true'></i> ");
 
 
     // Save Bascket button
     var btnSaveCart = jQuery("#ctl00_content_CurrentCart_btnSaveCart");
     btnSaveCart.removeClass().addClass("btn bntCustomMain");
-	//var btnSaveCartText = btnSaveCart.text();
-	btnSaveCart.prepend("<i class='fa fa-shopping-basket' aria-hidden='true'></i> ");
+    //var btnSaveCartText = btnSaveCart.text();
+    btnSaveCart.prepend("<i class='fa fa-shopping-basket' aria-hidden='true'></i> ");
 
     // Back to Catalogue button
-	jQuery(".ButtonRowFloatL b:first").remove();
+    jQuery(".ButtonRowFloatL b:first").remove();
 
     var btnBackToCat = jQuery("#ctl00_content_CurrentCart_lnkBackToCatalog");
     btnBackToCat.removeClass().addClass("btn bntCustomMain").prepend("<i class='fa fa-chevron-circle-left' aria-hidden='true'></i> ");
@@ -504,12 +331,12 @@ jQuery(document).ready(function() {
     var btn = jQuery("#ctl00_content_CurrentCart_btnUpdate");
     btn.removeClass().addClass("btn btn-sm btn-default angBtnWhiteGreen");
 
-/* IE issue
-    var el = document.evaluate( '//*[@id="divMainContent"]/table[2]/tbody/tr', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
-    if (el) {
-        el.style.verticalAlign = "middle";
-    }
-*/
+    /* IE issue
+        var el = document.evaluate( '//*[@id="divMainContent"]/table[2]/tbody/tr', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue;
+        if (el) {
+            el.style.verticalAlign = "middle";
+        }
+    */
 
     // ***** Current cart - add spacing
     // add space to left
@@ -518,8 +345,8 @@ jQuery(document).ready(function() {
 
     // add space between checkbox and bin icon
     firstColumn.next().css({
-    	"padding-right": "5px",
-    	"padding-top": "2px",
+        "padding-right": "5px",
+        "padding-top": "2px",
     });
 
     // add space to right
@@ -532,8 +359,8 @@ jQuery(document).ready(function() {
 
     // add space between checkbox and bin icon
     firstColumn.next().css({
-      "padding-right": "5px",
-      "padding-top": "2px",
+        "padding-right": "5px",
+        "padding-top": "2px",
     });
     // add space to right
     jQuery("#ctl00_content_ManageShoppingLists_CtlCartItemList_CtlCartItems tr td:last-child").css("padding-right", "10px");
@@ -554,8 +381,8 @@ jQuery(document).ready(function() {
     jQuery("#ctl00_content_CurrentCart_txtSearchText, #ctl00_content_ManageShoppingLists_txtSearchText").parent().css("width", "200px");
     jQuery("#ctl00_content_CurrentCart_txtSearchText, #ctl00_content_ManageShoppingLists_txtSearchText").css({
         "font-size": "",
-        "width" : "200px"
-      });
+        "width": "200px"
+    });
 
     // add space around elments
     tableTds = jQuery("#divSearchCart table tbody tr td");
@@ -574,7 +401,7 @@ jQuery(document).ready(function() {
     var searchInput = jQuery("#ctl00_content_ManageShoppingLists_txtSearchText");
     searchInput.parent().html(searchInput);
 
-	/*
+    /*
     // add table shadow
     if (btn.length > 0) {
       jQuery("#CtlBody").css("box-shadow", "rgb(34, 34, 34) 1px 2px 12px 0px");
@@ -587,7 +414,7 @@ jQuery(document).ready(function() {
     // *********** Home page *************
     // Main table shadow
     //jQuery(".FeaturedProducts").css("-webkit-box-shadow", "1px 2px 12px 0px #222");
-	  jQuery(".FeaturedProducts").css("border", "transparent");
+    jQuery(".FeaturedProducts").css("border", "transparent");
 
     // *********** My profile page *************
     // buttons style update
@@ -603,59 +430,18 @@ jQuery(document).ready(function() {
     // remove white space under the buttons
     jQuery("#ctl00_content_SelfRegUpdateLayout > br").remove();
 
-/*
-    // custom security question
-    var el = jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_txtCustomQuestion");
-    el.removeClass().addClass("form-control");
+    // remove event on shipping country
+    jQuery("#ctl00_content_CartShipping_CtlAddressSelector_ctlAddressForm_ddlCountry").attr("onchange", null);
 
-    // security question answer
-    el = jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_txtAnswer");
-    el.removeClass().addClass("form-control");
-    el.css({"width" : "300px",
-            "display": "initial",
-            "margin-top": "5px"
-            });
-    //confirm answer
-    el = jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_txtConfirmAnswer");
-    el.removeClass().addClass("form-control");
-    el.css({"width" : "300px",
-            "display": "initial",
-            "margin-top": "5px"
-            });
-
-    // align security questions
-    jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_trSelectQuestion").css("vertical-align", "middle");
-    jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_trCustomQuestion").css("vertical-align", "middle");
-    jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_trAnswer").css("vertical-align", "middle");
-    jQuery("#ctl00_content_TextUserAttributeList_CtlUserPropertiesSecurityQuestion_trConfirmAnswer").css("vertical-align", "middle");
-*/
-	/*
-    // add table shadow
-    if (row.length > 0) {
-      jQuery("#CtlBody").css("box-shadow", "rgb(34, 34, 34) 1px 2px 12px 0px");
+    // invoice - move
+    var divBillingPoInstructions = jQuery("#ctl00_content_CartBilling_divBillingPoInstructions");
+    if (divBillingPoInstructions.length > 0) {
+        //jQuery("#CtlBody").css("box-shadow", "rgb(34, 34, 34) 1px 2px 12px 0px");
+        divBillingPoInstructions.remove();
     }
-	*/
 
-// remove event on shipping country
-jQuery("#ctl00_content_CartShipping_CtlAddressSelector_ctlAddressForm_ddlCountry").attr("onchange", null);
-
-// invoice - move
-var divBillingPoInstructions = jQuery("#ctl00_content_CartBilling_divBillingPoInstructions");
-if (divBillingPoInstructions.length > 0) {
-    //jQuery("#CtlBody").css("box-shadow", "rgb(34, 34, 34) 1px 2px 12px 0px");
-    divBillingPoInstructions.remove();
-}
-
-/*
-// confirm cart - move
-var divCtlCartItemsAlt = jQuery("#ctl00_content_CartConfirm_CtlCartItemList_CtlCartItemsAlt");
-if (divCtlCartItemsAlt.length > 0) {
-    jQuery("#CtlBody").css("box-shadow", "rgb(34, 34, 34) 1px 2px 12px 0px");
-}
-*/
-
-//Append Elements to banner Page
-jQuery(".MastHead").append('\
+    //Append Elements to banner Page
+    jQuery(".MastHead").append('\
     <div class="container">\
       <div class="row" id="bannerRow">\
         <div class="col-md-12" id="bannerColumn">\
@@ -671,8 +457,8 @@ jQuery(".MastHead").append('\
     //jQuery(".spSearch").appendTo(jQuery("#searchbox")).removeClass().addClass("form-control searchField").attr("value", "Search Catalogue...").css("display","inline");
 
     jQuery(".spSearch").css({
-      "float": "",
-      "display": ""
+        "float": "",
+        "display": ""
     });
     jQuery(".spSearch").appendTo(jQuery("#searchbox"));
     jQuery("#ctl00_ctl08_CatalogSearchBox_txtSearchText").addClass("TDSearchBox CatalogSearchBox tt-query form-control searchField").attr("value", "Search Catalogue...");
@@ -685,5 +471,25 @@ jQuery(".MastHead").append('\
 
     // display the page once all styling is applied
     jQuery("#ENUSmain").css("display", "table");
+
+    // end of document ready
+});
+
+// align footer
+function alignFooter() {
+    var footer = jQuery("#CtlFooter");
+    var scroll = jQuery('body').height() > jQuery(window).height();
+    if (scroll) {
+        footer.css("margin-top", "40px");
+    } else {
+        // 40 is the existing margin-top
+        var top = jQuery(window).height() - jQuery('body').height() + 40;
+        footer.css("margin-top", top + "px");
+    }
+    footer.css("visibility", "visible");
+}
+
+jQuery(window).on('load resize', function() {
+    alignFooter();
 });
 </script>
