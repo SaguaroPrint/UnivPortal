@@ -732,3 +732,8 @@ span {
 #divPricingGridContainer > table  table {
   margin-bottom: 10px;
 }
+
+/* cart quantity update */
+#ctl00_content_CurrentCart_CtlCartItemList_CtlCartItems_ctl03_txtQty {
+  width: 100px;
+}
