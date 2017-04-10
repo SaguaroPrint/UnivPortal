@@ -742,3 +742,7 @@ span {
 #ctl00_content_CartShipping_CtlAddressSelector_divCreateNewAddress table td table td {
   padding-bottom: 5px;
 }
+
+.CtlCartItems tbody td {
+  border-left: none;
+}
