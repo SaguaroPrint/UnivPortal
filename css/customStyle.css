@@ -5,8 +5,8 @@
 }
 
 /* hide old menu */
-.NavTop > div:first {
-  display: none;
+.NavTop div:first {
+  display: none !important;
 }
 
 #CtlBody {
