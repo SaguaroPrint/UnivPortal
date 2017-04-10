@@ -743,6 +743,12 @@ span {
   padding-bottom: 5px;
 }
 
+/* Manage orders > Order summary */
 .CtlCartItems tbody td {
   border-left: none;
+}
+
+.CtlSearchGroup {
+  border: none;
+  background-color: initial;
 }
