@@ -743,6 +743,11 @@ span {
   padding-bottom: 5px;
 }
 
+/* cart invoicing address spacing */
+#ctl00_content_CartBilling_CtlAddressSelector_divCreateNewAddress table td table td {
+  padding-bottom: 5px;
+}
+
 /* Manage orders > Order summary */
 .CtlCartItems {
   border-top: none;

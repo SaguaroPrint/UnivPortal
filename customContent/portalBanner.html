@@ -257,7 +257,6 @@ jQuery(document).ready(function() {
     btn = jQuery("#ctl00_content_CartShipping_CtlAddressSelector_btnSelectAddress");
     btn.removeClass().addClass("btn btn-sm btn-default angBtnWhiteGray");
 
-
     //  *************** Invoicing page *********************
 
     // Continue button
@@ -302,12 +301,10 @@ jQuery(document).ready(function() {
 
     // *********** Cart page ***********************
     // Checkout button
-
     var btnCheckout = jQuery("#ctl00_content_CurrentCart_btnOrderCart");
     var btnCheckoutText = btnCheckout.text().replace("»", "");
     btnCheckout.text(btnCheckoutText);
     btnCheckout.removeClass().addClass("btn btn-success btnWhiteText").append(" <i class='fa fa-chevron-circle-right' aria-hidden='true'></i>").prepend("<i class='fa fa-shopping-cart' aria-hidden='true'></i> ");
-
 
     // Save Bascket button
     var btnSaveCart = jQuery("#ctl00_content_CurrentCart_btnSaveCart");
@@ -318,9 +315,11 @@ jQuery(document).ready(function() {
     // Back to Catalogue button
     jQuery(".ButtonRowFloatL b:first").remove();
 
+    // qty input field size
+    jQuery("#ctl00_content_CurrentCart_CtlCartItemList_CtlCartItems_ctl02_txtQty").css("width", "70px");
+
     var btnBackToCat = jQuery("#ctl00_content_CurrentCart_lnkBackToCatalog");
     btnBackToCat.removeClass().addClass("btn bntCustomMain").prepend("<i class='fa fa-chevron-circle-left' aria-hidden='true'></i> ");
-
 
 
     // Remove items from cart button
@@ -455,14 +454,17 @@ jQuery(document).ready(function() {
 
     /********* Manage Orders > Order summary **********/
     // Reorder Selected buttoon
-    jQuery("#ctl00_content_OrderSummary_btnAddToCart").removeClass().addClass("btn btn-primary");
+    jQuery("#ctl00_content_OrderSummary_btnAddToCart").removeClass().addClass("btn btn-primary").css("margin-bottom", "5px");
 
     // View Detail summary
     jQuery("#ctl00_content_OrderSummary_btnViewDetailSummary2").removeClass().addClass("btn btn-primary").css("margin-right", "200px");
 
     // remove space under table head
-    //jQuery("#CtlCart tbody tr:nth-child(2) td").text("");
+    jQuery("#CtlCart > tbody > tr:nth-child(2) > td").text("");
 
+    // Reorder Selected response
+    jQuery("#ctl00_content_OrderSummary_btnReorderYes").removeClass().addClass("btn btn-info btn-xs");
+    jQuery("#ctl00_content_OrderSummary_btnReorderNo").removeClass().addClass("btn btn-info btn-xs");
 
 
     // move Search
