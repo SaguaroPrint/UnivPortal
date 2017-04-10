@@ -744,6 +744,9 @@ span {
 }
 
 /* Manage orders > Order summary */
+..CtlCartItems {
+  border-top: none;
+}
 .CtlCartItems tbody td {
   border-left: none;
 }
