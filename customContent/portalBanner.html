@@ -4,11 +4,6 @@
   border: 0px;
 }
 
-/* hide old menu */
-.NavTop div:first {
-  display: none !important;
-}
-
 #CtlFooter {
   visibility: hidden;
 }
@@ -46,6 +41,9 @@ jQuery(document).ready(function() {
     // remove Nav bar
     jQuery("#navBarEnhanced").remove();
 
+    /* hide old menu */
+    jQuery(".NavTop > div:first").css("display", "none");
+
     // place site icon
     var link = document.querySelector("src", "https://rawgit.com/SaguaroPrint/UnivPortal/master/img/univ_icon.png") || document.createElement('link');
     link.type = 'image/x-icon';
@@ -70,7 +68,6 @@ jQuery(document).ready(function() {
 
     // top menu style
     var navTop = jQuery(".NavTop");
-    /* moved to customStyle
     navTop.css({
         "padding": "15px 0px",
         "font-family": "Helvetica Neue, Helvetica, Arial",
@@ -81,7 +78,6 @@ jQuery(document).ready(function() {
         "top": "0px",
         "box-shadow": "0px 3px 4px rgba(0, 0, 0, 0.2)"
     });
-    */
 
     //Add logo and Text
     navTop.append(logoImg);
