@@ -76,10 +76,6 @@ jQuery(document).ready(function() {
         "box-shadow": "0px 3px 4px rgba(0, 0, 0, 0.2)"
     });
 
-    // hide old menu
-    mccMenuLeftCart = jQuery(".NavTop > div:first");
-    mccMenuLeftCart.css("display", "none");
-
     //Add logo and Text
     navTop.append(logoImg);
     //navTop.append(log oTxt);
@@ -287,13 +283,25 @@ jQuery(document).ready(function() {
 
     // *********** Complete Order page ************
 
+    // remove border under items
+    var tbl = jQuery("#ctl00_content_CartConfirm_CtlCartItemList_CtlCartItemsAlt").find("table.CtlCartItems");
+    tbl.css("border-bottom", "0px");
+    tbl.find("thead > tr > td:first").css("border-bottom", "0px");
+
+    // remove space under table
+    var ctlCart = jQuery("#CtlCart");
+    ctlCart.nextAll("br").remove();
+    //ctlCart.next().next("div").children("br").remove();
+
     // re-style Complete order button
-    var btnOrderPrint = jQuery("#ctl00_content_CartConfirm_btnContinue");
-    btnOrderPrint.removeClass().addClass("btn btn-success btnWhiteText").append(" <i class='fa fa-chevron-circle-right' aria-hidden='true'></i>").prepend("<i class='fa fa-shopping-cart' aria-hidden='true'></i> ");
+    var btnComplete = jQuery("#ctl00_content_CartConfirm_btnContinue");
+    var btnCompleteText = btnComplete.text().replace("»", "");
+    btnComplete.text(btnCompleteText);
+    btnComplete.removeClass().addClass("btn btn-success btnWhiteText").append(" <i class='fa fa-chevron-circle-right' aria-hidden='true'></i>").prepend("<i class='fa fa-shopping-cart' aria-hidden='true'></i> ");
 
     // re-syle back button
-    var btnBack = jQuery("#ctl00_content_CartConfirm_btnBack");
-    btnBack.removeClass().addClass("angBtnWhite");
+    btn = jQuery("#ctl00_content_CartConfirm_btnBack");
+    btn.removeClass().addClass("btn bntCustomMain").prepend("<i class='fa fa-chevron-circle-left' aria-hidden='true'></i> ");
 
     // drop shadow on cart table
     //  jQuery("#CtlCart").css("box-shadow", " 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24)");
