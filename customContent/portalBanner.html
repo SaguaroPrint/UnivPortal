@@ -36,7 +36,24 @@
 </style>
 
 <script type="text/javascript">
+
+// function to load a css file
+loadCSS = function(href) {
+    var cssLink = jQuery("<link rel='stylesheet' type='text/css' href='" + href + "'>");
+    jQuery("head").append(cssLink);
+};
+
+// function to load a js file
+loadJS = function(src) {
+    var jsLink = jQuery("<script type='text/javascript' src='" + src + "'>");
+    jQuery("head").append(jsLink);
+};
+
 jQuery(document).ready(function() {
+
+    // load css files
+    loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/css/customStyle.css");
+    loadCSS("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
 
     // remove Nav bar
     jQuery("#navBarEnhanced").remove();
@@ -79,12 +96,11 @@ jQuery(document).ready(function() {
         "box-shadow": "0px 3px 4px rgba(0, 0, 0, 0.2)"
     });
 
-    //Add logo and Text
+    // Add logo
     navTop.append(logoImg);
-    //navTop.append(log oTxt);
 
+    // main menu
     var basketItems = jQuery("#ctl00_ctl08_lnkCart");
-
     var ulMenu = jQuery("<ul></ul>").addClass("nav navbar-nav").css("float", "right").attr("id", "mainMenu");
     ulMenu.append("<li id='mainMenuHome' class='active'><a href='https://marcomcentral.app.pti.com/printone/home.aspx?uigroup_id=26727'>Home</a></li>");
     ulMenu.append("<li id='mainMenuCatalogue'><a href='https://marcomcentral.app.pti.com/printone/catalog.aspx?uigroup_id=26727'>Catalogue</a></li>");
@@ -119,7 +135,31 @@ jQuery(document).ready(function() {
         jQuery("#dropdown-submenu").remove();
     }
 
-    //Main Menu modifications
+    //Append Elements to banner Page
+    jQuery(".MastHead").append('\
+    <div class="container">\
+      <div class="row" id="bannerRow">\
+        <div class="col-md-12" id="bannerColumn">\
+          <div id="bannerHead">Welcome to our University Portal</div>\
+          <div id="bannersubhead">Find any available resources below</div>\
+          <div id="searchbox"></div>\
+        </div>\
+      </div>\
+    </div>');
+
+    // move Search
+    //jQuery("#ctl00_ctl08_CatalogSearchBox_txtSearchText").appendTo(jQuery("#searchbox")).removeClass().addClass("form-control searchField").attr("value", "Search Catalogue...").css("display","inline");
+    //jQuery(".spSearch").appendTo(jQuery("#searchbox")).removeClass().addClass("form-control searchField").attr("value", "Search Catalogue...").css("display","inline");
+
+   jQuery(".spSearch").css({
+        "float": "",
+        "display": ""
+    });
+    jQuery(".spSearch").appendTo(jQuery("#searchbox"));
+    jQuery("#ctl00_ctl08_CatalogSearchBox_txtSearchText").addClass("TDSearchBox CatalogSearchBox tt-query form-control searchField").attr("value", "Search Catalogue...");
+
+/*
+    // Main Menu modifications
     var mccMenuLeftCart = jQuery(".NavTop > div").children().last();
     var mccMenuRightLogout = mccMenuLeftCart.prev();
 
@@ -143,7 +183,7 @@ jQuery(document).ready(function() {
 
     // change cart icon to black
     jQuery("#ctl00_ctl08_lnkImgCart > img").attr("src", "images/cart_black.png");
-
+*/
     // update bread crums menu
     jQuery("#CtlBrdCrm").css({
         "width": "80%",
@@ -152,35 +192,11 @@ jQuery(document).ready(function() {
         "font-size": "18px"
     });
 
-    /**
-     * function to load a given css file
-     */
-    loadCSS = function(href) {
-        var cssLink = jQuery("<link rel='stylesheet' type='text/css' href='" + href + "'>");
-        jQuery("head").append(cssLink);
-    };
-
-    /**
-     * function to load a given js file
-     */
-    loadJS = function(src) {
-        var jsLink = jQuery("<script type='text/javascript' src='" + src + "'>");
-        jQuery("head").append(jsLink);
-    };
-
-    // load the css file
-    loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/css/customStyle.css");
-    //loadCSS("https://marcomcentral.app.pti.com/printone/Css/bootstrap.min.css");
-    loadCSS("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
-
-    // load the js file
-    //loadJS("one.js");
-
-    // *********** Order Info Copy page ********************
+    // --------------- ORDER INFO COPY page ---------------
 
     // replace "description" with i icon
     var infoIcon = jQuery("<i class='fa fa-info fa-lg fa-fw' aria-hidden='true' style='color: #0074c7;'></i>");
-    var desc = jQuery("#ctl00_content_CtlAddToCart_ProductDescription_StringControl1");
+    var desc = jQuery("#ctl00_content_CtlAddToCart_ProductDescription_StringControl1, #ctl00_content_EditCartItem1_ProductDescription_StringControl1");
     desc.before(infoIcon);
     desc.remove();
 
@@ -192,7 +208,6 @@ jQuery(document).ready(function() {
     instr.remove();
 
     //remove Grey background from shoping basket table
-
     jQuery(".ContentBoxGrey").removeClass("ContentBoxGrey");
 
     // remove classes for buttons container
@@ -227,14 +242,13 @@ jQuery(document).ready(function() {
         "box-sizing": "initial"
     });
 
-    //  *************** Delivery page *********************
+    //  --------------- DELIVERY page ---------------
 
     // Continue button
     var btn = jQuery("#ctl00_content_CartShipping_btnContinue");
     var btnContinueText = btn.text().replace("»", "");
     btn.text(btnContinueText);
     btn.removeClass().addClass("btn btn-success btnWhiteText").append(" <i class='fa fa-chevron-circle-right' aria-hidden='true'></i>");
-
 
     // Back button
     btn = jQuery("#ctl00_content_CartShipping_btnBack");
@@ -256,16 +270,13 @@ jQuery(document).ready(function() {
     btn = jQuery("#ctl00_content_CartShipping_CtlAddressSelector_btnSelectAddress");
     btn.removeClass().addClass("btn btn-sm btn-default angBtnWhiteGray");
 
-    //  *************** Invoicing page *********************
+    //  --------------- INVOICING page ---------------
 
     // Continue button
     var btnContinue = jQuery("#ctl00_content_CartBilling_btnContinue");
     var btnContinueText = btnContinue.text().replace("»", "");
     btnContinue.text(btnContinueText);
-
-
     btnContinue.removeClass().addClass("btn btn-success btnWhiteText").append(" <i class='fa fa-chevron-circle-right' aria-hidden='true'></i>").prepend("<i class='fa fa-shopping-cart' aria-hidden='true'></i> ");
-
 
     // Back button
     btn = jQuery("#ctl00_content_CartBilling_btnBack");
@@ -283,8 +294,7 @@ jQuery(document).ready(function() {
     btn = jQuery("#ctl00_content_CartBilling_CtlAddressSelector_btnSelectAddress");
     btn.removeClass().addClass("btn btn-sm btn-default angBtnWhiteGray");
 
-
-    // *********** Complete Order page ************
+    // --------------- COMPLETE ORDER page ---------------
 
     // remove border under items
     var tbl = jQuery("#ctl00_content_CartConfirm_CtlCartItemList_CtlCartItemsAlt").find("table.CtlCartItems");
@@ -306,11 +316,9 @@ jQuery(document).ready(function() {
     btn = jQuery("#ctl00_content_CartConfirm_btnBack");
     btn.removeClass().addClass("btn bntCustomMain").prepend("<i class='fa fa-chevron-circle-left' aria-hidden='true'></i> ");
 
-    // drop shadow on cart table
-    //  jQuery("#CtlCart").css("box-shadow", " 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24)");
 
+    // --------------- CART page ---------------
 
-    // *********** Cart page ***********************
     // Checkout button
     var btnCheckout = jQuery("#ctl00_content_CurrentCart_btnOrderCart");
     var btnCheckoutText = btnCheckout.text().replace("»", "");
@@ -327,11 +335,10 @@ jQuery(document).ready(function() {
     jQuery(".ButtonRowFloatL b:first").remove();
 
     // qty input field size
-    jQuery("#ctl00_content_CurrentCart_CtlCartItemList_CtlCartItems_ctl02_txtQty").css("width", "70px");
+    jQuery("input[id$=_txtQty]").css("width", "70px");
 
     var btnBackToCat = jQuery("#ctl00_content_CurrentCart_lnkBackToCatalog");
     btnBackToCat.removeClass().addClass("btn bntCustomMain").prepend("<i class='fa fa-chevron-circle-left' aria-hidden='true'></i> ");
-
 
     // Remove items from cart button
     var btn = jQuery("#ctl00_content_CurrentCart_btnRemoveItems");
@@ -402,7 +409,8 @@ jQuery(document).ready(function() {
     var searchInput = jQuery("#ctl00_content_CurrentCart_txtSearchText");
     searchInput.parent().html(searchInput);
 
-    // ******** Saved cart **********
+    // --------------- SAVED CART ---------------
+
     // Add Selected to Shopping Basket button
     var btn = jQuery("#ctl00_content_ManageShoppingLists_btnAddToCart");
     btn.removeClass().addClass("btn btn-success");
@@ -411,22 +419,17 @@ jQuery(document).ready(function() {
     var searchInput = jQuery("#ctl00_content_ManageShoppingLists_txtSearchText");
     searchInput.parent().html(searchInput);
 
-    /*
-    // add table shadow
-    if (btn.length > 0) {
-      jQuery("#CtlBody").css("box-shadow", "rgb(34, 34, 34) 1px 2px 12px 0px");
-    }
-*/
     // Remove items from cart button
     btn = jQuery("#ctl00_content_ManageShoppingLists_btnRemoveItems");
     btn.removeClass().addClass("btn btn-sm btn-default angBtnWhiteRed");
 
-    // *********** Home page *************
-    // Main table shadow
-    //jQuery(".FeaturedProducts").css("-webkit-box-shadow", "1px 2px 12px 0px #222");
+    // --------------- HOME page ---------------
+
+    // Main table
     jQuery(".FeaturedProducts").css("border", "transparent");
 
-    // *********** My profile page *************
+    // --------------- MY PROFILE page ---------------
+
     // buttons style update
     var btn = jQuery("#ctl00_content_TextUserAttributeList_btnContnue");
     btn.removeClass().addClass("btn btn-sm btn-default angBtnWhiteGreen");
@@ -450,20 +453,8 @@ jQuery(document).ready(function() {
         divBillingPoInstructions.remove();
     }
 
-    //Append Elements to banner Page
-    jQuery(".MastHead").append('\
-    <div class="container">\
-      <div class="row" id="bannerRow">\
-        <div class="col-md-12" id="bannerColumn">\
-          <div id="bannerHead">Welcome to our University Portal</div>\
-          <div id="bannersubhead">Find any available resources below</div>\
-          <div id="searchbox"></div>\
-        </div>\
-      </div>\
-    </div>');
 
-
-    /********* Manage Orders > Order summary **********/
+    //--------------- Manage Orders > Order summary ---------------
     // Reorder Selected buttoon
     jQuery("#ctl00_content_OrderSummary_btnAddToCart").removeClass().addClass("btn btn-primary").css("margin-bottom", "5px");
 
@@ -477,19 +468,7 @@ jQuery(document).ready(function() {
     jQuery("#ctl00_content_OrderSummary_btnReorderYes").removeClass().addClass("btn btn-info btn-xs");
     jQuery("#ctl00_content_OrderSummary_btnReorderNo").removeClass().addClass("btn btn-info btn-xs");
 
-
-    // move Search
-    //jQuery("#ctl00_ctl08_CatalogSearchBox_txtSearchText").appendTo(jQuery("#searchbox")).removeClass().addClass("form-control searchField").attr("value", "Search Catalogue...").css("display","inline");
-    //jQuery(".spSearch").appendTo(jQuery("#searchbox")).removeClass().addClass("form-control searchField").attr("value", "Search Catalogue...").css("display","inline");
-
-   jQuery(".spSearch").css({
-        "float": "",
-        "display": ""
-    });
-    jQuery(".spSearch").appendTo(jQuery("#searchbox"));
-    jQuery("#ctl00_ctl08_CatalogSearchBox_txtSearchText").addClass("TDSearchBox CatalogSearchBox tt-query form-control searchField").attr("value", "Search Catalogue...");
-
-
+    //--------------- LOGOUT ---------------
     // redirect to landing page at logout
     var logoutHref = jQuery("#ctl00_ctl08_btnLogOut").attr("href");
     var landingPage = "https://ricoheurope.github.io";
@@ -497,11 +476,10 @@ jQuery(document).ready(function() {
 
     // display the page once all styling is applied
     jQuery("#ENUSmain").css("display", "table");
-
     // end of document ready
 });
 
-// align footer
+//--------------- FOOTER align ---------------
 function alignFooter() {
     var footer = jQuery("#CtlFooter");
     var scroll = jQuery('body').height() > jQuery(window).height();
