@@ -1,0 +1,37 @@
+<script>
+	document.getElementById('ENUSmain').style.visibility = 'hidden';
+
+	var includeREASJS = [
+		"https://rawgit.com/SaguaroPrint/UnivPortal/master/js/isotope/create.js",
+		"https://rawgit.com/SaguaroPrint/UnivPortal/master/js/isotope/imagesloaded.pkgd.min.js",
+		"https://rawgit.com/SaguaroPrint/UnivPortal/master/js/isotope/jquery.appear.js",
+		"https://rawgit.com/SaguaroPrint/UnivPortal/master/js/isotope/jquery.isotope.min.js",
+		"https://rawgit.com/SaguaroPrint/UnivPortal/master/js/isotope/lz-string.js",
+		"https://rawgit.com/SaguaroPrint/UnivPortal/master/js/isotope/reas.isotope.js",
+		"https://rawgit.com/SaguaroPrint/UnivPortal/master/js/isotope/main.js",
+		"https://rawgit.com/SaguaroPrint/UnivPortal/master/js/isotope/modernizr.js",
+		"https://rawgit.com/SaguaroPrint/UnivPortal/master/js/isotope/smooth-scroll.js"		
+	];
+	var includeREASCSS = [
+		"https://rawgit.com/SaguaroPrint/UnivPortal/master/css/isotope/et-line-icons.css",
+		"https://rawgit.com/SaguaroPrint/UnivPortal/master/css/isotope/responsive.css",
+		"https://rawgit.com/SaguaroPrint/UnivPortal/master/css/isotope/style.css"
+	];
+		
+	var head = document.getElementsByTagName('head')[0];
+	for (var i=0; i < includeREASJS.length; i++) {
+		var script = document.createElement('script');
+		script.src = includeREASJS[i];    
+		script.type = "text/javascript";
+		head.appendChild(script);
+	}
+	for (var i=0; i < includeREASCSS.length; i++) {
+		var link = document.createElement('link');
+		link.type = "text/css";
+		link.rel = "stylesheet";
+		link.media = "all";
+		link.href = includeREASCSS[i];
+		head.appendChild(link);
+	}	
+	
+</script>

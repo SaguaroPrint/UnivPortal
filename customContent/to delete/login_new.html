@@ -1,0 +1,113 @@
+<style>
+
+#PageType01 {
+  background-color: #eaeaea;
+}
+
+#ENUSmain {
+  border: none !important;
+}
+
+#CtlHead {
+    background: #55adb6 url(https://images.printable.com/printonelogos/images/2220/17351/banners/26727/university_bg.png) no-repeat 30% 190%;
+    height: 300px;
+    width: 100%;
+}
+
+/* center logo  on login page */
+.NavTop img {
+	display: flex;
+	margin: auto !important;
+	float: none !important;
+}
+
+/* hide menu on login page */
+#mainMenu {
+	display: none !important;
+}
+
+#CtlLogIn {
+border:0 !important;
+}
+
+#CtlLogIn h4 strong span {
+font-size: 20px !important;
+}
+
+#CtlLogIn table {
+background-color: transparent !important;
+border:0 !important;
+}
+
+#CtlLogIn table tbody tr td {
+background-color: transparent !important;
+border:0 !important;
+vertical-align: middle;
+}
+
+#CtlLogIn table tbody tr td input {
+background-color: #f1f1f1 !important;
+width: 200px !important;
+height: 30px !important;
+border:1px solid #0074c7 !important;
+border-radius: 2px;
+-webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+font-size: 14px !important;
+padding-left: 5px !important;
+}
+
+/* footer */
+.FooterBottom {
+	display: none;
+}
+</style>
+
+
+<script>
+jQuery(document).ready(function() {
+
+  jQuery("head").append("<meta http-equiv='X-UA-Compatible' content='IE=10'/>");
+
+	// change login button style
+	jQuery("#ctl00_content_Login_btnLogin").removeClass().addClass("btn btn-primary");
+
+	var channel;
+
+	messageHandler = function(e) {
+		window.removeEventListener('message', messageHandler);
+		message = JSON.parse(e.data);
+		if (!message.me)
+			return;
+		if  (message.me != "Marcom University")
+			return;
+
+		channel = e;
+
+		theForm.ctl00_content_Login_txtLoginId.value = message.user;
+		theForm.ctl00_content_Login_txtPassword.value = message.password;
+		theForm.__EVENTTARGET.value = "ctl00$content$Login$btnLogin";
+        theForm.__EVENTARGUMENT.value = "";
+
+		jQuery.ajax({
+			type: theForm.method,
+			url: theForm.action,
+			data: $(theForm).serialize(),
+			success: function (data, textStatus, jqXHR) {
+				channel.source.postMessage("logged!", channel.origin);
+			},
+			error: function (jqXHR, textStatus, errorThrown) {
+				channel.source.postMessage(textStatus + " " +  + errorThrown, channel.origin);
+			},
+			done: function(data) {
+				channel.source.postMessage("done!", channel.origin);
+			},
+			timeout: 10000
+		});
+
+	}
+
+	window.addEventListener('message', messageHandler, false);
+});
+
+</script>
