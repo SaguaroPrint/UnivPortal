@@ -290,6 +290,12 @@ select[name="ctl00$content$TextUserAttributeList$CtlUserPropertiesSecurityQuesti
     vertical-align: top;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+.PromptText {
+  font-size: 16px;
+  color: #d42000;
+}
+
 .Font22 {
     font-size: 20px !important;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -413,6 +419,7 @@ select[name="ctl00$content$TextUserAttributeList$CtlUserPropertiesSecurityQuesti
   margin: auto;
   float: none;
   font-size: 18px;
+  padding-top: 20px;
 }
 
 /* Buttons redesign */
