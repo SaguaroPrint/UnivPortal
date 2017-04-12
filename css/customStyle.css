@@ -693,3 +693,7 @@ span {
   border: none;
   background-color: initial;
 }
+
+#ulMenuLogout {
+  cursor: pointer;
+}

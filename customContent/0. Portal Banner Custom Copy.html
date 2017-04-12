@@ -108,8 +108,7 @@ jQuery(document).ready(function() {
 
     var username = jQuery("#ctl00_ctl08_spUserName").text();
     ulMenu.append("<li id='dropdown-submenu' class='dropdown'><a href='#' class='dropdown-toggle' data-toggle='dropdown'>" + username + " <span class='caret'></span></a><ul id='dropdown-submenu-holder' class='dropdown-menu'><li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/profile.aspx?uigroup_id=26727&mode=1'>My Profile</a></li><li><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/manageOrders.aspx?uigroup_id=26727'>Order Manager</a></li><li><a href='javascript:openDownloadHistoryModal();'>Download History</a></li></ul></li>");
-    ulMenuLogOutA = jQuery("<a></a>");
-    ulMenuLogOutA.attr("href", "javascript:__doPostBack('ctl00$ctl08$btnLogOut',''); window.location.href = 'https://ricoheurope.github.io'");
+    ulMenuLogOutA = jQuery("<a id='ulMenuLogout'></a>");
     ulMenuLogOutA.html("Log out");
     ulMenuLogOutLi = jQuery("<li id='mainMenuLogout'></li>");
     ulMenuLogOutLi.append(ulMenuLogOutA);
@@ -127,13 +126,19 @@ jQuery(document).ready(function() {
         event.stopPropagation();
     });
 
+    var landingPage = "https://ricoheurope.github.io";
 
-    // remove User menu (for guest)
+    // GUEST processing
     if (jQuery("#ctl00_ctl08_lblUserName").text() == "Guest User") {
+        // remove User menu
         jQuery("#mainMenuHome").remove();
         jQuery("#mainMenuCatalogue").remove();
         jQuery("#dropdown-submenu").remove();
-    }
+
+        // redirect to landing page after order completion
+        var orderPrintHref = jQuery("#ctl00_content_CartConfirm_btnContinue").attr("href");
+        jQuery("#ctl00_content_CartConfirm_btnContinue").attr("href", orderPrintHref + "; window.location.href = '" + landingPage + "'");
+  }
 
     //Append Elements to banner Page
     jQuery(".MastHead").append('\
@@ -470,9 +475,29 @@ jQuery(document).ready(function() {
 
     //--------------- LOGOUT ---------------
     // redirect to landing page at logout
-    var logoutHref = jQuery("#ctl00_ctl08_btnLogOut").attr("href");
-    var landingPage = "https://ricoheurope.github.io";
-    jQuery("#ctl00_ctl08_btnLogOut").attr("href", logoutHref + "; window.location.href = '" + landingPage + "'");
+    //var logoutHref = jQuery("#ctl00_ctl08_btnLogOut").attr("href");
+    //jQuery("#ctl00_ctl08_btnLogOut").attr("href", logoutHref + "; window.location.href = '" + landingPage + "'");
+
+    //javascript:__doPostBack('ctl00$ctl08$btnLogOut','')
+
+    jQuery("#ulMenuLogout").on("click", function(){
+      theForm.__EVENTTARGET.value = "ctl00$ctl08$btnLogOut";
+      jQuery.ajax({
+        type: theForm.method,
+        url: theForm.action,
+        data: $(theForm).serialize(),
+        success: function (data, textStatus, jqXHR) {
+          window.location.href = landingPage;
+        }
+      });
+    });
+/*
+    logoutScript = __doPostBack('ctl00$ctl08$btnLogOut','');
+
+    jQuery.when( logoutScript ).done(function(args) {
+      window.location.href = landingPage;
+    });
+*/
 
     // display the page once all styling is applied
     jQuery("#ENUSmain").css("display", "table");
