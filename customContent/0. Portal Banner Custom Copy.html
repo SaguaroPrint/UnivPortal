@@ -84,7 +84,6 @@ jQuery(document).ready(function() {
     // load css files
     loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/css/customStyle.css");
     loadCSS("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
-    loadJS("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js");
 
     // remove Nav bar
     jQuery("#navBarEnhanced").remove();
@@ -232,9 +231,9 @@ jQuery(document).ready(function() {
                           <div class="modal fade" id="modal-confirm" role="dialog">\
                             <div class="modal-dialog modal-sm">\
                               <div class="modal-content">\
-                                <div class="modal-header">\
+                                <div id="modalHeader">\
                                   <button type="button" class="close" data-dismiss="modal">&times;</button>\
-                                  <h4 class="modal-title">Info</h4>\
+                                  <h4 id="modalTitle"><i class="fa fa-info-circle" style="color: #337ab7" aria-hidden="true"></i>Info</h4>\
                                 </div>\
                                 <div class="modal-body">\
                                   <p id="modal-message"></p>\
