@@ -1,0 +1,53 @@
+#PageType01 {
+  background-color: #eaeaea;
+}
+/* hide menu on login page */
+#mainMenu {
+	display: none !important;
+}
+
+#ENUSmain {
+  border: none !important;
+}
+
+#CtlHead {
+    background: #55adb6 url(https://images.printable.com/printonelogos/images/2220/17351/banners/26727/university_bg.png) no-repeat 30% 190%;
+    height: 300px;
+    width: 100%;
+}
+
+/* center logo  on login page */
+.NavTop img {
+	display: flex;
+	margin: auto !important;
+	float: none !important;
+}
+
+#CtlLogIn {
+border:0 !important;
+}
+
+#CtlLogIn h4 strong span {
+font-size: 20px !important;
+}
+
+#CtlSearchGroup table {
+background-color: transparent !important;
+border:0 !important;
+}
+
+#CtlLogIn table tbody tr td {
+background-color: transparent !important;
+border:0 !important;
+vertical-align: middle;
+}
+
+
+.test {
+ float: left, font-size: .9em;
+ margin: 5px 0px 5px 10px;
+}
+/* footer */
+.FooterBottom {
+	display: none;
+}
