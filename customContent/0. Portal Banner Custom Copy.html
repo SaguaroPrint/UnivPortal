@@ -170,7 +170,7 @@ jQuery(document).ready(function() {
         // redirect to landing page after order completion
         var completeOrder = jQuery("#ctl00_content_CartConfirm_btnContinue");
         completeOrder.removeAttr("href");
-        completeOrder.click({eventTarget: "ctl00$content$CartConfirm$btnContinue", message: "<h4>University of Change awaits you!</h4> Your order has been succesfully processed!"}, redirectToLandingPage);
+        completeOrder.click({eventTarget: "ctl00$content$CartConfirm$btnContinue", message: "Your order has been succesfully processed! <h4>University of Change awaits you!</h4>"}, redirectToLandingPage);
   }
 
     //Append Elements to banner Page
@@ -233,7 +233,7 @@ jQuery(document).ready(function() {
     // create modal for order confirmation
     jQuery("body").append('<!-- Modal -->\
                           <div class="modal fade" id="modal-confirm" role="dialog">\
-                            <div class="modal-dialog modal-sm">\
+                            <div class="modal-dialog modal-md">\
                               <div class="modal-content">\
                                 <div id="modalHeader">\
                                   <button type="button" class="close" data-dismiss="modal">&times;</button>\
@@ -531,8 +531,8 @@ jQuery(document).ready(function() {
 
     //--------------- LOGOUT ---------------
     // redirect to landing page at logout
-    //jQuery("#ulMenuLogout").click({eventTarget: "ctl00$ctl08$btnLogOut"}, redirectToLandingPage);
-    jQuery("#ulMenuLogout").click({eventTarget: "ctl00$ctl08$btnLogOut", message: "Logged out!"}, redirectToLandingPage);
+    jQuery("#ulMenuLogout").click({eventTarget: "ctl00$ctl08$btnLogOut"}, redirectToLandingPage);
+    //jQuery("#ulMenuLogout").click({eventTarget: "ctl00$ctl08$btnLogOut", message: "Logged out!"}, redirectToLandingPage);
 
 /*
     logoutScript = __doPostBack('ctl00$ctl08$btnLogOut','');
