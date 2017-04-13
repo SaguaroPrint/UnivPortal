@@ -698,6 +698,31 @@ span {
   cursor: pointer;
 }
 
+/* modal window style */
 #btnModal {
   letter-spacing: 1px;
+}
+
+#modalHeader {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333;
+	webkit-box-sizing: border-box;
+	  -moz-box-sizing: border-box;
+		   box-sizing: border-box;
+	padding: 15px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+#modalTitle {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+	font-family: inherit;
+	font-weight: 500;
+	color: inherit;
+	font-size: 18px;
+	margin: 0;
+	line-height: 1.42;
 }
