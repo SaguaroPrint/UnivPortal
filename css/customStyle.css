@@ -700,7 +700,7 @@ span {
 
 /* modal window style */
 #btnModal {
-  letter-spacing: 1px;
+  letter-spacing: initial;
 }
 
 #modalHeader {

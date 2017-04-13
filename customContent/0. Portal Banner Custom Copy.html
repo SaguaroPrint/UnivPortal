@@ -61,17 +61,21 @@ redirectToLandingPage = function(event) {
       type: theForm.method,
       url: theForm.action,
       data: jQuery(theForm).serialize(),
+      beforeSend: function() {
+        if (message) {
+          //jQuery("#modal-message").html('<i class="fa fa-circle-o-notch fa-spin fa-lg" style="font-size:24px; color: #337ab7"></i> Processing...');
+          jQuery("#modal-message").html('<i class="fa fa-spinner fa-pulse fa-lg" style="font-size:24px; color: #337ab7"></i> Processing...');
+          jQuery("#modal-confirm").modal('show');
+        }
+      },
       success: function (data, textStatus, jqXHR) {
         if (message) {
-          jQuery("#modal-message").html(message);
+          jQuery("#modal-message").html('<i class="fa fa-check fa-lg" aria-hidden="true" style="color: green;"></i> ' + message);
 
           jQuery("#modal-confirm").on('hidden.bs.modal', function (e) {
               window.location.href = landingPage;
           });
-
-          jQuery("#modal-confirm").modal('show');
-        }
-        else {
+        } else {
           window.location.href = landingPage;
         }
 
@@ -166,7 +170,7 @@ jQuery(document).ready(function() {
         // redirect to landing page after order completion
         var completeOrder = jQuery("#ctl00_content_CartConfirm_btnContinue");
         completeOrder.removeAttr("href");
-        completeOrder.click({eventTarget: "ctl00$content$CartConfirm$btnContinue", message: "Your order has been succesfully processed!"}, redirectToLandingPage);
+        completeOrder.click({eventTarget: "ctl00$content$CartConfirm$btnContinue", message: "<h4>University of Change awaits you!</h4> Your order has been succesfully processed!"}, redirectToLandingPage);
   }
 
     //Append Elements to banner Page
@@ -239,7 +243,7 @@ jQuery(document).ready(function() {
                                   <p id="modal-message"></p>\
                                 </div>\
                                 <div class="modal-footer">\
-                                  <button type="button" id="btnModal" class="btn btn-primary" data-dismiss="modal">Close</button>\
+                                  <button type="button" id="btnModal" class="btn btn-primary" data-dismiss="modal">Return to University</button>\
                                 </div>\
                               </div>\
                             </div>\
@@ -527,8 +531,8 @@ jQuery(document).ready(function() {
 
     //--------------- LOGOUT ---------------
     // redirect to landing page at logout
-    jQuery("#ulMenuLogout").click({eventTarget: "ctl00$ctl08$btnLogOut"}, redirectToLandingPage);
-    //jQuery("#ulMenuLogout").click({eventTarget: "ctl00$ctl08$btnLogOut", message: "Logged out!"}, redirectToLandingPage);
+    //jQuery("#ulMenuLogout").click({eventTarget: "ctl00$ctl08$btnLogOut"}, redirectToLandingPage);
+    jQuery("#ulMenuLogout").click({eventTarget: "ctl00$ctl08$btnLogOut", message: "Logged out!"}, redirectToLandingPage);
 
 /*
     logoutScript = __doPostBack('ctl00$ctl08$btnLogOut','');
