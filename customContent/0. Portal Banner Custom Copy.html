@@ -49,11 +49,42 @@ loadJS = function(src) {
     jQuery("head").append(jsLink);
 };
 
+
+var landingPage = "https://ricoheurope.github.io";
+
+// redirect to landing page
+redirectToLandingPage = function(event) {
+    theForm.__EVENTTARGET.value = event.data.eventTarget;
+    theForm.__EVENTARGUMENT.value = "";
+    var message = event.data.message;
+    jQuery.ajax({
+      type: theForm.method,
+      url: theForm.action,
+      data: jQuery(theForm).serialize(),
+      success: function (data, textStatus, jqXHR) {
+        if (message) {
+          jQuery("#modal-message").html(message);
+
+          jQuery("#modal-confirm").on('hidden.bs.modal', function (e) {
+              window.location.href = landingPage;
+          });
+
+          jQuery("#modal-confirm").modal('show');
+        }
+        else {
+          window.location.href = landingPage;
+        }
+
+      }
+    });
+};
+
 jQuery(document).ready(function() {
 
     // load css files
     loadCSS("https://rawgit.com/SaguaroPrint/UnivPortal/master/css/customStyle.css");
     loadCSS("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
+    loadJS("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js");
 
     // remove Nav bar
     jQuery("#navBarEnhanced").remove();
@@ -126,8 +157,6 @@ jQuery(document).ready(function() {
         event.stopPropagation();
     });
 
-    var landingPage = "https://ricoheurope.github.io";
-
     // GUEST processing
     if (jQuery("#ctl00_ctl08_lblUserName").text() == "Guest User") {
         // remove User menu
@@ -136,8 +165,9 @@ jQuery(document).ready(function() {
         jQuery("#dropdown-submenu").remove();
 
         // redirect to landing page after order completion
-        var orderPrintHref = jQuery("#ctl00_content_CartConfirm_btnContinue").attr("href");
-        jQuery("#ctl00_content_CartConfirm_btnContinue").attr("href", orderPrintHref + "; window.location.href = '" + landingPage + "'");
+        var completeOrder = jQuery("#ctl00_content_CartConfirm_btnContinue");
+        completeOrder.removeAttr("href");
+        completeOrder.click({eventTarget: "ctl00$content$CartConfirm$btnContinue", message: "Your order has been succesfully processed!"}, redirectToLandingPage);
   }
 
     //Append Elements to banner Page
@@ -196,6 +226,25 @@ jQuery(document).ready(function() {
         "float": "none",
         "font-size": "18px"
     });
+
+    // create modal for order confirmation
+    jQuery("body").append('<!-- Modal -->\
+                          <div class="modal fade" id="modal-confirm" role="dialog">\
+                            <div class="modal-dialog modal-sm">\
+                              <div class="modal-content">\
+                                <div class="modal-header">\
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>\
+                                  <h4 class="modal-title">Info</h4>\
+                                </div>\
+                                <div class="modal-body">\
+                                  <p id="modal-message"></p>\
+                                </div>\
+                                <div class="modal-footer">\
+                                  <button type="button" id="btnModal" class="btn btn-primary" data-dismiss="modal">Close</button>\
+                                </div>\
+                              </div>\
+                            </div>\
+                          </div>');
 
     // --------------- ORDER INFO COPY page ---------------
 
@@ -309,7 +358,8 @@ jQuery(document).ready(function() {
     // remove space under table
     var ctlCart = jQuery("#CtlCart");
     ctlCart.nextAll("br").remove();
-    //ctlCart.next().next("div").children("br").remove();
+
+    jQuery("#CtlBody > tbody > tr > td > div:nth(1) > br").remove();
 
     // re-style Complete order button
     var btnComplete = jQuery("#ctl00_content_CartConfirm_btnContinue");
@@ -320,6 +370,9 @@ jQuery(document).ready(function() {
     // re-syle back button
     btn = jQuery("#ctl00_content_CartConfirm_btnBack");
     btn.removeClass().addClass("btn bntCustomMain").prepend("<i class='fa fa-chevron-circle-left' aria-hidden='true'></i> ");
+
+    // increase width for Items column
+    jQuery("#ctl00_content_CartConfirm_CtlCartItemList_CtlCartItemsAlt .CtlCartDetail").find("tr td:nth(1)").css("width", "70%");
 
 
     // --------------- CART page ---------------
@@ -475,22 +528,9 @@ jQuery(document).ready(function() {
 
     //--------------- LOGOUT ---------------
     // redirect to landing page at logout
-    //var logoutHref = jQuery("#ctl00_ctl08_btnLogOut").attr("href");
-    //jQuery("#ctl00_ctl08_btnLogOut").attr("href", logoutHref + "; window.location.href = '" + landingPage + "'");
+    //jQuery("#ulMenuLogout").click({eventTarget: "ctl00$ctl08$btnLogOut"}, redirectToLandingPage);
+    jQuery("#ulMenuLogout").click({eventTarget: "ctl00$ctl08$btnLogOut", message: "Logged out!"}, redirectToLandingPage);
 
-    //javascript:__doPostBack('ctl00$ctl08$btnLogOut','')
-
-    jQuery("#ulMenuLogout").on("click", function(){
-      theForm.__EVENTTARGET.value = "ctl00$ctl08$btnLogOut";
-      jQuery.ajax({
-        type: theForm.method,
-        url: theForm.action,
-        data: $(theForm).serialize(),
-        success: function (data, textStatus, jqXHR) {
-          window.location.href = landingPage;
-        }
-      });
-    });
 /*
     logoutScript = __doPostBack('ctl00$ctl08$btnLogOut','');
 

@@ -697,3 +697,7 @@ span {
 #ulMenuLogout {
   cursor: pointer;
 }
+
+#btnModal {
+  letter-spacing: 1px;
+}
