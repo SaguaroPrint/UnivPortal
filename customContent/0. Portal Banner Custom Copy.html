@@ -33,6 +33,17 @@
 	background-color: #3f919c;
     border-color: #3f919c;
 }
+
+
+/* PRINT PAGE style */
+@media print {
+ #bannerColumn, #mainMenu {
+   display: none;
+ }
+ a[href]:after {
+    content: none !important;
+  }
+}
 </style>
 
 <script type="text/javascript">
@@ -484,6 +495,9 @@ jQuery(document).ready(function() {
     btn = jQuery("#ctl00_content_ManageShoppingLists_btnRemoveItems");
     btn.removeClass().addClass("btn btn-sm btn-default angBtnWhiteRed");
 
+    // add bottom border for empty basket
+    jQuery("#CtlCart > tbody > tr:first > td").css("border-bottom", "1px solid #BCBEC0");
+
     // --------------- HOME page ---------------
 
     // Main table
@@ -522,8 +536,11 @@ jQuery(document).ready(function() {
     // View Detail summary
     jQuery("#ctl00_content_OrderSummary_btnViewDetailSummary2").removeClass().addClass("btn btn-primary").css("margin-right", "200px");
 
-    // remove space under table head
-    jQuery("#CtlCart > tbody > tr:nth-child(2) > td").text("");
+    // remove space under table head (check if only whitespaces first)
+    var el = jQuery("#CtlCart > tbody > tr:nth-child(2) > td");
+    if (jQuery.trim(el.text()) == "") {
+      el.text("");
+    }
 
     // Reorder Selected response
     jQuery("#ctl00_content_OrderSummary_btnReorderYes").removeClass().addClass("btn btn-info btn-xs");
