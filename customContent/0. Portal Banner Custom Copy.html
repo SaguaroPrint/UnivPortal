@@ -146,7 +146,7 @@ jQuery(document).ready(function() {
 
     // main menu
     var basketItems = jQuery("#ctl00_ctl08_lnkCart");
-    var ulMenu = jQuery("<ul></ul>").addClass("nav navbar-nav").css("float", "right").attr("id", "mainMenu");
+    var ulMenu = jQuery("<ul></ul>").addClass("nav navbar-nav").attr("id", "mainMenu").css({"float": "right", "display": "flex"});
     ulMenu.append("<li id='mainMenuHome' class='active'><a href='https://marcomcentral.app.pti.com/printone/home.aspx?uigroup_id=26727'>Home</a></li>");
     ulMenu.append("<li id='mainMenuCatalogue'><a href='https://marcomcentral.app.pti.com/printone/catalog.aspx?uigroup_id=26727'>Catalogue</a></li>");
     ulMenu.append("<li id='mainMenuCart'><a href='https://marcomcentral.app.pti.com/ricoheurope/universityofchange/cart.aspx?uigroup_id=26727'>Basket <span class='glyphicon glyphicon-shopping-cart'></span> " + basketItems.html() + "</a></li>");
