@@ -727,3 +727,7 @@ span {
 	line-height: 1.42;
   float: left;
 }
+
+#CtlCart > tbody > tr:first > td {
+  border-bottom: 1px solid #BCBEC0;
+}
