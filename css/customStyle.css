@@ -76,7 +76,6 @@ body {
     border: 1px solid #ccc;
     background: #FFF;
     margin: 0 0 5px;
-    padding: 10px;
 }
 
 #lname_LabelCell{
@@ -97,7 +96,6 @@ body {
     border: 1px solid #ccc;
     background: #FFF;
     margin: 0 0 5px;
-    padding: 10px;
 }
 
 #add1_LabelCell{
@@ -118,7 +116,6 @@ body {
     border: 1px solid #ccc;
     background: #FFF;
     margin: 0 0 5px;
-    padding: 10px;
 }
 
 #add2_LabelCell{
@@ -139,7 +136,6 @@ body {
     border: 1px solid #ccc;
     background: #FFF;
     margin: 0 0 5px;
-    padding: 10px;
 }
 
 #city_LabelCell{
@@ -160,7 +156,6 @@ body {
     border: 1px solid #ccc;
     background: #FFF;
     margin: 0 0 5px;
-    padding: 10px;
 }
 
 #zip_LabelCell{
@@ -181,7 +176,6 @@ body {
     border: 1px solid #ccc;
     background: #FFF;
     margin: 0 0 5px;
-    padding: 10px;
 }
 
 #country_LabelCell{
@@ -202,7 +196,6 @@ body {
   border: 1px solid #ccc;
   background: #FFF;
   margin: 0 0 5px;s
-  /*padding: 10px;*/
 }
 
 #Text_Email_Address_LabelCell{
@@ -223,7 +216,6 @@ body {
     border: 1px solid #ccc;
     background: #FFF;
     margin: 0 0 5px;
-    padding: 10px;
 }
 /*
 #ctl00_content_CartShipping_pnlShippingAction {
