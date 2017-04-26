@@ -91,10 +91,10 @@ jQuery(window).on('load', function() {
 								var image = products.im[i].src;
 								var item = "{ \"name\":\"" + name + "\",\"description\":\"" + description + "\",\"js\":\"" + js + "\",\"image\":\"" + image + "\"} ";
 								localStorage.setItem("reasProduct" + name.replace(/\s/g, ''), escape(item));
-								reasCategory += "\"reasProduct" + name.replace(/\s/g, '') + "\"" + ((i == (products.l.length - 1))?"":",");
+								reasCategory += "\"reasProduct" + name.replace(/\s/g, '') + "\",";
 							}
 						}
-						reasCategory += "]}";
+						reasCategory = reasCategory.substr(0, reasCategory.length - 1) + "]}";
 						localStorage.setItem("reasCategory" + filter, escape(reasCategory));
 					},
 					done: function(data) {
