@@ -2,15 +2,15 @@
 		jQuery( window ).on( "load", function() {
 			var orderPrint = jQuery("#ctl00_content_CtlAddToCart_ProductOrderInfoController_AddToCartActionBox_mAddToCartAction_btnAddToCart");
 
-var weekday = jQuery("<input id='dateUserInfoId' name='dateUserInfoName' />"); 
-var humanDate = jQuery("<input id='reas_timestamp' name='reas_timestamp' />"); 
-var date = jQuery("<input id='dateUserInfoId' name='dateUserInfoName' />"); 
+var weekday = jQuery("<input id='dateUserInfoId' name='dateUserInfoName' />");
+var humanDate = jQuery("<input id='reas_timestamp' name='reas_timestamp' />");
+var date = jQuery("<input id='dateUserInfoId' name='dateUserInfoName' />");
 
 jQuery(theForm).append(weekday);
 jQuery(theForm).append(humanDate);
 
 			orderPrint.on("click", function() {
-				
+
 
 var d = new Date();
 
@@ -25,7 +25,7 @@ humanDate.val(ts.substr(0, ts.lastIndexOf(":")));
 					xhr.onreadystatechange = function () {
 						console.log(xhr.readyState + " " + xhr.status + " [" + xhr.responseText + "]");
 					}
-					xhr.open("POST", "https://172.27.125.39:8083/addUser2");
+					xhr.open("POST", "https://172.27.117.101:8083/addUser");
 					xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 					xhr.send(theForm.serialize());
 				}

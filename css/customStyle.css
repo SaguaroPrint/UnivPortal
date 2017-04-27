@@ -719,3 +719,8 @@ span {
 	line-height: 1.42;
   float: left;
 }
+
+/* remove border in shopping cart */
+.CtlGridTable3 {
+  border: none !important;
+}
