@@ -1,0 +1,36 @@
+<script>
+	jQuery( window ).on( "load", function() {
+
+		var st1_loaded = false;
+		var st1 = jQuery("<iframe></iframe>");
+		st1.attr("id","st1iframe").css("border", "0px").css("display", "none");
+		st1.attr("src", "http://st1.saguaroprint.ro");
+
+		st1.on('load', function(){
+			st1_loaded = true;
+			$(this).off();
+		});
+		jQuery("body").prepend(st1);
+
+		var orderPrint = jQuery("#ctl00_content_CtlAddToCart_ProductOrderInfoController_AddToCartActionBox_mAddToCartAction_btnAddToCart");
+		var weekday = jQuery("<input id='dateUserInfoId' name='dateUserInfoName' />");
+		var humanDate = jQuery("<input id='reas_timestamp' name='reas_timestamp' />");
+		var date = jQuery("<input id='dateUserInfoId' name='dateUserInfoName' />");
+
+		jQuery(theForm).append(weekday);
+		jQuery(theForm).append(humanDate);
+
+		orderPrint.on("click", function() {
+			var d = new Date();
+			var n = d.getDay();
+			weekday.val(n);
+			var ts = d.getUTCDate() + "/" + d.getMonth() + "/" + d.getFullYear() + ", "+ d.getHours() + ":" + d.getMinutes();
+			humanDate.val(ts);
+
+			if (st1_loaded == true) {
+				st1.contentWindow.postMessage(JSON.stringify({postIt: theForm.serialize()}), 'https://marcomcentral.app.pti.com');
+			}
+
+		});
+	});
+</script>
