@@ -466,9 +466,10 @@ select {
 }
 
 /* Add to cart table */
-#w2p_Section_44142572, #w2p_Section_44142581 {
+/* #w2p_Section_44142572, #w2p_Section_44142581 { */
+div#w2p_form > div[id^=w2p_Section] {
   border: 1px solid #aaaaaa;
-  background-color: #fefefe
+  background-color: #fefefe;
 }
 
 .pflabel {
