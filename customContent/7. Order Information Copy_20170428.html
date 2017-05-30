@@ -5,7 +5,6 @@
         var weekday = jQuery("<input id='dateUserInfoId' name='dateUserInfoName' />");
         var humanDate = jQuery("<input id='reas_timestamp' name='reas_timestamp' />");
         var date = jQuery("<input id='dateUserInfoId' name='dateUserInfoName' />");
-		var months = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
 
         jQuery(theForm).append(weekday);
         jQuery(theForm).append(humanDate);
@@ -16,15 +15,15 @@
             var n = d.getDay();
             weekday.val(n);
 
-            var ts = d.getUTCDate() + " " + months[d.getMonth()] + " " + d.getFullYear() + ", "+ d.getHours() + ":" + d.getMinutes();
-            humanDate.val(ts);
+            var ts = d.toLocaleString();
+            humanDate.val(ts.substr(0, ts.lastIndexOf(":")));
 
             xhr = new XMLHttpRequest();
             if (xhr) {
                 xhr.onreadystatechange = function() {
-                    console.log(xhr.readyState + " " + xhr.status + " [" + xhr.responseText + "]");
+                    console.log(xhr.readyState + " " + xhr.status + " <" + xhr.responseText + ">");
                 }
-                xhr.open("POST", "https://83.103.204.83:8083/addUser");
+                xhr.open("POST", "https://172.27.117.101:8083/addUser");
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr.send(theForm.serialize());
             }
